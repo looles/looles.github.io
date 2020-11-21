@@ -221,31 +221,6 @@
     
     
     <entry>
-      <title>java中双端队列deque的用法</title>
-      <link href="posts/5ece5ecc.html"/>
-      <url>posts/5ece5ecc.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p><h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul><li>ArrayDeque：基于数组实现的线性双向队列</li><li>LinkedList：基于链表实现的链式双向队列</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li><li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li><li>不推荐插入null元素，null作为特定返回值表示队列为空</li><li>未定义基于元素相等的equals和hashCode</li></ol><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol><li><p>插入元素</p><pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE    addLast(): 向队尾插入元素，如果为空，则发生NPE    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre></li><li><p>移除元素</p><pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre></li><li><p>获取元素</p><pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LeetCode中移掉K位数字题解</title>
       <link href="posts/128470ac.html"/>
       <url>posts/128470ac.html</url>
@@ -263,6 +238,31 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java中双端队列deque的用法</title>
+      <link href="posts/5ece5ecc.html"/>
+      <url>posts/5ece5ecc.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p><h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul><li>ArrayDeque：基于数组实现的线性双向队列</li><li>LinkedList：基于链表实现的链式双向队列</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li><li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li><li>不推荐插入null元素，null作为特定返回值表示队列为空</li><li>未定义基于元素相等的equals和hashCode</li></ol><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol><li><p>插入元素</p><pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE    addLast(): 向队尾插入元素，如果为空，则发生NPE    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre></li><li><p>移除元素</p><pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre></li><li><p>获取元素</p><pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -396,11 +396,11 @@
     
     
     <entry>
-      <title>LeetCode中搜索旋转排序数组题解</title>
-      <link href="posts/8c2b3a88.html"/>
-      <url>posts/8c2b3a88.html</url>
+      <title>LeetCode中有多少小于当前数字的数题解</title>
+      <link href="posts/629e772.html"/>
+      <url>posts/629e772.html</url>
       
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="33"><li>搜索旋转排序数组<br>给你一个升序排列的整数数组 nums ，和一个整数 target 。<br>假设按照升序排序的数组在预先未知的某个点上进行了旋转。（例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] ）。<br>请你在数组中搜索 target ，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</li></ol><p>示例 1：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 0输出：4</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 3输出：-1</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [1], target = 0输出：-1</code></pre><p>提示：</p><pre><code class="java">1 &lt;= nums.length &lt;= 5000-10^4 &lt;= nums[i] &lt;= 10^4nums 中的每个值都 独一无二nums 肯定会在某个点上旋转-10^4 &lt;= target &lt;= 10^4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol><li>暴力搜索法<br>一开始我看到这个题目是一个中等难度的题目，所以一开始看题目就不知所以，看不懂题目，然后又仔细看了一遍，感觉这有序无序也没毛关系鸭，直接暴力搜索就可了鸭：</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {        for(int i =0;i&lt;nums.length;i++){            if(nums[i] == target){                return i;            }        }        return -1;    }}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026200744324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>是不是要来句**，那么简单无脑的代码居然打败了那么多。</p><ol start="3"><li>二分搜索<br>额，，，让我感到奇怪的地方，为什么条件里面会给这是一个有序数组，并且在某个点进行了旋转，作为一个理科数学难，根据以往惨痛的数学题经验，抱着“题目里给的条件一定有它的用处，不可能用不到”这种感觉，我看了一下此题的评论区，发现很多人说此题的要求时间复杂度为logn（啊，茫然，没有这个要求呀），既然都是要求时间复杂度为logn了，那我们就来做这种解法吧，一般像这种有序啊，然后让你查找某个值的话，而且时间复杂度为logn，这让我们想起了—二分查找，非常符合。</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {    int l = 0, h = nums.length - 1, m = 0;    whle (l &lt;= h) {        m = l + (h - l) / 2;        if (nums[m] == target) {            return m;        }        // 先根据 nums[m] 与 nums[l] 的关系判断 m 是在左段还是右段         if (nums[m] &gt;= nums[l]) {            // 再判断 target 是在 m 的左边还是右边，从而调整左右边界 l 和 h            if (target &gt;= nums[l] &amp;&amp; target &lt; nums[m]) {                h = m - 1;            } else {                l = m + 1;            }        } else {            if (target &gt; nums[m] &amp;&amp; target &lt;= nums[h]) {                l = m + 1;            } else {                h = m - 1;            }        }    }    return -1;}}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026202749649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>有多少小于当前数字的数<br>给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。<br>换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] &lt; nums[i] 。<br>以数组形式返回答案。</p><p>示例 1：</p><pre><code class="java">输入：nums = [8,1,2,2,3]输出：[4,0,1,1,3]解释： 对于 nums[0]=8 存在四个比它小的数字：（1，2，2 和 3）。 对于 nums[1]=1 不存在比它小的数字。对于 nums[2]=2 存在一个比它小的数字：（1）。 对于 nums[3]=2 存在一个比它小的数字：（1）。 对于 nums[4]=3 存在三个比它小的数字：（1，2 和 2）。</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [6,5,4,8]输出：[2,1,0,3]</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [7,7,7,7]输出：[0,0,0,0]</code></pre><p>提示：<br>2 &lt;= nums.length &lt;= 500<br>0 &lt;= nums[i] &lt;= 100</p><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><ol><li>暴力法<br>对于数组中的每一个元素，都遍历一遍数组，统计小于当前元素的数的数目</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        //arr数组存放小于nums数组此所索引对应的数的数目        int[] arr = new int[nums.length];        for(int i = 0;i&lt;nums.length;i++){            int m = 0;            for(int j =0;j&lt;nums.length;j++){                //如果有一个数小于当前数，则统计量m加1                if(nums[i]&gt;nums[j]){                    m++;                }            }            arr[i]=m;        }        return arr;    }}</code></pre><ol start="3"><li>hashmap映射<br>我们在这里使用hashmap建立索引与所在数据的的键值对，然后通过对nums进行排序，则排序后的数组中所在数据对应的索引即为小于该数的数目。</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        int[] data = new int[n];        HashMap&lt;Integer,Integer&gt; hashmap = new HashMap&lt;&gt;();        //建立hashmap对应原数组中数据及对应索引        for(int i = 0; i &lt; n; i++){            hashmap.put(nums[i],i);        }        Arrays.sort(nums);        for(int j = 0;j &lt;n ;j++){            //此时j对应nums数组中索引j所在数据的小于改数据的数目            data[hashmap.get(nums[j])] = j;        }        return data;    }}</code></pre><p>测试结果：<br><img src="https://img-blog.csdnimg.cn/20201026192547660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="方法二对应测试结果"><br>。。。这些看似是没有问题，但是可能有些同学在已经看出来哪里有问题，或者说提交时并没有通过，emmmm….这里的想法有一个严重的前提限制，因为我们使用了hashmap来存放nums数组及对应索引，但是hashmap是不允许有存在重复的键的，但是nums数组中元素是可以重复的。所以此项解法是错误的，<br>3.快速排序<br>正确解法：使用二维数组存放nums数组中数据及对应索引</p><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        //使用data二维数组存放nums数组中数据及其对应的索引        int[][] data = new int[n][2];        //data数组中第一列对应nums数组中的数据，第二列对应数据所在索引值        for (int i = 0; i &lt; n; i++) {            data[i][0] = nums[i];            data[i][1] = i;        }        //对data数组进行排序        Arrays.sort(data, new Comparator&lt;int[]&gt;() {            public int compare(int[] data1, int[] data2) {                return data1[0] - data2[0];            }        });        int[] ret = new int[n];        int prev = -1;        //根据排序后的data数组中的索引来获取小于此数据的数目        for (int i = 0; i &lt; n; i++) {            if (prev == -1 || data[i][0] != data[i - 1][0]) {                prev = i;            }            ret[data[i][1]] = prev;        }        return ret;    }}</code></pre><p>至此，这一题已经写出了两种解法，写本博客的目的主要是想记录和分享一下本人在第二种解法时 的思路错误问题，没有将题目条件考虑周全，提前给像我一样思路的人把这个坑给跳过。</p>]]></content>
       
       
       <categories>
@@ -421,11 +421,11 @@
     
     
     <entry>
-      <title>LeetCode中有多少小于当前数字的数题解</title>
-      <link href="posts/629e772.html"/>
-      <url>posts/629e772.html</url>
+      <title>LeetCode中搜索旋转排序数组题解</title>
+      <link href="posts/8c2b3a88.html"/>
+      <url>posts/8c2b3a88.html</url>
       
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>有多少小于当前数字的数<br>给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。<br>换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] &lt; nums[i] 。<br>以数组形式返回答案。</p><p>示例 1：</p><pre><code class="java">输入：nums = [8,1,2,2,3]输出：[4,0,1,1,3]解释： 对于 nums[0]=8 存在四个比它小的数字：（1，2，2 和 3）。 对于 nums[1]=1 不存在比它小的数字。对于 nums[2]=2 存在一个比它小的数字：（1）。 对于 nums[3]=2 存在一个比它小的数字：（1）。 对于 nums[4]=3 存在三个比它小的数字：（1，2 和 2）。</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [6,5,4,8]输出：[2,1,0,3]</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [7,7,7,7]输出：[0,0,0,0]</code></pre><p>提示：<br>2 &lt;= nums.length &lt;= 500<br>0 &lt;= nums[i] &lt;= 100</p><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><ol><li>暴力法<br>对于数组中的每一个元素，都遍历一遍数组，统计小于当前元素的数的数目</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        //arr数组存放小于nums数组此所索引对应的数的数目        int[] arr = new int[nums.length];        for(int i = 0;i&lt;nums.length;i++){            int m = 0;            for(int j =0;j&lt;nums.length;j++){                //如果有一个数小于当前数，则统计量m加1                if(nums[i]&gt;nums[j]){                    m++;                }            }            arr[i]=m;        }        return arr;    }}</code></pre><ol start="3"><li>hashmap映射<br>我们在这里使用hashmap建立索引与所在数据的的键值对，然后通过对nums进行排序，则排序后的数组中所在数据对应的索引即为小于该数的数目。</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        int[] data = new int[n];        HashMap&lt;Integer,Integer&gt; hashmap = new HashMap&lt;&gt;();        //建立hashmap对应原数组中数据及对应索引        for(int i = 0; i &lt; n; i++){            hashmap.put(nums[i],i);        }        Arrays.sort(nums);        for(int j = 0;j &lt;n ;j++){            //此时j对应nums数组中索引j所在数据的小于改数据的数目            data[hashmap.get(nums[j])] = j;        }        return data;    }}</code></pre><p>测试结果：<br><img src="https://img-blog.csdnimg.cn/20201026192547660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="方法二对应测试结果"><br>。。。这些看似是没有问题，但是可能有些同学在已经看出来哪里有问题，或者说提交时并没有通过，emmmm….这里的想法有一个严重的前提限制，因为我们使用了hashmap来存放nums数组及对应索引，但是hashmap是不允许有存在重复的键的，但是nums数组中元素是可以重复的。所以此项解法是错误的，<br>3.快速排序<br>正确解法：使用二维数组存放nums数组中数据及对应索引</p><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        //使用data二维数组存放nums数组中数据及其对应的索引        int[][] data = new int[n][2];        //data数组中第一列对应nums数组中的数据，第二列对应数据所在索引值        for (int i = 0; i &lt; n; i++) {            data[i][0] = nums[i];            data[i][1] = i;        }        //对data数组进行排序        Arrays.sort(data, new Comparator&lt;int[]&gt;() {            public int compare(int[] data1, int[] data2) {                return data1[0] - data2[0];            }        });        int[] ret = new int[n];        int prev = -1;        //根据排序后的data数组中的索引来获取小于此数据的数目        for (int i = 0; i &lt; n; i++) {            if (prev == -1 || data[i][0] != data[i - 1][0]) {                prev = i;            }            ret[data[i][1]] = prev;        }        return ret;    }}</code></pre><p>至此，这一题已经写出了两种解法，写本博客的目的主要是想记录和分享一下本人在第二种解法时 的思路错误问题，没有将题目条件考虑周全，提前给像我一样思路的人把这个坑给跳过。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="33"><li>搜索旋转排序数组<br>给你一个升序排列的整数数组 nums ，和一个整数 target 。<br>假设按照升序排序的数组在预先未知的某个点上进行了旋转。（例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] ）。<br>请你在数组中搜索 target ，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</li></ol><p>示例 1：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 0输出：4</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 3输出：-1</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [1], target = 0输出：-1</code></pre><p>提示：</p><pre><code class="java">1 &lt;= nums.length &lt;= 5000-10^4 &lt;= nums[i] &lt;= 10^4nums 中的每个值都 独一无二nums 肯定会在某个点上旋转-10^4 &lt;= target &lt;= 10^4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol><li>暴力搜索法<br>一开始我看到这个题目是一个中等难度的题目，所以一开始看题目就不知所以，看不懂题目，然后又仔细看了一遍，感觉这有序无序也没毛关系鸭，直接暴力搜索就可了鸭：</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {        for(int i =0;i&lt;nums.length;i++){            if(nums[i] == target){                return i;            }        }        return -1;    }}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026200744324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>是不是要来句**，那么简单无脑的代码居然打败了那么多。</p><ol start="3"><li>二分搜索<br>额，，，让我感到奇怪的地方，为什么条件里面会给这是一个有序数组，并且在某个点进行了旋转，作为一个理科数学难，根据以往惨痛的数学题经验，抱着“题目里给的条件一定有它的用处，不可能用不到”这种感觉，我看了一下此题的评论区，发现很多人说此题的要求时间复杂度为logn（啊，茫然，没有这个要求呀），既然都是要求时间复杂度为logn了，那我们就来做这种解法吧，一般像这种有序啊，然后让你查找某个值的话，而且时间复杂度为logn，这让我们想起了—二分查找，非常符合。</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {    int l = 0, h = nums.length - 1, m = 0;    whle (l &lt;= h) {        m = l + (h - l) / 2;        if (nums[m] == target) {            return m;        }        // 先根据 nums[m] 与 nums[l] 的关系判断 m 是在左段还是右段         if (nums[m] &gt;= nums[l]) {            // 再判断 target 是在 m 的左边还是右边，从而调整左右边界 l 和 h            if (target &gt;= nums[l] &amp;&amp; target &lt; nums[m]) {                h = m - 1;            } else {                l = m + 1;            }        } else {            if (target &gt; nums[m] &amp;&amp; target &lt;= nums[h]) {                l = m + 1;            } else {                h = m - 1;            }        }    }    return -1;}}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026202749649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>]]></content>
       
       
       <categories>
