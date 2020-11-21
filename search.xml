@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>搭建博客</title>
+      <link href="posts/123.html"/>
+      <url>posts/123.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何搭建自己的github-io博客"><a href="#如何搭建自己的github-io博客" class="headerlink" title="如何搭建自己的github.io博客"></a>如何搭建自己的github.io博客</h2><p>github.io是基于github的仓库进行管理，据本人浅显地理解就是我们借用了github的仓库管理器来充当个人的服务器（这个服务器是免费的嘿嘿），下面我将根据来<a href="https://www.jianshu.com/p/e68fba58f75c">柏荧的博客</a>来搭建属于自己的github.io的个人博客。</p><h2 id="1-注册一个github账号"><a href="#1-注册一个github账号" class="headerlink" title="1.注册一个github账号"></a>1.注册一个github账号</h2><p>作为全球最大的同性交友网站，github值得你拥有（唉，但是全英文的界面对我这种菜菜的人就很不友好了）。<br>话不多说，上图</p><p> <strong>github注册页面</strong></p><p><img src="https://img-blog.csdnimg.cn/20200425200001365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="2-拉取博客模板"><a href="#2-拉取博客模板" class="headerlink" title="**2.拉取博客模板"></a>**2.拉取博客模板</h2><p>**</p><p>注册结束之后点击<a href="https://github.com/qiubaiying/qiubaiying.github.io">此链接</a>（这里因为我也是刚刚fork此位大佬的模板，所以这里直接奉上他的仓库链接）<br><img src="https://img-blog.csdnimg.cn/20200425200447948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>点击fork把此模板代码拉取到自己的账号下</p><p> <strong>修改仓库名，绑定个人域名</strong><br>点击setting进入设置<br><img src="https://img-blog.csdnimg.cn/20200425200610888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改仓库名为自己的<em>github账号名.github.io</em>,然后点击rename<br><img src="https://img-blog.csdnimg.cn/20200425200942846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时在浏览器输入<em>github账号名.github.io</em>，如Looles.github.io<br><img src="https://img-blog.csdnimg.cn/20200425201135519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>绑定自己的域名，在github pages下找到custom domain在里面填写到自己申请的域名（并且需要在自己的域名设置里绑定自己github仓库的地址）<br><img src="https://img-blog.csdnimg.cn/20200425201352138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>此时还需要修改博客的配置才能变成自己的博客（此时打开网址内容的博客还仍是别人的内容，你只是复制粘贴到了自己github仓库下）</p><h2 id="网站结构"><a href="#网站结构" class="headerlink" title="网站结构"></a>网站结构</h2><p>修改之前我们了解一下jekyll网站的基础结构</p><pre><code>├── _config.yml├── _drafts|   ├── begin-with-the-crazy-ideas.textile|   └── on-simplicity-in-technology.markdown├── _includes|   ├── footer.html|   └── header.html├── _layouts|   ├── default.html|   └── post.html├── _posts|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile|   └── 2009-04-26-barcamp-boston-4-roundup.textile├── _data|   └── members.yml├── _site├── img└── index.html</code></pre><ul><li>_config.yml全局配置文件</li><li>_posts放置博客文章的文件夹</li><li>img存放图片的文件夹</li></ul><p>官方教程链接奉上<a href="http://jekyll.com.cn/docs/structure/">jekyll教程</a></p><h2 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h2><p>来到我们的仓库，找到_config.yml文件，这是网站的全局配置文件。</p><p><img src="https://img-blog.csdnimg.cn/20200425202151423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击修改<br><img src="https://img-blog.csdnimg.cn/20200425202231889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>一下具体讲解一下配置文件的内容</p><p>基础配置</p><pre><code># Site settingstitle: You Blog                     #你博客的标题SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题header-img: img/post-bg-rwd.jpg     #显示在首页的背景图片email: You@gmail.com    description: "You Blog"              #网站介绍keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址baseurl: ""      # 这个我们不用填写</code></pre><p>侧边栏</p><pre><code># Sidebar settingssidebar: true                           # 是否开启侧边栏.sidebar-about-description: "说点装逼的话。。。"sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g片</code></pre><p>社交平台：</p><pre><code># SNS settingsRSS: falseweibo_username:     usernamezhihu_username:     usernamegithub_username:    usernamefacebook_username:  usernamejianshu_username:   jianshu_id</code></pre><p>评论系统<br>采用了Gitalk评论插件（Disqus在国内加载较慢）<br>奉上给博客添加Gitalk评论链接<a href="http://qiubaiying.vip/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/">Gitalk评论教程</a></p><p>好友</p><pre><code>friends: [    {        title: "简书·BY",        href: "http://www.jianshu.com/u/e71990ada2fd"    },{        title: "Apple",        href: "https://apple.com"    },{        title: "Apple Developer",        href: "https://developer.apple.com/"    }]</code></pre><p>保存<br><img src="https://img-blog.csdnimg.cn/20200425202702255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再次进入主页<br><img src="https://img-blog.csdnimg.cn/20200425202725254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>个人博客已搭建完成（还未完全更改为自己的配置）</p><p>写文章<br>可直接在github网站里写，对于轻车熟路的程序员来说，可使用Git管理自己的网站文件代码</p><p>创建<br>文章统一放到网站根目录下的_posts的文件夹里，且文件名为“日期+此博客标题”，中间用-连接。</p><p>本人也是初入博客写作，进步空间巨大，希望有见解的兄弟可以多多指出见解，期待一起进步。</p><p>感谢各位<br>                                        —来自还有头发的程序员Loole</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="posts/4a17b156.html"/>
+      <url>posts/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new "My New Post"</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中对链表进行插入排序</title>
+      <link href="posts/ce41y99e2.html"/>
+      <url>posts/ce41y99e2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="147"><li>对链表进行插入排序<br>对链表进行插入排序。</li></ol><p><img src="https://img-blog.csdnimg.cn/20201120140347644.gif#pic_center" alt="在这里插入图片描述"></p><p>插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。<br>每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。</p><p>插入排序算法：</p><pre><code class="java">插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。重复直到所有输入数据插入完为止。</code></pre><p>示例 1：</p><pre><code class="java">输入: 4-&gt;2-&gt;1-&gt;3输出: 1-&gt;2-&gt;3-&gt;4</code></pre><p>示例 2：</p><pre><code class="java">输入: -1-&gt;5-&gt;3-&gt;4-&gt;0输出: -1-&gt;0-&gt;3-&gt;4-&gt;5</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>**方法一：</p><ol><li>dummy指向第一个节点，一是用于结果输出，二是寻找插入位置时用于回到起点</li><li>cur用于遍历的节点</li><li>pre一是用于和当前节点作比较，二是做标记，让交换后的cur回到pre后面</li></ol><pre><code class="java">class Solution {    public ListNode insertionSortList(ListNode head) {        if (head == null || head.next == null) {            return head;        }        ListNode dummy = new ListNode(0);        ListNode pre = head;        ListNode cur = head.next;        dummy.next = head;        while (cur != null) {            if (pre.val &lt;= cur.val) {// 本来就有序                pre = cur;                cur = cur.next;            } else {                ListNode p = dummy;                // 找到一个位置使得p &lt; cur &lt; p.next                while (p.next != cur &amp;&amp; p.next.val &lt; cur.val) {                    p = p.next;                }                // 将cur插入到p和p.next之间                // 因为cur被插到前面，pre的指针需要跳过cur                pre.next = cur.next;                cur.next = p.next;                p.next = cur;                // 完成插入后，cur回到pre后面                cur = pre.next;            }        }        return dummy.next;    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中买卖股票的最佳时机题解</title>
+      <link href="posts/a1ca36d.html"/>
+      <url>posts/a1ca36d.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="121"><li>买卖股票的最佳时机<br>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</li></ol><p>如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。</p><p>注意：你不能在买入股票前卖出股票。</p><p>示例 1:</p><pre><code class="java">输入: [7,1,5,3,6,4]输出: 5解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。</code></pre><p>示例 2:</p><pre><code class="java">输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一</strong>：动态规划</p><pre><code class="java">class Solution {    public int maxProfit(int[] prices) {        if(prices.length &lt;= 1){            return 0;        }        // min为今天之前买入的最小值，max为今天之前最小值买入，今天卖出的获利值，即今天卖出的最大获利值        int min = prices[0], max = 0;        for(int i = 1; i &lt; prices.length; i++) {            // 比较每天的最大获利，取最大值            max = Math.max(max, prices[i] - min);            // 比较每天的最小买入值，取最小值            min = Math.min(min, prices[i]);        }        return max;    }}</code></pre><p><strong>复杂度分析：</strong><br>    时间复杂度： O(N)<br>    空间复杂度：O(1)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中买卖股票的最佳时机 II</title>
+      <link href="posts/ce4199e2.html"/>
+      <url>posts/ce4199e2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="122"><li>买卖股票的最佳时机 II<br>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</li></ol><p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p><p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p><p>示例 1:</p><pre><code class="java">输入: [7,1,5,3,6,4]输出: 7解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</code></pre><p>示例 2:</p><pre><code class="java">输入: [1,2,3,4,5]输出: 4解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</code></pre><p>示例 3:</p><pre><code class="java">输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></pre><p>提示：</p><pre><code class="java">1 &lt;= prices.length &lt;= 3 * 10 ^ 40 &lt;= prices[i] &lt;= 10 ^ 4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一</strong>：暴力搜索<br>思路：由于不限制交易次数，在每一天，可以根据当前的持股情况，选择相应的操作，如果，当前未持股，所以操作可以为“不操作”，或“买入”，如果当天持股，操作可以为“不操作”或者“卖出”。（可能会超时）</p><p><strong>方法二</strong>：贪心算法<br>思路：由于不限制交易的次数，所以本题只要今天的股价比昨天高，就交易</p><pre><code class="java">class Solution {    public int maxProfit(int[] prices) {        int res  = 0;        // 遍历数组prices        for(int i = 1; i &lt; prices.length; i++){            // 只要此时的股价比昨天的大，则就交易，            if(prices[i] &gt; prices[i-1]){                res += prices[i] - prices[i-1];            }        }        return res;    }}</code></pre><p><strong>复杂度分析</strong>：<br>    时间复杂度：O(N)<br>    空间复杂度：O(1)</p><p><strong>方法三</strong>：动态规划</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中加油站题解</title>
+      <link href="posts/cc4f64a2.html"/>
+      <url>posts/cc4f64a2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="134"><li>加油站<br>在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。</li></ol><p>你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。</p><p>如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。</p><p>说明: </p><pre><code class="java">-如果题目有解，该答案即为唯一答案。-输入数组均为非空数组，且长度相同。-输入数组中的元素均为非负数。</code></pre><p>示例 1:</p><p>输入: </p><pre><code class="java">gas  = [1,2,3,4,5]cost = [3,4,5,1,2]</code></pre><p>输出:</p><pre><code class="java"> 3解释:从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。因此，3 可为起始索引。</code></pre><p>示例 2:</p><p>输入: </p><pre><code class="java">gas  = [2,3,4]cost = [3,4,3]</code></pre><p>输出: </p><pre><code class="java">-1解释:你不能从 0 号或 1 号加油站出发，因为没有足够的汽油可以让你行驶到下一个加油站。我们从 2 号加油站出发，可以获得 4 升汽油。 此时油箱有 = 0 + 4 = 4 升汽油开往 0 号加油站，此时油箱有 4 - 3 + 2 = 3 升汽油开往 1 号加油站，此时油箱有 3 - 3 + 3 = 3 升汽油你无法返回 2 号加油站，因为返程需要消耗 4 升汽油，但是你的油箱只有 3 升汽油。因此，无论怎样，你都不可能绕环路行驶一周。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一</strong>：一次遍历法<br><strong>车开完全程的条件：</strong><br>    -车能从i站开到i+1<br>    -所有站的油总量大于等于车子的总耗油量。<br>    所以，我们假设总0站开始，一直到k站都正常，在开往k+1站时车子没油了，这时，应将起点设置为k+1站。</p><pre><code class="java">class Solution {    public int canCompleteCircuit(int[] gas, int[] cost) {        int run = 0;        int rest = 0;        int start = 0;        for(int i = 0; i &lt; gas.length; i++){            // run代表目前所剩余油量            run += gas[i] - cost[i];            // rest代表总剩余油量，若rest大于等于0，则说明能走完全程，否则返回-1            rest += gas[i] - cost[i];            //  如果i点剩余油量小于到i+1的所需油量，则起点start++，并将run剩余油量置于零            if(run &lt; 0){                start = i + 1;                run = 0;            }        }        return rest &gt;= 0 ? start : -1;    }}</code></pre><p>问题1: 为什么应该将起始站点设为k+1？</p><p>因为k-&gt;k+1站耗油太大，0-&gt;k站剩余油量都是不为负的，每减少一站，就少了一些剩余油量。所以如果从k前面的站点作为起始站，剩余油量不可能冲过k+1站。</p><p>问题2: 为什么如果k+1-&gt;end全部可以正常通行，且rest&gt;=0就可以说明车子从k+1站点出发可以开完全程？</p><p>因为，起始点将当前路径分为A、B两部分。其中，必然有(1)A部分剩余油量&lt;0。(2)B部分剩余油量&gt;0。</p><p>所以，无论多少个站，都可以抽象为两个站点（A、B）。(1)从B站加满油出发，(2)开往A站，车加油，(3)再开回B站的过程。</p><p>重点：B剩余的油&gt;=A缺少的总油。必然可以推出，B剩余的油&gt;=A站点的每个子站点缺少的油。</p><p><strong>复杂度分析：</strong><br>    时间复杂度：O(N)<br>    空间复杂度：O(1)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中距离顺序排列矩阵单元格题解</title>
+      <link href="posts/732af8ec.html"/>
+      <url>posts/732af8ec.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="1030"><li>距离顺序排列矩阵单元格<br>给出 R 行 C 列的矩阵，其中的单元格的整数坐标为 (r, c)，满足 0 &lt;= r &lt; R 且 0 &lt;= c &lt; C。<br>另外，我们在该矩阵中给出了一个坐标为 (r0, c0) 的单元格。<br>返回矩阵中的所有单元格的坐标，并按到 (r0, c0) 的距离从最小到最大的顺序排，其中，两单元格(r1, c1) 和 (r2, c2) 之间的距离是曼哈顿距离，|r1 - r2| + |c1 - c2|。（你可以按任何满足此条件的顺序返回答案。）</li></ol><p>示例 1：</p><pre><code class="java">输入：R = 1, C = 2, r0 = 0, c0 = 0输出：[[0,0],[0,1]]解释：从 (r0, c0) 到其他单元格的距离为：[0,1]</code></pre><p>示例 2：</p><pre><code class="java">输入：R = 2, C = 2, r0 = 0, c0 = 1输出：[[0,1],[0,0],[1,1],[1,0]]解释：从 (r0, c0) 到其他单元格的距离为：[0,1,1,2][[0,1],[1,1],[0,0],[1,0]] 也会被视作正确答案。</code></pre><p>示例 3：</p><pre><code class="java">输入：R = 2, C = 3, r0 = 1, c0 = 2输出：[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]解释：从 (r0, c0) 到其他单元格的距离为：[0,1,1,2,2,3]其他满足题目要求的答案也会被视为正确，例如 [[1,2],[1,1],[0,2],[1,0],[0,1],[0,0]]。</code></pre><p>提示：</p><pre><code class="java">1、 1 &lt;= R &lt;= 1002、 1 &lt;= C &lt;= 1003、 0 &lt;= r0 &lt; R4、 0 &lt;= c0 &lt; C</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：直接排序法</strong><br>首先存储矩阵内所有的点在一个二维数组中，然后将其按照曼哈顿距离直接排序</p><pre><code class="java">class Solution {    public int[][] allCellsDistOrder(int R, int C, int r0, int c0) {        //新建一个二维数组，用来存放矩阵中所有的点        int[][] res = new int[R*C][2];        int index = 0;        for(int i = 0; i &lt; R; i++){            for(int j = 0; j &lt; C; j++){                res[index][0] = i;                res[index][1] = j;                index++;            }        }        //对二维数组中的所有点进行曼哈顿排序        Arrays.sort(res,new Comparator&lt;int[]&gt;(){            @Override            public int compare(int[] o1, int[] o2){                return (Math.abs(o1[0] - r0) + Math.abs(o1[1] - c0)) - (Math.abs(o2[0] - r0) + Math.abs(o2[1] - c0));            }        });        return res;    }}</code></pre><p><strong>复杂度分析</strong></p><ul><li>时间复杂度：O(RClog(RC))，存储所有点时间复杂度O(RC)，排序时间复杂度O(RClog(RC))。</li><li>空间复杂度：O(log(RC))，即为排序需要使用的栈空间，不考虑返回值的空间占用。</li></ul><p><strong>方法二：桶排序</strong><br>在枚举所有点时，可以直接按照曼哈顿距离分桶，可以实现线性的桶排序</p><pre><code class="java">class Solution {    public int[][] allCellsDistOrder(int R, int C, int r0, int c0) {        int maxDist = Math.max(r0, R - 1 - r0) + Math.max(c0, C - 1 - c0);        List&lt;List&lt;int[]&gt;&gt; bucket = new ArrayList&lt;List&lt;int[]&gt;&gt;();        for (int i = 0; i &lt;= maxDist; i++) {            bucket.add(new ArrayList&lt;int[]&gt;());        }        //根据曼哈顿距离的值为下标，将其相应点存入其曼哈顿距离的值的下标数组中，相同下标情况下，存入多个值        for (int i = 0; i &lt; R; i++) {            for (int j = 0; j &lt; C; j++) {                int d = dist(i, j, r0, c0);                bucket.get(d).add(new int[]{i, j});            }        }        int[][] ret = new int[R * C][];        int index = 0;        // 遍历bucket，将其值逐个存入到二维数组中        for (int i = 0; i &lt;= maxDist; i++) {            for (int[] it : bucket.get(i)) {                ret[index++] = it;            }        }        return ret;    }    // 计算两个点之间的曼哈顿距离    public int dist(int r1, int c1, int r2, int c2) {        return Math.abs(r1 - r2) + Math.abs(c1 - c2);    }}</code></pre><p>这个我一直纠结一个点，就是当两个或多个点的曼哈顿距离相同时，将其存入bucket后，遍历时，是否会把这些值全部遍历出来，所以我调试一下代码，如下<br><img src="https://img-blog.csdnimg.cn/20201117192640628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"><br><strong>此处注意看24行我输出的内容，是bucket的第i值+相应的坐标点</strong><br>可以看到右处输出的i值为0 1 1 2 2 3，所以可知，一个下标对应多值时，遍历时可将其全部遍历出来。</p><p><strong>复杂度分析</strong><br>    -时间复杂度：O(RC)，存储所有点时间复杂度为O(RC),桶排序时间复杂度为O(RC)<br>    -空间复杂度：O(RC)，需要存储矩阵内所有点。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哈希表（散列表）理解</title>
+      <link href="posts/90889556.html"/>
+      <url>posts/90889556.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>哈希表（Hash table，也叫散列表），是根据关键码值（key value）来直接进行访问数据的数据结构，也就是一个关键码值通过散列函数映射到表中一个位置来进行访问数据，来加快查找的速度。</p><p><strong>数组的特点</strong>：寻址容易，插入和删除困难；<br><strong>链表的特点</strong>：寻址困难，插入和删除困难。<br>而哈希表综合两者的特性，实现了寻址容易，插入删除也容易的数据结构。</p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>1：拉链法（链表的数组）<br><img src="https://img-blog.csdnimg.cn/20201116210618172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"><br>左边为一个数组，数组的每个成员包括一个指针，指向一个链表的头，我们根据元素的一些特性把元素分配到不同的链表中去，也是根据这些特性找到正确的链表，再从链表中找出这个元素。</p><h2 id="Hash的应用"><a href="#Hash的应用" class="headerlink" title="Hash的应用"></a>Hash的应用</h2><p>1、用于信息安全领域中加密算法，把一些不同长度的信息转化成杂乱的128位的编码，这些编码值叫做hash值；<br>2、查找：当我们知道这个key值后，可以直接通过哈希函数计算出这个元素在集合中的地址，从而找到这个元素，不需要一次又一次地查找；<br>3、Hash表在海量数据处理中有着广泛应用</p><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：一对一的查找效率很高，查找，插入，删除只需要接近常量的时间<br>缺点：一个关键字可能对应多个地址，可能会产生冲突，基于数组的，创建后难于扩展，当某些哈希表被基本填满时，性能下降的非常严重。</p><h2 id="冲突的解决方案"><a href="#冲突的解决方案" class="headerlink" title="冲突的解决方案"></a>冲突的解决方案</h2><p>1、建立一个缓冲区，把凡是查找的结果全部放到缓冲区中，当通过键查找的结果不对时，直接在缓冲区里找。<br>2、进行再探测（在其他的位置查找）<br>    （1）线性再探测：在找到查找位置的index的index-1，index+1位置查找，index-2，index+2查找，以此类推；<br>    （2）随机再探测    ：在查找位置index周围随机的查找；<br>    （3）再哈希：就是当冲突产生时，采用另外一种映射函数来查找。</p><h2 id="测试题"><a href="#测试题" class="headerlink" title="测试题"></a>测试题</h2><p>题目：海量日志数据，提取出某日访问百度次数最多的那个IP<br>方案：</p><pre><code class="java">IP的数目是有限的，最多为2^32个，所以可以考虑使用hash将IP直接存入内存，然后进行统计。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中根据身高重建队列</title>
+      <link href="posts/49f79b1a.html"/>
+      <url>posts/49f79b1a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="406"><li>根据身高重建队列<br>假设有打乱顺序的一群人站成一个队列。 每个人由一个整数对(h, k)表示，其中h是这个人的身高，k是排在这个人前面且身高大于或等于h的人数。 编写一个算法来重建这个队列。</li></ol><p>注意：<br>总人数少于1100人。</p><p>示例</p><pre><code class="java">输入:[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]输出:[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法一：先排序后插入</p><p>首先数组按照先H高度降序，K升序排序，遍历排序后的数组，根据K插入到K的位置上。</p><pre><code class="java">class Solution {    public int[][] reconstructQueue(int[][] people) {        // [7,0], [7,1], [6,1], [5,0], [5,2], [4,4]        // 再一个一个插入。        // [7,0]        // [7,0], [7,1]        // [7,0], [6,1], [7,1]        // [5,0], [7,0], [6,1], [7,1]        // [5,0], [7,0], [5,2], [6,1], [7,1]        // [5,0], [7,0], [5,2], [6,1], [4,4], [7,1]        Arrays.sort(people, new Comparator&lt;int[]&gt;(){            @Override            public int compare(int[] o1,int[] o2){                return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];            }        });        LinkedList&lt;int[]&gt; list = new LinkedList&lt;&gt;();        for (int[] i : people) {            list.add(i[1], i);        }        return list.toArray(new int[list.size()][2]);    }}</code></pre><p><strong>核心思想</strong>：高个子先站好位，矮个子插入到K位置上，前面肯定有K个高个子，矮个子再插入到前面也满足K的要求。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java中双端队列deque的用法</title>
+      <link href="posts/5ece5ecc.html"/>
+      <url>posts/5ece5ecc.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p><h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul><li>ArrayDeque：基于数组实现的线性双向队列</li><li>LinkedList：基于链表实现的链式双向队列</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li><li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li><li>不推荐插入null元素，null作为特定返回值表示队列为空</li><li>未定义基于元素相等的equals和hashCode</li></ol><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol><li><p>插入元素</p><pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE    addLast(): 向队尾插入元素，如果为空，则发生NPE    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre></li><li><p>移除元素</p><pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre></li><li><p>获取元素</p><pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中移掉K位数字题解</title>
+      <link href="posts/128470ac.html"/>
+      <url>posts/128470ac.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="402"><li>移掉K位数字<br>给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。</li></ol><p>注意:</p><pre><code class="java">num 的长度小于 10002 且 ≥ k。num 不会包含任何前导零。</code></pre><p>示例 1 :</p><pre><code class="java">输入: num = "1432219", k = 3输出: "1219"解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。</code></pre><p>示例 2 :</p><pre><code class="java">输入: num = "10200", k = 1输出: "200"解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。</code></pre><p>示例 3 :</p><pre><code class="java">输入: num = "10", k = 2输出: "0"解释: 从原数字移除所有的数字，剩余为空就是0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>解释：<br>给定一个长度为 nn 的数字序列 [D0D1D2D3···Dn-1]，从左往右找到第一个位置 i（i&gt;0）使得 Di&lt;Di-1，删去 Di-1；如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p><p>基于此，我们可以每次对整个数字序列执行一次这个策略；删去一个字符后，剩下的 n−1 长度的数字序列就形成了新的子问题，可以继续使用同样的策略，直至删除 k 次。</p><p>方法一：<br>思路：从左到右，找到第一个比后面大的字符，删除这个字符，k次扫描</p><pre><code class="java">class Solution {    public String removeKdigits(String num, int k) {        if (num.length() == k) return "0";  //如果字符长度等于k，则直接返回0        StringBuilder s = new StringBuilder(num);        for (int i = 0; i &lt; k; i++) {       // K次扫描            int idx = 0;            for (int j = 1; j &lt; s.length() &amp;&amp; s.charAt(j) &gt;= s.charAt(j - 1); j++) idx = j;             //定位到第一个比后面大的字符            s.delete(idx, idx + 1);       //删除这个字符            //如果此时的字符长度大于1并且第一个字符为0时，则删除第一个字符            while (s.length() &gt; 1 &amp;&amp; s.charAt(0) == '0'){                s.delete(0, 1);            }         }        return s.toString();    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中按奇偶排序数组II题解</title>
+      <link href="posts/bb619e45.html"/>
+      <url>posts/bb619e45.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="922"><li>按奇偶排序数组 II<br>给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。</li></ol><p>对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。</p><p>你可以返回任何满足上述条件的数组作为答案。</p><p>示例：</p><p>输入：[4,2,5,7]<br>输出：[4,5,2,7]<br>解释：[4,7,2,5]，[2,5,4,7]，[2,7,4,5] 也会被接受。</p><p>提示：</p><p>2 &lt;= A.length &lt;= 20000<br>A.length % 2 == 0<br>0 &lt;= A[i] &lt;= 1000</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>1、遍历法<br>新建一个数组result用来存储排序后的数组，使用变量ji和ou来代表result数组的下标，然后用下标i遍历原数组，若A[i]为奇数，将A[i]存入result[ji]，并将ji加2，若A[i]为偶数。将A[i]存入result[ou]，并将ou加2，遍历完成后，所有的数据均正确放入数组result中</p><pre><code class="java">class Solution {    public int[] sortArrayByParityII(int[] A) {        int[] result = new int[A.length];       //用来存储排序后的数组        int ji = 1;                            //用来表示奇数值的下标        int ou = 0;                            //用来表示偶数值的下标        for(int i = 0; i &lt; A.length; i++){      //遍历原数组            if(A[i] % 2 == 0){                  //如此为偶数，将此时值赋予result[ou]，并将偶数下标加2                result[ou] = A[i];                ou += 2;            }else{                result[ji] = A[i];              //若为奇数，将此时值赋予result[ji]， 并将奇数下标加2                ji += 2;            }        }        return result;    }}</code></pre><p>复杂度分析</p><p>时间复杂度：O(N)O(N)，其中 NN 是数组 A 的长度。</p><p>空间复杂度：O(1)O(1)。注意在这里我们不考虑输出数组的空间占用。</p><p>2、使用双指针在原数组修改<br>使用i和 j来分别维护数组的偶数下标与奇数下标，如果A[i]为奇数，并且此时A[j]为奇数，将j 移两个单位，直到遇到下一个偶数（A[j]为偶数），此时，直接将A[i]与A[j]交换，不断执行这样的过程，最后将所有的整数放在正确的位置。</p><pre><code class="java">class Solution{    public int[] sortArrayByParityII(int[] A) {        int n = A.length;               int i = 0;              //i 用来数组中偶数下标的值        int j = 1;              //j 用来表示数组中奇数下标的值        for(i = 0; i &lt; n; i += 2){      //遍历数组中偶数下标的值            if(A[i] % 2 == 1){          //如偶数下标的值为奇数                while(A[j] % 2 == 1){   //遍历奇数下标的值，若为奇数，j加2，否则，将下标i与下标j的值交换                    j += 2;                }                swap(A,i,j);            }        }        return A;    }    private void swap(int[] array, int i, int j){        int temp = array[i];        array[i] = array[j];        array[j] = temp;    }}</code></pre><p>复杂度分析</p><p>时间复杂度：O(N)O(N)，其中 NN 是数组 A 的长度。</p><p>空间复杂度：O(1)O(1)。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中下一个排列题解</title>
+      <link href="posts/75881b9f.html"/>
+      <url>posts/75881b9f.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="31"><li>下一个排列<br>实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。</li></ol><p>如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。</p><p>必须原地修改，只允许使用额外常数空间。</p><p>以下是一些例子，输入位于左侧列，其相应输出位于右侧列。<br>1,2,3 → 1,3,2<br>3,2,1 → 1,2,3<br>1,1,5 → 1,5,1</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法一：两遍扫描<br>思路及解法</p><p>注意到下一个排列总是比当前排列要大，除非该排列已经是最大的排列。我们希望找到一种方法，能够找到一个大于当前序列的新序列，且变大的幅度尽可能小。具体地：</p><p>我们需要将一个左边的「较小数」与一个右边的「较大数」交换，以能够让当前排列变大，从而得到下一个排列。</p><p>同时我们要让这个「较小数」尽量靠右，而「较大数」尽可能小。当交换完成后，「较大数」右边的数需要按照升序重新排列。这样可以在保证新排列大于原来排列的情况下，使变大的幅度尽可能小。</p><p>以排列 [4,5,2,6,3,1][4,5,2,6,3,1] 为例：</p><p>我们能找到的符合条件的一对「较小数」与「较大数」的组合为 22 与 33，满足「较小数」尽量靠右，而「较大数」尽可能小。</p><p>当我们完成交换后排列变为 [4,5,3,6,2,1][4,5,3,6,2,1]，此时我们可以重排「较小数」右边的序列，序列变为 [4,5,3,1,2,6][4,5,3,1,2,6]。</p><p>具体地，我们这样描述该算法，对于长度为 nn 的排列 aa：</p><p>首先从后向前查找第一个顺序对 (i,i+1)(i,i+1)，满足 a[i] &lt; a[i+1]a[i]&lt;a[i+1]。这样「较小数」即为 a[i]a[i]。此时 [i+1,n)[i+1,n) 必然是下降序列。</p><p>如果找到了顺序对，那么在区间 [i+1,n)[i+1,n) 中从后向前查找第一个元素 jj 满足 a[i] &lt; a[j]a[i]&lt;a[j]。这样「较大数」即为 a[j]a[j]。</p><p>交换 a[i]a[i] 与 a[j]a[j]，此时可以证明区间 [i+1,n)[i+1,n) 必为降序。我们可以直接使用双指针反转区间 [i+1,n)[i+1,n) 使其变为升序，而无需对该区间进行排序。</p><pre><code class="java">class Solution {    public void nextPermutation(int[] nums) {        int i = nums.length - 2;        while (i &gt;= 0 &amp;&amp; nums[i] &gt;= nums[i + 1]) {            i--;        }        if (i &gt;= 0) {            int j = nums.length - 1;            while (j &gt;= 0 &amp;&amp; nums[i] &gt;= nums[j]) {                j--;            }            swap(nums, i, j);        }        reverse(nums, i + 1);    }    public void swap(int[] nums, int i, int j) {        int temp = nums[i];        nums[i] = nums[j];        nums[j] = temp;    }    public void reverse(int[] nums, int start) {        int left = start, right = nums.length - 1;        while (left &lt; right) {            swap(nums, left, right);            left++;            right--;        }    }}</code></pre><p>复杂度分析</p><p>时间复杂度：O(N)O(N)，其中 NN 为给定序列的长度。我们至多只需要扫描两次序列，以及进行一次反转操作。</p><p>空间复杂度：O(1)O(1)，只需要常数的空间存放若干变量。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中最接近原点的k个点题解</title>
+      <link href="posts/79f75a73.html"/>
+      <url>posts/79f75a73.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="973"><li>最接近原点的 K 个点<br>我们有一个由平面上的点组成的列表 points。需要从中找出 K 个距离原点 (0, 0) 最近的点。</li></ol><p>（这里，平面上两点之间的距离是欧几里德距离。）</p><p>你可以按任何顺序返回答案。除了点坐标的顺序之外，答案确保是唯一的。</p><p>示例 1：</p><p>输入：points = [[1,3],[-2,2]], K = 1<br>输出：[[-2,2]]<br>解释：<br>(1, 3) 和原点之间的距离为 sqrt(10)，<br>(-2, 2) 和原点之间的距离为 sqrt(8)，<br>由于 sqrt(8) &lt; sqrt(10)，(-2, 2) 离原点更近。<br>我们只需要距离原点最近的 K = 1 个点，所以答案就是 [[-2,2]]。<br>示例 2：</p><p>输入：points = [[3,3],[5,-1],[-2,4]], K = 2<br>输出：[[3,3],[-2,4]]<br>（答案 [[-2,4],[3,3]] 也会被接受。）</p><p>提示：</p><p>1 &lt;= K &lt;= points.length &lt;= 10000<br>-10000 &lt; points[i][0] &lt; 10000<br>-10000 &lt; points[i][1] &lt; 10000</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法一：排序<br>将每个点到原点的欧几里得距离的平方从小到大排序后，取出前K个即可。</p><pre><code class="java">class Solution {    public int[][] kClosest(int[][] points, int K) {        Arrays.sort(points, new Comparator&lt;int[]&gt;() {            public int compare(int[] point1, int[] point2) {                return (point1[0] * point1[0] + point1[1] * point1[1]) - (point2[0] * point2[0] + point2[1] * point2[1]);            }        });        return Arrays.copyOfRange(points, 0, K);    }}</code></pre><p>复杂度分析：<br>时间复杂度：O(nlogn）<br>空间复杂度：O(logn）</p><p>方法二：优先队列<br>使用一个优先队列实时维护前K个最小的距离平方。<br>首先我们将前 KK 个点的编号（为了方便最后直接得到答案）以及对应的距离平方放入优先队列中，随后从第 K+1K+1 个点开始遍历：如果当前点的距离平方比堆顶的点的距离平方要小，就把堆顶的点弹出，再插入当前的点。当遍历完成后，所有在优先队列中的点就是前 KK 个距离最小的点。</p><pre><code class="java">class Solution {    public int[][] kClosest(int[][] points, int K) {        //方法一：排序        // Arrays.sort(points, new Comparator&lt;int[]&gt;(){        //     public int compare(int[] point1,int[] point2){        //         return (point1[0] * point1[0] + point1[1] * point1[1]) - (point2[0] * point2[0] + point2[1] * point2[1]);        //     }        // });        // return Arrays.copyOfRange(points, 0, K);        //方法二：优先队列        PriorityQueue&lt;int[]&gt; pq = new PriorityQueue&lt;int[]&gt;(new Comparator&lt;int[]&gt;(){            public int compare(int[] array1,int[] array2){                return array2[0] - array1[0];            }        });        for(int i = 0; i &lt; K; ++i){            pq.offer(new int[]{points[i][0] * points[i][0] + points[i][1] * points[i][1], i});        }        int n = points.length;        for(int i = K; i &lt; n; ++i){            int dist = points[i][0] * points[i][0] + points[i][1] * points[i][1];            if(dist &lt; pq.peek()[0]){                pq.poll();                pq.offer(new int[]{dist, i});            }        }        int[][] ans = new int[K][2];        for(int i = 0; i &lt; K; ++i){            ans[i] = points[pq.poll()[1]];        }        return ans;    }}</code></pre><p>复杂度分析：<br>时间复杂度：O(nlogK）<br>空间复杂度：O(K)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中移动零题解</title>
+      <link href="posts/1438972c.html"/>
+      <url>posts/1438972c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="283"><li>移动零<br>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。</li></ol><p>示例:</p><p>输入: [0,1,0,3,12]<br>输出: [1,3,12,0,0]<br>说明:</p><p>必须在原数组上操作，不能拷贝额外的数组。<br>尽量减少操作次数。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>1、双指针<br>创建两个指针i和j，第一次遍历时，用指针j用来记录有多少非0元素，在每次遇到一个非0元素就将其往数组左边挪，j指针的下标指向了最后一个非0元素下标，第二次遍历时，起始位置从j开始，将剩下的元素全部置为0。</p><pre><code class="java">class Solution {    public void moveZeroes(int[] nums) {        if(nums==null) {            return;        }        //第一次遍历的时候，j指针记录非0的个数，只要是非0的统统都赋给nums[j]        int j = 0;        for(int i=0;i&lt;nums.length;++i) {            if(nums[i]!=0) {                nums[j++] = nums[i];            }        }        //非0元素统计完了，剩下的都是0了        //所以第二次遍历把末尾的元素都赋为0即可        for(int i=j;i&lt;nums.length;++i) {            nums[i] = 0;        }    }}    </code></pre><p>2、快速排序<br>确定一个待分割的元素做中间点x,然后把所有小于等于x的元素放到x的左边，大于x的元素放到右边。<br>在此题中，用0当做这个中间点，把不等于0的放到中间点的左边（没说不能为负数，所以此处条件为不等于0），等于0的放到其右边。</p><pre><code class="java">class Solution {    public void moveZeroes(int[] nums) {        //两个指针i和j        int i = 0, j = 0;        if(nums == null) return;        for(i=0; i &lt; nums.length; i++){        //当前元素!=0，就把其交换到左边，等于0的交换到右边            if(nums[i] != 0){                int temp = nums[i];                nums[i] = nums[j];                nums[j] = temp;                j++;            }        }    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中二叉树的前序、中序、后序遍历题解</title>
+      <link href="posts/50e4c20e.html"/>
+      <url>posts/50e4c20e.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个二叉树，返回它的前序、中序、后序遍历；</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol><li>递归法：</li></ol><pre><code class="java"> class Solution {    //递归解法：    //前序遍历     List&lt;Integer&gt; arr = new ArrayList&lt;&gt;();     public List&lt;Integer&gt; preorderTraversal(TreeNode root) {         TreeNode head = root;         if(head == null){             return arr;         }         arr.add(head.val);         preorderTraversal(head.left);         preorderTraversal(head.right);         return arr;     } }</code></pre><pre><code class="java">class Solution {    //递归解法    //中序遍历    List&lt;Integer&gt; res = new ArrayList&lt;&gt;();    public List&lt;Integer&gt; inorderTraversal(TreeNode root) {        TreeNode head = root;        if(head == null){            return res;        }        inorderTraversal(root.left);        res.add(head.val);        inorderTraversal(root.right);        return res;    }}</code></pre><pre><code class="java">class Solution {    //递归解法    //后序遍历    List&lt;Integer&gt; res = new ArrayList&lt;&gt;();    public List&lt;Integer&gt; postorderTraversal(TreeNode root) {        TreeNode head = root;        if(head == null){            return res;        }        postorderTraversal(head.left);        postorderTraversal(head.right);        res.add(head.val);        return res;    }}</code></pre><ol start="3"><li>迭代法：</li></ol><pre><code class="java">class Solution {    //迭代解法：建立一个栈，来存放输出数据    //前序遍历    public List&lt;Integer&gt; preorderTraversal(TreeNode root) {        List&lt;Integer&gt; res = new ArrayList&lt;&gt;();        if(root == null){            return res;        }        Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();        TreeNode node = root;        while(!stack.isEmpty() || node != null){            while(node!=null){                res.add(node.val);                stack.push(node);                node = node.left;            }            node =stack.pop();            node = node.right;        }        return res;    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中搜索旋转排序数组题解</title>
+      <link href="posts/8c2b3a88.html"/>
+      <url>posts/8c2b3a88.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="33"><li>搜索旋转排序数组<br>给你一个升序排列的整数数组 nums ，和一个整数 target 。<br>假设按照升序排序的数组在预先未知的某个点上进行了旋转。（例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] ）。<br>请你在数组中搜索 target ，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</li></ol><p>示例 1：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 0输出：4</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [4,5,6,7,0,1,2], target = 3输出：-1</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [1], target = 0输出：-1</code></pre><p>提示：</p><pre><code class="java">1 &lt;= nums.length &lt;= 5000-10^4 &lt;= nums[i] &lt;= 10^4nums 中的每个值都 独一无二nums 肯定会在某个点上旋转-10^4 &lt;= target &lt;= 10^4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol><li>暴力搜索法<br>一开始我看到这个题目是一个中等难度的题目，所以一开始看题目就不知所以，看不懂题目，然后又仔细看了一遍，感觉这有序无序也没毛关系鸭，直接暴力搜索就可了鸭：</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {        for(int i =0;i&lt;nums.length;i++){            if(nums[i] == target){                return i;            }        }        return -1;    }}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026200744324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>是不是要来句**，那么简单无脑的代码居然打败了那么多。</p><ol start="3"><li>二分搜索<br>额，，，让我感到奇怪的地方，为什么条件里面会给这是一个有序数组，并且在某个点进行了旋转，作为一个理科数学难，根据以往惨痛的数学题经验，抱着“题目里给的条件一定有它的用处，不可能用不到”这种感觉，我看了一下此题的评论区，发现很多人说此题的要求时间复杂度为logn（啊，茫然，没有这个要求呀），既然都是要求时间复杂度为logn了，那我们就来做这种解法吧，一般像这种有序啊，然后让你查找某个值的话，而且时间复杂度为logn，这让我们想起了—二分查找，非常符合。</li></ol><pre><code class="java">class Solution {    public int search(int[] nums, int target) {    int l = 0, h = nums.length - 1, m = 0;    whle (l &lt;= h) {        m = l + (h - l) / 2;        if (nums[m] == target) {            return m;        }        // 先根据 nums[m] 与 nums[l] 的关系判断 m 是在左段还是右段         if (nums[m] &gt;= nums[l]) {            // 再判断 target 是在 m 的左边还是右边，从而调整左右边界 l 和 h            if (target &gt;= nums[l] &amp;&amp; target &lt; nums[m]) {                h = m - 1;            } else {                l = m + 1;            }        } else {            if (target &gt; nums[m] &amp;&amp; target &lt;= nums[h]) {                l = m + 1;            } else {                h = m - 1;            }        }    }    return -1;}}</code></pre><p>结果：<br><img src="https://img-blog.csdnimg.cn/20201026202749649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中有多少小于当前数字的数题解</title>
+      <link href="posts/629e772.html"/>
+      <url>posts/629e772.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>有多少小于当前数字的数<br>给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。<br>换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] &lt; nums[i] 。<br>以数组形式返回答案。</p><p>示例 1：</p><pre><code class="java">输入：nums = [8,1,2,2,3]输出：[4,0,1,1,3]解释： 对于 nums[0]=8 存在四个比它小的数字：（1，2，2 和 3）。 对于 nums[1]=1 不存在比它小的数字。对于 nums[2]=2 存在一个比它小的数字：（1）。 对于 nums[3]=2 存在一个比它小的数字：（1）。 对于 nums[4]=3 存在三个比它小的数字：（1，2 和 2）。</code></pre><p>示例 2：</p><pre><code class="java">输入：nums = [6,5,4,8]输出：[2,1,0,3]</code></pre><p>示例 3：</p><pre><code class="java">输入：nums = [7,7,7,7]输出：[0,0,0,0]</code></pre><p>提示：<br>2 &lt;= nums.length &lt;= 500<br>0 &lt;= nums[i] &lt;= 100</p><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><ol><li>暴力法<br>对于数组中的每一个元素，都遍历一遍数组，统计小于当前元素的数的数目</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        //arr数组存放小于nums数组此所索引对应的数的数目        int[] arr = new int[nums.length];        for(int i = 0;i&lt;nums.length;i++){            int m = 0;            for(int j =0;j&lt;nums.length;j++){                //如果有一个数小于当前数，则统计量m加1                if(nums[i]&gt;nums[j]){                    m++;                }            }            arr[i]=m;        }        return arr;    }}</code></pre><ol start="3"><li>hashmap映射<br>我们在这里使用hashmap建立索引与所在数据的的键值对，然后通过对nums进行排序，则排序后的数组中所在数据对应的索引即为小于该数的数目。</li></ol><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        int[] data = new int[n];        HashMap&lt;Integer,Integer&gt; hashmap = new HashMap&lt;&gt;();        //建立hashmap对应原数组中数据及对应索引        for(int i = 0; i &lt; n; i++){            hashmap.put(nums[i],i);        }        Arrays.sort(nums);        for(int j = 0;j &lt;n ;j++){            //此时j对应nums数组中索引j所在数据的小于改数据的数目            data[hashmap.get(nums[j])] = j;        }        return data;    }}</code></pre><p>测试结果：<br><img src="https://img-blog.csdnimg.cn/20201026192547660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="方法二对应测试结果"><br>。。。这些看似是没有问题，但是可能有些同学在已经看出来哪里有问题，或者说提交时并没有通过，emmmm….这里的想法有一个严重的前提限制，因为我们使用了hashmap来存放nums数组及对应索引，但是hashmap是不允许有存在重复的键的，但是nums数组中元素是可以重复的。所以此项解法是错误的，<br>3.快速排序<br>正确解法：使用二维数组存放nums数组中数据及对应索引</p><pre><code class="java">class Solution {    public int[] smallerNumbersThanCurrent(int[] nums) {        int n = nums.length;        //使用data二维数组存放nums数组中数据及其对应的索引        int[][] data = new int[n][2];        //data数组中第一列对应nums数组中的数据，第二列对应数据所在索引值        for (int i = 0; i &lt; n; i++) {            data[i][0] = nums[i];            data[i][1] = i;        }        //对data数组进行排序        Arrays.sort(data, new Comparator&lt;int[]&gt;() {            public int compare(int[] data1, int[] data2) {                return data1[0] - data2[0];            }        });        int[] ret = new int[n];        int prev = -1;        //根据排序后的data数组中的索引来获取小于此数据的数目        for (int i = 0; i &lt; n; i++) {            if (prev == -1 || data[i][0] != data[i - 1][0]) {                prev = i;            }            ret[data[i][1]] = prev;        }        return ret;    }}</code></pre><p>至此，这一题已经写出了两种解法，写本博客的目的主要是想记录和分享一下本人在第二种解法时 的思路错误问题，没有将题目条件考虑周全，提前给像我一样思路的人把这个坑给跳过。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电赛总结</title>
+      <link href="posts/cdecc56b.html"/>
+      <url>posts/cdecc56b.html</url>
+      
+        <content type="html"><![CDATA[<p>@<a href="%E7%94%B5%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89">Loole</a></p><h1 id="系统概述"><a href="#系统概述" class="headerlink" title="系统概述"></a>系统概述</h1><p>基于前端芯片心率传感器ADS1292，温度传感器LMT70，加速度传感器mpu6050，蓝牙通信模块和stm32f103ZET6设计制作无线运动传感节点，能够稳定采集使用者的心电信息、体表温度和运动信息，并且采用微信小程序开发，将数据实时显示在手机或pad端。</p><h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p><strong>（一）通信模块：</strong></p><ol><li>采用ESP8266wifi通信模块<br><img src="https://img-blog.csdnimg.cn/20201020194244303.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="ESP8266模块"></li></ol><pre><code>     （1）引脚说明             VCC连接正极（有些是3.3v，有些是5v，），GND连接负极             RXD:数据的接收端（连接单片机或者USB转TTL模块的TXD）             TXD：数据的发送端（连接单片机或者USB转TTL模块的RXD）             RST：复位，低电平有效             IO_0:用于进入固件烧写模式,低电平-&gt;烧写,高电平-&gt;运行模式(默认)（2）模块介绍            ESP8266支持3中工作模式“STA”、“AP”、“STA+AP”模式：            STA模式：该模块通过路由器连接网络，手机或电脑实现该设备的远程控制。            AP模式：该模块作为热点，手机或者电脑连接wifi与该模块进行通信，实现局域网的无线控制。            STA+AP模式：两种模式共存，既可以路由器连接到互联网，也可以作为wifi热点，使其他设备连接到这个模块，实现广域网与局域网的无缝切换。    （3）AT指令        在使用USB转TTL模块与电脑连接之后，就可以使用串口调试助手进行wifi模块的调试，AT指令不区分大小写，均以回车、换行结尾</code></pre><table><thead><tr><th>指令名</th><th>含义</th></tr></thead><tbody><tr><td>AT</td><td>测试指令</td></tr><tr><td>AT+CWMODE=<mode></mode></td><td>设置应用模式</td></tr><tr><td>AT+CWMODE?</td><td>获得当前应用模式</td></tr><tr><td>AT+CWLAP</td><td>返回目前的AP列表</td></tr><tr><td>AT+CWJAP=<ssid><pwd></pwd></ssid></td><td>加入某一AP</td></tr><tr><td>AT+CWJAP?</td><td>返回当前加入的AP</td></tr><tr><td>AT+CWQAP</td><td>退出当前加入的AP</td></tr><tr><td>AT+CIPSTART=<type>,<addr>,<port></port></addr></type></td><td>建立TCP/UDP连接</td></tr><tr><td>AT+CIPMUX=<mode></mode></td><td>是否启用多连接</td></tr><tr><td>AT+CIPSEND=<param></td><td>发送数据</td></tr><tr><td>AT+CIPMODE=<mode></mode></td><td>是否进入透传模式</td></tr></tbody></table><p>*透传模式：指不需要关系wifi协议是如何实现的，所需要做的就是A通过串口发送数据，B通过串口接收数据，整个过程中A串口和B串口就像是用导线直接连接起来了一样，对于开发人员来看，就是完全透明的。</p><p>（4）ESP8266wifi模块的使用<br>    1、AT+CWMODE=1：设置工作模式（STA模式）<br>    2、AR+RST：模块重启（生效工作模式）<br>    3、AT+CWJAP=“111”，“111111111”：连接当前环境的WIFI热点（热点名，密码）<br>    4、AT+CIPMUX=0：设置单路连接模式<br>    5、AT+CIPSTART=“TCP”，“xxx.xxx.xxx.xxx”：建立TCP连接<br>    6、AT+CIPMODE=1：开启透传模式<br>    7、AT+CIPSEND：透传模式下，传输数据<br>    8、+++：退出透传模式</p><ol start="2"><li>采用HC-08蓝牙通信模块<pre><code> （1）引脚说明：         两模块共地，两模块共VCC（VCC取5V）；蓝牙模块的RX接转换模块的TX，蓝牙模块的TX接转换模块的RX （2）模块介绍：         具有两种工作模式：命令响应工作模式和自动连接工作模式         当模块处于自动连接工作模式时，将自动根据事先设定的方式连接的数据传输；         当模块处于命令响应工作模式时能执行AT命令，用户可向模块发送各种AT指令，微模块设定控制参数或发布控制命令 进入命令响应工作模式方法： 模块上电，未配对情况下就是AT模式，波特率为模块本身的波特率，默认：9600，发送一次AT指令需要置高一次PIO11； PIO11置高电平后，再给模块上电，此时模块进入AT模式，波特率固定为：38400，可以直接发送AT指令。</code></pre></li></ol><p><em>（二）微信小程序端</em></p><ol><li>wifi通信：<br> 局域网内通信：手机连接WiFi模块热点后，向wifi模块的IP地址及对应端口号发送请求，接收wifi模块发送数据<br> 外网通信：通过向服务器发送websocket通信请求，获取服务器返回的数据，</li></ol><pre><code class="javascript">       //建立连接    wx.connectSocket({      url: "ws://192.168.43.100:8081",      header: {        'content-type': 'application/json'      },      // protocols: ['protocol1'],      success:function(){        console.log("websocket打开成功")      },fail:function(){        console.log("websocket打开失败")      }    })    let socketOpen = false    //连接成功    wx.onSocketOpen(function () {      socketOpen = true      console.log("websocket连接打开成功")    })    //发送消息    function sendSocketMessage(msg){      if(socketOpen){        wx.sendSocketMessage({          data: msg,          success: function () {            console.log("消息发送成功")          }, fail: function () {            console.log("消息发送失败")          }        })      }else{        console.log("没有连接打开成功")      }    }    //接收数据    wx.onSocketMessage(function (data) {      var objData = JSON.parse(data.data);      console.log("消息接收成功"+data);    })  },  //连接失败  onSocketError:function(){    wx.onSocketError(function () {    console.log('websocket连接打开失败！');  })  }</code></pre><ol start="2"><li>蓝牙通信<br>根据微信小程序所给出的蓝牙模块API，获取蓝牙模块的参数信息，在可允许情况下对蓝牙模块进行监听，一旦蓝牙模块发送数据，接收至小程序后端内，将其处理后显示</li></ol><pre><code class="javascript">//初始化蓝牙模块  openBluetoothAdapter(){      wx.openBluetoothAdapter({          success:(res) =&gt;{        console.log('初始化蓝牙设备成功')        this.startBluetoothDeviceDiscovery()      },      fail:(res) =&gt;{        if(res.errCode == 10001){          wx.onBluetoothAdapterStateChange(function(res){            console.log("打开蓝牙适配器状态变化",res)            if(res.available){              this.startBluetoothDeviceDiscovery()            }          })        }      }      })  },  //检测本地蓝牙是否可用  getBluetoothAdapterState(){    wx.getBluetoothAdapterState({      success: function(res) {        console.log('获取蓝牙适配器状态',res)        if(res.discovering){          this.onBluetoothDeviceFound()        } else if(res.available){          this.startBluetoothDeviceDiscovery()        }      },      fail:function(res){        console.log("本地蓝牙不可用，未打开")        wx.showToast({          title: '蓝牙未打开',        })      }    })  },  //开始搜索蓝牙设备  startBluetoothDeviceDiscovery(){    wx.startBluetoothDevicesDiscovery({      success: function(res) {        console.log("开始搜索蓝牙设备",res)      },    })    this.onBluetoothDeviceFound()  },  //停止搜索蓝牙设备  stopBluetoothDevicesDiscovery(){    wx.stopBluetoothDevicesDiscovery({      success: function(res) {        console.log("停止搜索蓝牙设备")      },    })  },  //监听寻找到新设备的事件  onBluetoothDeviceFound() {    wx.onBluetoothDeviceFound((res) =&gt; {      res.devices.forEach(device =&gt; {        if (!device.name &amp;&amp; !device.localName) {          return        }        const foundDevices = this.data.devices        const idx = inArray(foundDevices, 'deviceId', device.deviceId)        const data = {}        if (idx === -1) {          data[`devices[${foundDevices.length}]`] = device        } else {          data[`devices[${idx}]`] = device        }        this.setData(data)      })    })  },  //连接蓝牙  createBLEConnection(e){    const ds = e.currentTarget.dataset    this.setData({      _deviceId:ds.deviceId,      _name:ds.name    })    console.log("蓝牙连接的deviceID："+this.data._deviceId)    console.log("蓝牙连接的名称："+this.data._name)    wx.createBLEConnection({      deviceId: this.data._deviceId,      success: function(res) {        wx.showLoading({          title: '蓝牙连接中',        })        this.setData({          connected:true        })        this.getBLEDeviceServices(_deviceId)      },    })    this.stopBluetoothDevicesDiscovery()  },  //关闭蓝牙连接  closeBLEConnection(){    wx.closeBLEConnection({      deviceId: this.data._deviceId,      success: function(res) {        console.log("蓝牙关闭成功")      },    })    this.setData({      connected:false    })  },  //获取蓝牙的service服务，获取的serviceid有多个，要试着连接最终确定哪个稳定版本的  //service服务，之后获取特征值  getBLEDeviceService(deviceId){    wx.getBLEDeviceServices({      deviceId: deviceId,      success: function(res) {        for(let i = 0; i &lt; res.services.length;i++){          if(res.services[i].isPrimary){            console.log("蓝牙服务的信息："+res.services[i])            this.getBLEDeviceCharacteristics(deviceId,res.services[i].uuid)            return          }        }      },      fail:function(res){        console.log("获取蓝牙的service服务失败")      }    })  },  //获取蓝牙设备的特征值，并启动notify蓝牙监听功能，然后  //使用onBLECharacteristicValueChange用来监听蓝牙设备传递的数据信息  //接收数据和发送数据需为二进制数据，页面展示的时候进行转换  getBLEDeviceCharacteristics(deviceId,serviceId){    wx.getBLEDeviceCharacteristics({      deviceId: deviceId,      serviceId: serviceId,      success: function(res) {        console.log("获取的蓝牙设备服务的特征值：",res.characteristics)        for(let i=0;i&lt;res.characteristics.length;i++){          let item = res.characteristics[i]          if(item.properties.read){            wx.readBLECharacteristicValue({              deviceId: deviceId,              serviceId: serviceId,              characteristicId: item.uuid,              success: function(res) {                console.log("可读蓝牙设备的具体信息："+item.properties)              },            })          }          if(item.properties.write){            console.log("可写蓝牙设备的具体信息："+item.properties)          }          if(item.properties.notify || item.properties.indicate){            console.log("可监听蓝牙设备的具体信息："+item.properties)            this.data._characteristicId = item.uuid            this.writeBLECharacteristicValue()            //启动监听蓝牙功能            wx.notifyBLECharacteristicValueChange({              deviceId: this.data._deviceId,              serviceId: this.data._serviceId,              characteristicId: this.data._characteristicId,              state: true,              success: function(res) {                console.log("成功监听的蓝牙设备信息："+res.errMsg)                //监听蓝牙设备传递数据，保证第一时间获取数据                wx.onBLECharacteristicValueChange(function (res) {                  console.log("监听到的数据："+this.buf2String(res.value))                })              },              fail:function(res){                console.log("监听失败的蓝牙设备信息："+res)              }            })          }        }      },    })  },  //向蓝牙设备发送数据  writeBLECharacteristicValue(){    //向蓝牙设备发送一个数据    let buffer = new ArrayBuffer(1)    let dataView = new DataView(buffer)    dataView.setUint8(0, Math.random() * 255 | 0)    wx.writeBLECharacteristicValue({      deviceId: this._deviceId,      serviceId: this._deviceId,      characteristicId: this._characteristicId,      value: buffer,    })  },  //关闭蓝牙模块  closeBluetoothAdapter(){    wx.closeBluetoothAdapter({      success: function(res) {        console.log("关闭蓝牙成功")      },    })  }</code></pre><ol start="3"><li>微信小程序界面端<br>首页界面：<br><img src="https://img-blog.csdnimg.cn/20201020194556541.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="微信小程序首页"><br>监测数据界面：<br><img src="https://img-blog.csdnimg.cn/20201020194637195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="显示检测数据"><br>心电图界面：<br>由于一直在做滤波算法，导致小程序端的心电图没有展示，所以这里展示电脑调试时获取的心电图<br><img src="https://img-blog.csdnimg.cn/20201020194801735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center" alt="心电图"><br>心电图实时更新：<br>哦，不能上传视频，所以……，下一项</li></ol><h3 id="思考与总结"><a href="#思考与总结" class="headerlink" title="思考与总结"></a>思考与总结</h3><ol><li>遇到的问题及解决方案：<br> （1）微信小程序所支持的蓝牙设备为4.0BLE低功耗蓝牙设备（也就是说HC-05蓝牙模块是不支持的）<br>（2）微信小程序对蓝牙模块的参数进行获取时，切记要把所有service下的characteristic中特征值全部查看，只要有一个支持监听，就可以监听相应services下的characteristic服务<pre><code>（3）我们当时看到的题目要求是将温度，心率等实时数据显示在（除电脑外）手机、ipad等设备，于是便自己做了一个微信小程序的开发，但是当时验收时，老师说“你们怎么没有用显示屏（单片机上的显示屏）,没有显示屏，怎么知道你们的数据正不正确（茫然....）”，在此想和各位同学说，一定要看清题目和重点（“等设备”），切记切记。    </code></pre></li><li>总结：<pre><code> 经历这次电赛，虽然没有达到预期的期望，但是也在短短的时间内，经过三个人的艰苦奋斗（嗯，没错，就是艰苦奋斗，三天时间，两个晚上在实验室度过），将部分功能实现了（并且也成功入手了一个小程序），所以想找个机会把这次经历记录下来。</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot报错Failed to configure a DataSource url attribute is not specified and no embedd</title>
+      <link href="posts/e395d729.html"/>
+      <url>posts/e395d729.html</url>
+      
+        <content type="html"><![CDATA[<p>Failed to configure a DataSource: ‘url’ attribute is not specified and no embedded datasource could be configured.在初步搭建springboot应用，因为没有进行数据库配置，如地址值，数据库驱动，用户名，密码等，常常会出现上述错误，表示是无法配置DataSource：未指定‘URL’属性，无法配置嵌入数据源。</p><p>Springboot最大的一个好处就是自动配置，所以我们只需要配置相关属性的值，它就会自动配置，配置在application.properties文件中。</p><pre><code class="java">#访问根路径#应用名称spring.application.name=springboot-stxcx#访问端口号server.port=8080#编码格式server.tomcat.url-encoding=utf-8#数据库相关配置spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driverspring.datasource.url=jdbc:mysql://localhost:3306/stxcxspring.datasource.username=rootspring.datasource.password='123456'spring.datasource.max-idle=10spring.datasource.max-wait=10000spring.datasource.min-idle=5spring.datasource.initial-size=5#session生命周期server.servlet.session.timeout=30m</code></pre><p>当然，如果此时你还不想配置，你也可以声明一下<br>启动类头部声明：</p><pre><code class="java">@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})</code></pre><p>感谢观看，如果有帮到小伙伴，请点赞哦！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下搭建web服务器-3</title>
+      <link href="posts/5acf12c2.html"/>
+      <url>posts/5acf12c2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Linux下如何搭建web服务器-3"><a href="#Linux下如何搭建web服务器-3" class="headerlink" title="Linux下如何搭建web服务器-3"></a>Linux下如何搭建web服务器-3</h2><p>嗨，各位小伙伴，这次博客我们来使用一个现有的项目来更新我们的web应用</p><ol><li><p>cd /var/www/html    进入到此目录</p></li><li><p>ls    显示当前目录下文件</p></li><li><p>rm index.html    删除index.html文件</p></li><li><p>ls</p></li><li><p>下载文件，将discuz/upload下的文件全部复制粘贴到/var/www/html目录下<br><img src="https://img-blog.csdnimg.cn/20200507203002495.png" alt="在这里插入图片描述"></p></li><li><p>yum install php*        安装PHP<br><img src="https://img-blog.csdnimg.cn/20200507203020865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>ls /etc/httpd/conf.d/<br><img src="https://img-blog.csdnimg.cn/2020050720305186.png" alt="在这里插入图片描述"></p></li><li><p>gedit /etc/httpd/conf.a/aaa.conf        在此目录下新建一个aaa.conf文件输入以下内容</p></li></ol><pre><code>&lt;VirtualHost *:80&gt;ServerName server.happy.comDocumentRoot /var/www/htmlDirectoryIndex index.php&lt;/VirtualHost&gt;</code></pre><ol start="8"><li><p>systemctl restart httpd    重启httpd服务</p></li><li><p>yum group install MariaDB\Database\Client MariaDB\Database\Server    安装数据库<br><img src="https://img-blog.csdnimg.cn/20200507203148809.png" alt="在这里插入图片描述"></p></li><li><p>systemctl start mariadb     启动数据库</p></li><li><pre><code>mysql_secure_installation    对数据库进行初始化设置</code></pre><p><img src="https://img-blog.csdnimg.cn/20200507203252343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>mysql -u root -p    登录数据库<br><img src="https://img-blog.csdnimg.cn/20200507203313146.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>setenforce 0</p></li><li><p>getenforce</p></li><li><p>gedit /etc/selinux/config<br><img src="https://img-blog.csdnimg.cn/20200507202106376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>将此处的SELINUX设置为disabled</p></li><li><p>访问web应用<br><img src="https://img-blog.csdnimg.cn/20200507202735888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ol><p>如果你已经显示这个，恭喜，大兄弟，说明你已经成功搭建完成，当然，如果可以的话，也可以搭建自己的个人博客或项目文件。到此为止，Linux下根据LAMP架构搭建个人服务器已到此为止，当然这个服务器并不是一个正式的web应用，不能通过外网访问，而且只有主机运行时，才能访问到，这是因为我们没有公网IP和云服务器，如果后期有机会的话，可能会继续写如何利用云服务器和购买一个公网IP实现一个正式的个人网站。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下搭建web服务器-2</title>
+      <link href="posts/2dc82254.html"/>
+      <url>posts/2dc82254.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Linux下如何搭建web服务器-2"><a href="#Linux下如何搭建web服务器-2" class="headerlink" title="Linux下如何搭建web服务器-2"></a>Linux下如何搭建web服务器-2</h2><p>嗨，小哥哥们小姐姐们，这里是Loole的个人博客；<br>这里补充说明一下，可能是每个版本的Linux对很少的命令有所区别，所以呢，我的Linux系统是red hat enterprise Linux 7版本。<br>上一节我们已经讲了如何安装web服务器，接下来我们来继续搭建Linux服务器</p><h2 id="编写网页代码"><a href="#编写网页代码" class="headerlink" title="编写网页代码"></a>编写网页代码</h2><ol><li><p>cd /var/www/html    切换到网页文件目录下（这里的文件目录下，只要把网页文件放到此目录下，那么就可以访问这个网页）</p></li><li><p>gedit /var/www/html/index.html    在位于/var/www/html/index.html新建index.html文件并进入图形化编辑<br><img src="https://img-blog.csdnimg.cn/20200507181211347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ol><pre><code>&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312" /&gt;&lt;meta http-equiv="Content-Language" content="zh-cn" /&gt;&lt;/head&gt;&lt;body bgcolor="yellow"&gt;&lt;h2&gt;请看: 改变了颜色的背景。&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>然后点击save并退出</p><ol start="3"><li><p>ls 显示当前目录下文件</p></li><li><p>cat index.html        显示index.html文件的具体内容</p></li><li><p>systemctl start httpd    启动httpd服务</p></li><li><p>systemctl status httpd    查看httpd的状态<br><img src="https://img-blog.csdnimg.cn/20200507181500164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里才用的是Apache的服务器，状态为正在运行中</p></li><li><p>ip addr    查看本机的ip地址<br><img src="https://img-blog.csdnimg.cn/20200507181603725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如果没有ip地址，请接下一步</p></li><li><p>nm-connection-editor            打开网络连接<br><img src="https://img-blog.csdnimg.cn/20200507181703931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选中eno····点击edit，后如图<br><img src="https://img-blog.csdnimg.cn/20200507181754361.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击general<br><img src="https://img-blog.csdnimg.cn/20200507181829599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>勾选此单选框，即可查看本机ip地址</p></li></ol><p>这里我们在浏览器输入本机IP地址<br><img src="https://img-blog.csdnimg.cn/20200507182041220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如果正常显示，我们输入的index网页，则说明网页搭建成功</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>症状：<br>       sudo gedit<br>出现以下错误：<br>        No protocol specified<br>        (gedit:3062): Gtk-WARNING **: cannot open display: :0.0<br>解决：<br>        执行：sudo xhost +<br>分析：<br>        当使用su 到另外一个用户运行某个程序，而这个程序又要有图形显示的时候，就有可能有下面提示：<br>        Invalid MIT-MAGIC-COOKIE-1 key<br>        (:3825): Gtk-WARNING **: cannot open display: :0.0</p><pre><code>    这是因为Xserver默认情况下不允许别的用户的图形程序的图形显示在当前屏幕上. 如果需要别的用户的图形显示在当前屏幕上, 则应以当前登陆的用户, 也就是切换身份前的用户执行如下命令。</code></pre><p>小伙伴们，快来试试趴。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下搭建web服务器-1</title>
+      <link href="posts/b4c173ee.html"/>
+      <url>posts/b4c173ee.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Linux下搭建web服务器-1"><a href="#Linux下搭建web服务器-1" class="headerlink" title="Linux下搭建web服务器-1"></a>Linux下搭建web服务器-1</h2><p>本身对Linux颇有兴趣，自己就粗浅的了解一些Linux的相关知识，但是却没有把学到的相关知识总结起来（嘻嘻，大概率是因为自己才疏学浅，知识浅薄）。但是这学期学校开了一门Linux企业课，所以就想把老师在课堂上教授一些实践的项目内容与步骤记录下来，一方面是为了帮助一些对此部分内容比较懵懂的同学，另一方面也可以加固我对Linux的理解与实践，So：The best of both worlds.</p><h2 id="（一）Web服务器了解"><a href="#（一）Web服务器了解" class="headerlink" title="（一）Web服务器了解"></a>（一）Web服务器了解</h2><p><img src="https://img-blog.csdnimg.cn/20200507165444107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>这张图片就是关于我们日常上网时会使用到一种结构，我们所浏览的网页是存放在服务器中的，我们个人通过互联网络去访问到远程服务器中的数据，实现数据的浏览，下载与交互。<br>Web服务器的常用架构：LAMP架构<br>Linux操作系统：基础命令使用，软件安装，服务器配置，权限，防火墙等技术<br>Apache：市场上目前最常用的Web服务器程序（就我们用的Tomcat的公司产品）<br>数据库：存放数据的程序，这里采用mysql或Mariadb—别问我为什么不用其他的数据库软件（俺是一个菜菜—个人感觉可能是这两个数据库的简介，占用内存小，适合个人开发）<br>web页面开发：PHP（老师写的PHP，就我个人理解而言，一些常用的java，js,html，css等应该都会用到）</p><h2 id="（二）正式开干"><a href="#（二）正式开干" class="headerlink" title="（二）正式开干"></a>（二）正式开干</h2><ol><li><p>打开终端<br><img src="https://img-blog.csdnimg.cn/20200507170715939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里我使用su命令切换到root用户（最大Boss）</p></li><li><p>df    用于显示目前在Linux系统上的文件系统的磁盘使用情况统计。<br><img src="https://img-blog.csdnimg.cn/20200507170911450.png" alt="在这里插入图片描述"><br>这里主要是找到/dev/sr0这一行具体信息</p></li><li><p>umount /dev/sr0        可卸除目前挂在Linux目录中的文件系统</p></li><li><p>mkdir /media/cdrom    创建/media/cdrom目录</p></li><li><p>vim /etc/fstab            使用vim编辑器打开位于/etc下的一个名为fstab文件<br><img src="https://img-blog.csdnimg.cn/20200507171640809.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>先把鼠标移到最后一行，点击一下i键，进入插入模式，然后输入上图框内的内容，点击ESC键，回到命令模式，点击：键。输入wq，保存并退出</p></li><li><p>mount -a        将 /etc/fstab 中定义的所有档案系统挂上。</p></li><li><p>df<br><img src="https://img-blog.csdnimg.cn/20200507171925489.png" alt="在这里插入图片描述"><br>发现区别了吗？这里对/dev/sr0的mounted on进行了修改（你可真是个精灵鬼！）</p></li><li><p>vim /etc/yum.repos.d/a.repo    新建一个位于/etc/yum.repos.d/下的a.repo文件并进入编辑<br><img src="https://img-blog.csdnimg.cn/20200507172144414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里怎么输命令的如上图</p></li><li><p>yum repolist    查看当前可用yum源<br><img src="https://img-blog.csdnimg.cn/20200507172914551.png" alt="在这里插入图片描述"></p></li><li><p>yum groups install Web\ Server<br><img src="https://img-blog.csdnimg.cn/2020050717264599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ol><p><img src="https://img-blog.csdnimg.cn/20200507173056118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里主要是安装服务器必须常用的httpd服务，然后is this ok?懂趴？（y）</p><p>11.yum list instaled | grep httpd         这里是查询httped相关已安装的的服务<br><img src="https://img-blog.csdnimg.cn/20200507173328886.png" alt="在这里插入图片描述"></p><p>ddd！！！如果你最后的结果和我大差不差，恭喜你，web服务器已经搭建成功了哈，恭喜恭喜，小老弟。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用Hbuilder X创建基于uni-app模板的微信小程序</title>
+      <link href="posts/13e6fe6a.html"/>
+      <url>posts/13e6fe6a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用Hbuilder-X创建基于uni-app模板的微信小程序"><a href="#使用Hbuilder-X创建基于uni-app模板的微信小程序" class="headerlink" title="使用Hbuilder X创建基于uni-app模板的微信小程序"></a>使用Hbuilder X创建基于uni-app模板的微信小程序</h2><ol><li><p>在Hbuilder X里面新建一个uni-app项目<br>点击文件，选择新建，后创建项目<br><img src="https://img-blog.csdnimg.cn/20200426154737863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>最后点击创建（需在项目名称上填写自己项目的名称）</p></li><li><p>点击Hbuilder X的设置，在运行配置中设置微信开发工具的安装路径</p></li></ol><p><img src="https://img-blog.csdnimg.cn/20200426155040841.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ol start="3"><li><p>在微信开发工具中，点击设置中的安全设置，然后开启服务端口<br><img src="https://img-blog.csdnimg.cn/20200426155225232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>记录下端口号</p></li><li><p>最后在Hbuilder X运行配置中填写web服务调用URL(本地IP+端口号） <img src="https://img-blog.csdnimg.cn/20200426155249789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>点击运行到小程序模拟器，微信开发工具即可运行<br><img src="https://img-blog.csdnimg.cn/20200426155340576.png" alt="在这里插入图片描述"></p></li><li><p>最终微信开发工具开始运行，并且是uni-app默认模板<br><img src="https://img-blog.csdnimg.cn/20200426155455526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">如有改进之处，还请各位及时提出，感谢有缘人翻到我的第二篇正式博客，嘿嘿。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
