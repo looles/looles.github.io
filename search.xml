@@ -26,6 +26,8 @@
             
             <tag> 前端 </tag>
             
+            <tag> github </tag>
+            
         </tags>
       
     </entry>
@@ -64,6 +66,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -88,6 +92,8 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -114,6 +120,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -138,6 +146,8 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -164,6 +174,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -180,7 +192,7 @@
       
       <categories>
           
-          <category> LeetCode </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -188,6 +200,8 @@
         <tags>
             
             <tag> 算法 </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -214,30 +228,7 @@
             
             <tag> LeetCode </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>java中双端队列deque的用法</title>
-      <link href="posts/5ece5ecc.html"/>
-      <url>posts/5ece5ecc.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p><h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul><li>ArrayDeque：基于数组实现的线性双向队列</li><li>LinkedList：基于链表实现的链式双向队列</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li><li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li><li>不推荐插入null元素，null作为特定返回值表示队列为空</li><li>未定义基于元素相等的equals和hashCode</li></ol><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol><li><p>插入元素</p><pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE    addLast(): 向队尾插入元素，如果为空，则发生NPE    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre></li><li><p>移除元素</p><pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre></li><li><p>获取元素</p><pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -264,6 +255,37 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java中双端队列deque的用法</title>
+      <link href="posts/5ece5ecc.html"/>
+      <url>posts/5ece5ecc.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p><h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul><li>ArrayDeque：基于数组实现的线性双向队列</li><li>LinkedList：基于链表实现的链式双向队列</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li><li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li><li>不推荐插入null元素，null作为特定返回值表示队列为空</li><li>未定义基于元素相等的equals和hashCode</li></ol><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol><li><p>插入元素</p><pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE    addLast(): 向队尾插入元素，如果为空，则发生NPE    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre></li><li><p>移除元素</p><pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre></li><li><p>获取元素</p><pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> java </tag>
+            
+            <tag> deque </tag>
+            
         </tags>
       
     </entry>
@@ -288,6 +310,8 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -314,6 +338,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -338,6 +364,8 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -364,6 +392,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -388,6 +418,8 @@
         <tags>
             
             <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -414,6 +446,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -439,6 +473,8 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
         </tags>
       
     </entry>
@@ -463,6 +499,8 @@
         <tags>
             
             <tag> 嵌入式 </tag>
+            
+            <tag> 电赛 </tag>
             
         </tags>
       
@@ -514,6 +552,8 @@
             
             <tag> linux </tag>
             
+            <tag> web </tag>
+            
         </tags>
       
     </entry>
@@ -538,6 +578,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> web </tag>
             
         </tags>
       
@@ -564,6 +606,8 @@
             
             <tag> linux </tag>
             
+            <tag> web </tag>
+            
         </tags>
       
     </entry>
@@ -586,6 +630,8 @@
       
       
         <tags>
+            
+            <tag> 前端 </tag>
             
             <tag> 微信小程序 </tag>
             

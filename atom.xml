@@ -6,7 +6,7 @@
   <link href="http://looles.github.io/atom.xml" rel="self"/>
   
   <link href="http://looles.github.io/"/>
-  <updated>2020-11-21T05:48:45.395Z</updated>
+  <updated>2020-11-21T08:37:02.308Z</updated>
   <id>http://looles.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://looles.github.io/posts/123.html"/>
     <id>http://looles.github.io/posts/123.html</id>
     <published>2020-11-21T05:16:00.000Z</published>
-    <updated>2020-11-21T05:48:45.395Z</updated>
+    <updated>2020-11-21T08:37:02.308Z</updated>
     
     
       
@@ -43,6 +43,8 @@
     
     <category term="前端" scheme="http://looles.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
+    <category term="github" scheme="http://looles.github.io/tags/github/"/>
+    
   </entry>
   
   <entry>
@@ -50,7 +52,7 @@
     <link href="http://looles.github.io/posts/4a17b156.html"/>
     <id>http://looles.github.io/posts/4a17b156.html</id>
     <published>2020-11-21T04:30:05.056Z</published>
-    <updated>2020-11-21T06:15:03.326Z</updated>
+    <updated>2020-11-21T08:47:09.686Z</updated>
     
     
       
@@ -71,7 +73,7 @@
     <link href="http://looles.github.io/posts/ce41y99e2.html"/>
     <id>http://looles.github.io/posts/ce41y99e2.html</id>
     <published>2020-11-18T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:59.963Z</updated>
+    <updated>2020-11-21T08:46:59.736Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -82,6 +84,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -90,7 +94,7 @@
     <link href="http://looles.github.io/posts/a1ca36d.html"/>
     <id>http://looles.github.io/posts/a1ca36d.html</id>
     <published>2020-11-18T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:55.777Z</updated>
+    <updated>2020-11-21T08:49:11.016Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -101,6 +105,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -109,7 +115,7 @@
     <link href="http://looles.github.io/posts/ce4199e2.html"/>
     <id>http://looles.github.io/posts/ce4199e2.html</id>
     <published>2020-11-18T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:52.190Z</updated>
+    <updated>2020-11-21T08:46:42.724Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -120,6 +126,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -128,7 +136,7 @@
     <link href="http://looles.github.io/posts/cc4f64a2.html"/>
     <id>http://looles.github.io/posts/cc4f64a2.html</id>
     <published>2020-11-17T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:48.058Z</updated>
+    <updated>2020-11-21T08:46:33.128Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -139,6 +147,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -147,7 +157,7 @@
     <link href="http://looles.github.io/posts/732af8ec.html"/>
     <id>http://looles.github.io/posts/732af8ec.html</id>
     <published>2020-11-16T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:43.671Z</updated>
+    <updated>2020-11-21T08:46:24.407Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -159,24 +169,28 @@
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
     
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
   </entry>
   
   <entry>
     <title>哈希表（散列表）理解</title>
     <link href="http://looles.github.io/posts/90889556.html"/>
     <id>http://looles.github.io/posts/90889556.html</id>
-    <published>2020-11-15T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:17.636Z</updated>
+    <published>2020-11-16T08:45:00.000Z</published>
+    <updated>2020-11-21T08:45:16.254Z</updated>
     
     
     <summary type="html">哈希表/散列表</summary>
     
     
     
-    <category term="LeetCode" scheme="http://looles.github.io/categories/LeetCode/"/>
+    <category term="算法" scheme="http://looles.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
     <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="java" scheme="http://looles.github.io/tags/java/"/>
     
   </entry>
   
@@ -185,7 +199,7 @@
     <link href="http://looles.github.io/posts/49f79b1a.html"/>
     <id>http://looles.github.io/posts/49f79b1a.html</id>
     <published>2020-11-15T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:36.343Z</updated>
+    <updated>2020-11-21T08:46:12.682Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -197,24 +211,7 @@
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
     
-  </entry>
-  
-  <entry>
-    <title>java中双端队列deque的用法</title>
-    <link href="http://looles.github.io/posts/5ece5ecc.html"/>
-    <id>http://looles.github.io/posts/5ece5ecc.html</id>
-    <published>2020-11-14T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:10.327Z</updated>
-    
-    
-    <summary type="html">java基础知识</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="http://looles.github.io/categories/LeetCode/"/>
-    
-    
-    <category term="java" scheme="http://looles.github.io/tags/java/"/>
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -223,7 +220,7 @@
     <link href="http://looles.github.io/posts/128470ac.html"/>
     <id>http://looles.github.io/posts/128470ac.html</id>
     <published>2020-11-14T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:14.213Z</updated>
+    <updated>2020-11-21T08:44:16.595Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -234,6 +231,31 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中双端队列deque的用法</title>
+    <link href="http://looles.github.io/posts/5ece5ecc.html"/>
+    <id>http://looles.github.io/posts/5ece5ecc.html</id>
+    <published>2020-11-14T16:00:00.000Z</published>
+    <updated>2020-11-21T08:44:07.576Z</updated>
+    
+    
+    <summary type="html">java基础知识</summary>
+    
+    
+    
+    <category term="java" scheme="http://looles.github.io/categories/java/"/>
+    
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="java" scheme="http://looles.github.io/tags/java/"/>
+    
+    <category term="deque" scheme="http://looles.github.io/tags/deque/"/>
     
   </entry>
   
@@ -242,7 +264,7 @@
     <link href="http://looles.github.io/posts/bb619e45.html"/>
     <id>http://looles.github.io/posts/bb619e45.html</id>
     <published>2020-11-11T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:06.965Z</updated>
+    <updated>2020-11-21T08:43:25.400Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -253,6 +275,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -261,7 +285,7 @@
     <link href="http://looles.github.io/posts/75881b9f.html"/>
     <id>http://looles.github.io/posts/75881b9f.html</id>
     <published>2020-11-09T16:00:00.000Z</published>
-    <updated>2020-11-21T06:14:00.876Z</updated>
+    <updated>2020-11-21T08:43:17.700Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -272,6 +296,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -280,7 +306,7 @@
     <link href="http://looles.github.io/posts/79f75a73.html"/>
     <id>http://looles.github.io/posts/79f75a73.html</id>
     <published>2020-11-08T16:00:00.000Z</published>
-    <updated>2020-11-21T06:13:56.124Z</updated>
+    <updated>2020-11-21T08:43:06.990Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -291,6 +317,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -299,7 +327,7 @@
     <link href="http://looles.github.io/posts/1438972c.html"/>
     <id>http://looles.github.io/posts/1438972c.html</id>
     <published>2020-11-07T16:00:00.000Z</published>
-    <updated>2020-11-21T06:13:21.592Z</updated>
+    <updated>2020-11-21T08:42:59.979Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -310,6 +338,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -318,7 +348,7 @@
     <link href="http://looles.github.io/posts/50e4c20e.html"/>
     <id>http://looles.github.io/posts/50e4c20e.html</id>
     <published>2020-11-06T16:00:00.000Z</published>
-    <updated>2020-11-21T06:13:17.847Z</updated>
+    <updated>2020-11-21T08:42:52.256Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -329,6 +359,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -337,7 +369,7 @@
     <link href="http://looles.github.io/posts/629e772.html"/>
     <id>http://looles.github.io/posts/629e772.html</id>
     <published>2020-10-25T16:00:00.000Z</published>
-    <updated>2020-11-21T06:13:46.971Z</updated>
+    <updated>2020-11-21T08:42:38.645Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -348,6 +380,8 @@
     
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -356,7 +390,7 @@
     <link href="http://looles.github.io/posts/8c2b3a88.html"/>
     <id>http://looles.github.io/posts/8c2b3a88.html</id>
     <published>2020-10-25T16:00:00.000Z</published>
-    <updated>2020-11-21T06:13:06.728Z</updated>
+    <updated>2020-11-21T08:50:31.962Z</updated>
     
     
     <summary type="html">LeetCode刷题</summary>
@@ -368,6 +402,8 @@
     
     <category term="LeetCode" scheme="http://looles.github.io/tags/LeetCode/"/>
     
+    <category term="算法" scheme="http://looles.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
   </entry>
   
   <entry>
@@ -375,7 +411,7 @@
     <link href="http://looles.github.io/posts/cdecc56b.html"/>
     <id>http://looles.github.io/posts/cdecc56b.html</id>
     <published>2020-10-17T16:00:00.000Z</published>
-    <updated>2020-11-21T06:12:51.784Z</updated>
+    <updated>2020-11-21T08:41:55.927Z</updated>
     
     
     <summary type="html">2020年江苏省电子设计大赛A题</summary>
@@ -387,6 +423,8 @@
     
     <category term="嵌入式" scheme="http://looles.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
+    <category term="电赛" scheme="http://looles.github.io/tags/%E7%94%B5%E8%B5%9B/"/>
+    
   </entry>
   
   <entry>
@@ -394,7 +432,7 @@
     <link href="http://looles.github.io/posts/e395d729.html"/>
     <id>http://looles.github.io/posts/e395d729.html</id>
     <published>2020-05-19T16:00:00.000Z</published>
-    <updated>2020-11-21T06:12:37.989Z</updated>
+    <updated>2020-11-21T08:41:27.261Z</updated>
     
     
     <summary type="html">Failed to configure a DataSource: &#39;url&#39; attribute is not specified and no embedded datasource could be configured.在初步搭建springboot应用，因为没有进行数据库配置，如地址值，数据库驱动，用户名，密码等，常常会出现上述错误，表示是无法配置DataSource：未指定‘URL’属性，无法配置嵌入数据源</summary>
