@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="臾昳, Loole">
+    <meta name="keywords" content="LeetCode中排序链表, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Looles</title>
+    <title>LeetCode中排序链表 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">LeetCode中排序链表</h1>
                 </div>
             </div>
         </div>
@@ -540,12 +540,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/LeetCode/" class="post-category">
+                                LeetCode
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -554,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-24
+                    2020-11-21
                 </div>
                 
 
@@ -570,65 +587,137 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="452">
-<li>用最少数量的箭引爆气球<br>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</li>
+                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="148">
+<li>排序链表<br>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。</li>
 </ol>
-<p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 x start，x end， 且满足  x start ≤ x ≤ x end，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p>
-<p>给你一个数组 points ，其中 points [i] = [x start,x end] ，返回引爆所有气球所必须射出的最小弓箭数。</p>
-<p>示例 1：</p>
-<pre><code class="java">输入：points = [[10,16],[2,8],[1,6],[7,12]]
-输出：2
-解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球</code></pre>
-<p>示例 2：</p>
-<pre><code class="java">输入：points = [[1,2],[3,4],[5,6],[7,8]]
-输出：4</code></pre>
+<p>进阶：</p>
+<pre><code class="java">你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+</code></pre>
+<p>示例 1：<br><img src="https://img-blog.csdnimg.cn/20201122140655139.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code class="java">输入：head = [4,2,1,3]
+输出：[1,2,3,4]</code></pre>
+<p>示例 2：<br><img src="https://img-blog.csdnimg.cn/20201122140717892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code class="java">输入：head = [-1,5,3,4,0]
+输出：[-1,0,3,4,5]</code></pre>
 <p>示例 3：</p>
-<pre><code class="java">输入：points = [[1,2],[2,3],[3,4],[4,5]]
-输出：2</code></pre>
-<p>示例 4：</p>
-<pre><code class="java">输入：points = [[1,2]]
-输出：1</code></pre>
-<p>示例 5：</p>
-<pre><code class="java">输入：points = [[2,3],[2,3]]
-输出：1</code></pre>
+<pre><code class="java">输入：head = []
+输出：[]
+</code></pre>
 <p>提示：</p>
-<pre><code class="java">0 &lt;= points.length &lt;= 104
-points[i].length == 2
--231 &lt;= xstart &lt; xend &lt;= 231 - 1</code></pre>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：排序+贪心算法</strong><br>思路：由于每个气球的宽度是固定的，我们只需要把所有的气球按照右边界的大小进行上升排序，然后将第一只箭的位置尽可能的在第一个气球的右边，这样第一支箭引爆的气球的数量是最多的，然后将引爆的气球都排除掉，从下一个未引爆的气球的右边界为开始，第二只箭尽可能的在这个气球的右边，以此类推，总共所需的箭则是最少的</p>
+<pre><code class="java">链表中节点的数目在范围 [0, 5 * 104] 内
+-105 &lt;= Node.val &lt;= 105</code></pre>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：归并排序（递归法）</strong><br>思路：在链表中点将链表断开，使用快慢指针法，找到中点后，输入当前链表左端点和中心端点，递归执行，当只有一个节点时，直接返回此节点<br>合并环节：将两个排序的链表进行合并，转化为一个排序链表</p>
+<pre><code class="java"> public ListNode sortList(ListNode head) {
+        // 1、递归结束条件
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // 2、找到链表中间节点并断开链表 &amp; 递归下探
+        ListNode midNode = middleNode(head);
+        ListNode rightHead = midNode.next;
+        midNode.next = null;
+
+        ListNode left = sortList(head);
+        ListNode right = sortList(rightHead);
+
+        // 3、当前层业务操作（合并有序链表）
+        return mergeTwoLists(left, right);
+    }
+
+    //  找到链表中间节点（876. 链表的中间结点）
+    private ListNode middleNode(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next.next;
+
+        while (fast != null &amp;&amp; fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    // 合并两个有序链表（21. 合并两个有序链表）
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode sentry = new ListNode(-1);
+        ListNode curr = sentry;
+
+        while(l1 != null &amp;&amp; l2 != null) {
+            if(l1.val &lt; l2.val) {
+                curr.next = l1;
+                l1 = l1.next;
+            } else {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+
+            curr = curr.next;
+        }
+
+        curr.next = l1 != null ? l1 : l2;
+        return sentry.next;
+    }</code></pre>
+<p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(logn)</p>
+<p><strong>方法二：归并排序（从低至顶直接合并）</strong><br>思路：使用迭代替换递归方法</p>
 <pre><code class="java">class Solution {
-    public int findMinArrowShots(int[][] points) {
-        //边界条件判断
-        if(points == null || points.length == 0){
-            return 0;
+    public ListNode sortList(ListNode head) {
+        ListNode h, h1, h2, pre, res;
+        h = head;
+        int length = 0, intv = 1;
+        while (h != null) {
+            h = h.next;
+            length++;
         }
-        // 按照每个气球的右边界排序
-        Arrays.sort(points, new Comparator&lt;int[]&gt;(){
-            public int compare(int[] point1, int[] point2){
-                if(point1[1] &gt; point2[1]){
-                    return 1;
-                }else if(point1[1] &lt; point2[1]){
-                    return -1;
-                }else{
-                    return 0;
+        res = new ListNode(0);
+        res.next = head;
+        while (intv &lt; length) {
+            pre = res;
+            h = res.next;
+            while (h != null) {
+                int i = intv;
+                h1 = h;
+                while (i &gt; 0 &amp;&amp; h != null) {
+                    h = h.next;
+                    i--;
                 }
+                if (i &gt; 0) break;
+                i = intv;
+                h2 = h;
+                while (i &gt; 0 &amp;&amp; h != null) {
+                    h = h.next;
+                    i--;
+                }
+                int c1 = intv, c2 = intv - i;
+                while (c1 &gt; 0 &amp;&amp; c2 &gt; 0) {
+                    if (h1.val &lt; h2.val) {
+                        pre.next = h1;
+                        h1 = h1.next;
+                        c1--;
+                    } else {
+                        pre.next = h2;
+                        h2 = h2.next;
+                        c2--;
+                    }
+                    pre = pre.next;
+                }
+                pre.next = c1 == 0 ? h2 : h1;
+                while (c1 &gt; 0 || c2 &gt; 0) {
+                    pre = pre.next;
+                    c1--;
+                    c2--;
+                }
+                pre.next = h;
             }
-        });
-        // 获取排序后第一个气球右边界的位置，可以认为箭射入的位置
-        int loc = points[0][1];
-        // 统计箭的数量
-         int  count = 1;
-        for(int i = 1; i &lt; points.length; i++){
-            //如果箭射入的位置小于下标为i的气球的左边界位置，所以这只箭不能击爆此气球，需要另外一支箭，并且更新箭的位置
-            if(loc &lt; points[i][0]){
-                loc = points[i][1];
-                count++;
-            }
+            intv *= 2;
         }
-        return count;
+        return res.next;
     }
 }</code></pre>
-<p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)，排序的时间复杂度<br>    空间复杂度：O(logn),排序使用的栈空间</p>
+<p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(1)</p>
 
             </div>
             <hr/>
@@ -654,7 +743,7 @@ points[i].length == 2
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/0.html">http://looles.github.io/posts/0.html</a>
+                    <a href="http://looles.github.io/posts/ce41y99se2.html">http://looles.github.io/posts/ce41y99se2.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -691,7 +780,15 @@ points[i].length == 2
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -863,13 +960,13 @@ points[i].length == 2
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/0.html">
+                <a href="/posts/ce41y99se2.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode中有效的字母异位词">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">LeetCode中有效的字母异位词</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -880,15 +977,31 @@ points[i].length == 2
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Loole
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
