@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="LeetCode中对链表进行插入排序, 臾昳, Loole">
+    <meta name="keywords" content="搭建博客, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode中对链表进行插入排序 | Looles</title>
+    <title>搭建博客 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -30,8 +30,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Looles" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Looles" type="application/atom+xml">
 </head>
 
 
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode中对链表进行插入排序</h1>
+                    <h1 class="description center-align post-title">搭建博客</h1>
                 </div>
             </div>
         </div>
@@ -542,12 +542,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                <span class="chip bg-color">博客</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
                             </a>
                         
                     </div>
@@ -558,8 +566,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category">
-                                LeetCode
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
                             </a>
                         
                     </div>
@@ -571,7 +579,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-19
+                    2019-03-20
                 </div>
                 
 
@@ -587,60 +595,85 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="147">
-<li>对链表进行插入排序<br>对链表进行插入排序。</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20201120140347644.gif#pic_center" alt="在这里插入图片描述"></p>
-<p>插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。<br>每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。</p>
-<p>插入排序算法：</p>
-<pre><code class="java">插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。
-每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。
-重复直到所有输入数据插入完为止。
+                <h2 id="如何搭建自己的github-io博客"><a href="#如何搭建自己的github-io博客" class="headerlink" title="如何搭建自己的github.io博客"></a>如何搭建自己的github.io博客</h2><p>github.io是基于github的仓库进行管理，据本人浅显地理解就是我们借用了github的仓库管理器来充当个人的服务器（这个服务器是免费的嘿嘿），下面我将根据来<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e68fba58f75c">柏荧的博客</a>来搭建属于自己的github.io的个人博客。</p>
+<h2 id="1-注册一个github账号"><a href="#1-注册一个github账号" class="headerlink" title="1.注册一个github账号"></a>1.注册一个github账号</h2><p>作为全球最大的同性交友网站，github值得你拥有（唉，但是全英文的界面对我这种菜菜的人就很不友好了）。<br>话不多说，上图</p>
+<p> <strong>github注册页面</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200425200001365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="2-拉取博客模板"><a href="#2-拉取博客模板" class="headerlink" title="**2.拉取博客模板"></a>**2.拉取博客模板</h2><p>**</p>
+<p>注册结束之后点击<a target="_blank" rel="noopener" href="https://github.com/qiubaiying/qiubaiying.github.io">此链接</a>（这里因为我也是刚刚fork此位大佬的模板，所以这里直接奉上他的仓库链接）<br><img src="https://img-blog.csdnimg.cn/20200425200447948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>点击fork把此模板代码拉取到自己的账号下</p>
+<p> <strong>修改仓库名，绑定个人域名</strong><br>点击setting进入设置<br><img src="https://img-blog.csdnimg.cn/20200425200610888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改仓库名为自己的<em>github账号名.github.io</em>,然后点击rename<br><img src="https://img-blog.csdnimg.cn/20200425200942846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时在浏览器输入<em>github账号名.github.io</em>，如Looles.github.io<br><img src="https://img-blog.csdnimg.cn/20200425201135519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>绑定自己的域名，在github pages下找到custom domain在里面填写到自己申请的域名（并且需要在自己的域名设置里绑定自己github仓库的地址）<br><img src="https://img-blog.csdnimg.cn/20200425201352138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>此时还需要修改博客的配置才能变成自己的博客（此时打开网址内容的博客还仍是别人的内容，你只是复制粘贴到了自己github仓库下）</p>
+<h2 id="网站结构"><a href="#网站结构" class="headerlink" title="网站结构"></a>网站结构</h2><p>修改之前我们了解一下jekyll网站的基础结构</p>
+<pre><code>├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+├── img
+└── index.html</code></pre>
+<ul>
+<li>_config.yml全局配置文件</li>
+<li>_posts放置博客文章的文件夹</li>
+<li>img存放图片的文件夹</li>
+</ul>
+<p>官方教程链接奉上<a target="_blank" rel="noopener" href="http://jekyll.com.cn/docs/structure/">jekyll教程</a></p>
+<h2 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h2><p>来到我们的仓库，找到_config.yml文件，这是网站的全局配置文件。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200425202151423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击修改<br><img src="https://img-blog.csdnimg.cn/20200425202231889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>一下具体讲解一下配置文件的内容</p>
+<p>基础配置</p>
+<pre><code># Site settings
+title: You Blog                     #你博客的标题
+SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题
+header-img: img/post-bg-rwd.jpg     #显示在首页的背景图片
+email: You@gmail.com    
+description: "You Blog"              #网站介绍
+keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
+url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址
+baseurl: ""      # 这个我们不用填写
 </code></pre>
-<p>示例 1：</p>
-<pre><code class="java">输入: 4-&gt;2-&gt;1-&gt;3
-输出: 1-&gt;2-&gt;3-&gt;4</code></pre>
-<p>示例 2：</p>
-<pre><code class="java">输入: -1-&gt;5-&gt;3-&gt;4-&gt;0
-输出: -1-&gt;0-&gt;3-&gt;4-&gt;5</code></pre>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>**方法一：</p>
-<ol>
-<li>dummy指向第一个节点，一是用于结果输出，二是寻找插入位置时用于回到起点</li>
-<li>cur用于遍历的节点</li>
-<li>pre一是用于和当前节点作比较，二是做标记，让交换后的cur回到pre后面</li>
-</ol>
-<pre><code class="java">class Solution {
-    public ListNode insertionSortList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode dummy = new ListNode(0);
-        ListNode pre = head;
-        ListNode cur = head.next;
-        dummy.next = head;
-        while (cur != null) {
-            if (pre.val &lt;= cur.val) {// 本来就有序
-                pre = cur;
-                cur = cur.next;
-            } else {
-                ListNode p = dummy;
-                // 找到一个位置使得p &lt; cur &lt; p.next
-                while (p.next != cur &amp;&amp; p.next.val &lt; cur.val) {
-                    p = p.next;
-                }
-                // 将cur插入到p和p.next之间
-                // 因为cur被插到前面，pre的指针需要跳过cur
-                pre.next = cur.next;
-                cur.next = p.next;
-                p.next = cur;
-                // 完成插入后，cur回到pre后面
-                cur = pre.next;
-            }
-        }
-        return dummy.next;
+<p>侧边栏</p>
+<pre><code># Sidebar settings
+sidebar: true                           # 是否开启侧边栏.
+sidebar-about-description: "说点装逼的话。。。"
+sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g片</code></pre>
+<p>社交平台：</p>
+<pre><code># SNS settings
+RSS: false
+weibo_username:     username
+zhihu_username:     username
+github_username:    username
+facebook_username:  username
+jianshu_username:   jianshu_id</code></pre>
+<p>评论系统<br>采用了Gitalk评论插件（Disqus在国内加载较慢）<br>奉上给博客添加Gitalk评论链接<a target="_blank" rel="noopener" href="http://qiubaiying.vip/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/">Gitalk评论教程</a></p>
+<p>好友</p>
+<pre><code>friends: [
+    {
+        title: "简书·BY",
+        href: "http://www.jianshu.com/u/e71990ada2fd"
+    },{
+        title: "Apple",
+        href: "https://apple.com"
+    },{
+        title: "Apple Developer",
+        href: "https://developer.apple.com/"
     }
-}
-</code></pre>
+]</code></pre>
+<p>保存<br><img src="https://img-blog.csdnimg.cn/20200425202702255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再次进入主页<br><img src="https://img-blog.csdnimg.cn/20200425202725254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>个人博客已搭建完成（还未完全更改为自己的配置）</p>
+<p>写文章<br>可直接在github网站里写，对于轻车熟路的程序员来说，可使用Git管理自己的网站文件代码</p>
+<p>创建<br>文章统一放到网站根目录下的_posts的文件夹里，且文件名为“日期+此博客标题”，中间用-连接。</p>
+<p>本人也是初入博客写作，进步空间巨大，希望有见解的兄弟可以多多指出见解，期待一起进步。</p>
+<p>感谢各位<br>                                        —来自还有头发的程序员Loole</p>
 
             </div>
             <hr/>
@@ -656,7 +689,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Loole</a>
+                    <a href="/about" rel="external nofollow noreferrer">looles</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -666,7 +699,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/ce41y99e2.html">http://looles.github.io/posts/ce41y99e2.html</a>
+                    <a href="http://looles.github.io/posts/5c83b0d3.html">http://looles.github.io/posts/5c83b0d3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -679,7 +712,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Loole</a>
+                    <a href="/about" target="_blank">looles</a>
                     !
                 </span>
             </div>
@@ -704,12 +737,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                    <span class="chip bg-color">博客</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
                                 </a>
                             
                         </div>
@@ -883,13 +924,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/4a17b156.html">
+                <a href="/posts/6a72f890.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo博客介绍">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">hexo博客介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -900,45 +941,8 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Loole
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/a1ca36d.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="LeetCode中买卖股票的最佳时机题解">
-                        
-                        <span class="card-title">LeetCode中买卖股票的最佳时机题解</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -954,12 +958,74 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/5c83b0d3.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="搭建博客">
+                        
+                        <span class="card-title">搭建博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
                 </div>

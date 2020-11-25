@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Linux下搭建web服务器-1, 臾昳, Loole">
+    <meta name="keywords" content="LeetCode中排序链表, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux下搭建web服务器-1 | Looles</title>
+    <title>LeetCode中排序链表 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux下搭建web服务器-1</h1>
+                    <h1 class="description center-align post-title">LeetCode中排序链表</h1>
                 </div>
             </div>
         </div>
@@ -542,12 +542,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
                             </a>
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -558,8 +558,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/linux/" class="post-category">
-                                linux
+                            <a href="/categories/LeetCode/" class="post-category">
+                                LeetCode
                             </a>
                         
                     </div>
@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-16
+                    2020-11-21
                 </div>
                 
 
@@ -587,34 +587,137 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Linux下搭建web服务器-1"><a href="#Linux下搭建web服务器-1" class="headerlink" title="Linux下搭建web服务器-1"></a>Linux下搭建web服务器-1</h2><p>本身对Linux颇有兴趣，自己就粗浅的了解一些Linux的相关知识，但是却没有把学到的相关知识总结起来（嘻嘻，大概率是因为自己才疏学浅，知识浅薄）。但是这学期学校开了一门Linux企业课，所以就想把老师在课堂上教授一些实践的项目内容与步骤记录下来，一方面是为了帮助一些对此部分内容比较懵懂的同学，另一方面也可以加固我对Linux的理解与实践，So：The best of both worlds.</p>
-<h2 id="（一）Web服务器了解"><a href="#（一）Web服务器了解" class="headerlink" title="（一）Web服务器了解"></a>（一）Web服务器了解</h2><p><img src="https://img-blog.csdnimg.cn/20200507165444107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>这张图片就是关于我们日常上网时会使用到一种结构，我们所浏览的网页是存放在服务器中的，我们个人通过互联网络去访问到远程服务器中的数据，实现数据的浏览，下载与交互。<br>Web服务器的常用架构：LAMP架构<br>Linux操作系统：基础命令使用，软件安装，服务器配置，权限，防火墙等技术<br>Apache：市场上目前最常用的Web服务器程序（就我们用的Tomcat的公司产品）<br>数据库：存放数据的程序，这里采用mysql或Mariadb—别问我为什么不用其他的数据库软件（俺是一个菜菜—个人感觉可能是这两个数据库的简介，占用内存小，适合个人开发）<br>web页面开发：PHP（老师写的PHP，就我个人理解而言，一些常用的java，js,html，css等应该都会用到）</p>
-<h2 id="（二）正式开干"><a href="#（二）正式开干" class="headerlink" title="（二）正式开干"></a>（二）正式开干</h2><ol>
-<li><p>打开终端<br><img src="https://img-blog.csdnimg.cn/20200507170715939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里我使用su命令切换到root用户（最大Boss）</p>
-</li>
-<li><p>df    用于显示目前在Linux系统上的文件系统的磁盘使用情况统计。<br><img src="https://img-blog.csdnimg.cn/20200507170911450.png" alt="在这里插入图片描述"><br>这里主要是找到/dev/sr0这一行具体信息</p>
-</li>
-<li><p>umount /dev/sr0        可卸除目前挂在Linux目录中的文件系统</p>
-</li>
-<li><p>mkdir /media/cdrom    创建/media/cdrom目录</p>
-</li>
-<li><p>vim /etc/fstab            使用vim编辑器打开位于/etc下的一个名为fstab文件<br><img src="https://img-blog.csdnimg.cn/20200507171640809.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>先把鼠标移到最后一行，点击一下i键，进入插入模式，然后输入上图框内的内容，点击ESC键，回到命令模式，点击：键。输入wq，保存并退出</p>
-</li>
-<li><p>mount -a        将 /etc/fstab 中定义的所有档案系统挂上。</p>
-</li>
-<li><p>df<br><img src="https://img-blog.csdnimg.cn/20200507171925489.png" alt="在这里插入图片描述"><br>发现区别了吗？这里对/dev/sr0的mounted on进行了修改（你可真是个精灵鬼！）</p>
-</li>
-<li><p>vim /etc/yum.repos.d/a.repo    新建一个位于/etc/yum.repos.d/下的a.repo文件并进入编辑<br><img src="https://img-blog.csdnimg.cn/20200507172144414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里怎么输命令的如上图</p>
-</li>
-<li><p>yum repolist    查看当前可用yum源<br><img src="https://img-blog.csdnimg.cn/20200507172914551.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>yum groups install Web\ Server<br><img src="https://img-blog.csdnimg.cn/2020050717264599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</li>
+                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="148">
+<li>排序链表<br>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/20200507173056118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里主要是安装服务器必须常用的httpd服务，然后is this ok?懂趴？（y）</p>
-<p>11.yum list instaled | grep httpd         这里是查询httped相关已安装的的服务<br><img src="https://img-blog.csdnimg.cn/20200507173328886.png" alt="在这里插入图片描述"></p>
-<p>ddd！！！如果你最后的结果和我大差不差，恭喜你，web服务器已经搭建成功了哈，恭喜恭喜，小老弟。</p>
+<p>进阶：</p>
+<pre><code class="java">你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+</code></pre>
+<p>示例 1：<br><img src="https://img-blog.csdnimg.cn/20201122140655139.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code class="java">输入：head = [4,2,1,3]
+输出：[1,2,3,4]</code></pre>
+<p>示例 2：<br><img src="https://img-blog.csdnimg.cn/20201122140717892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code class="java">输入：head = [-1,5,3,4,0]
+输出：[-1,0,3,4,5]</code></pre>
+<p>示例 3：</p>
+<pre><code class="java">输入：head = []
+输出：[]
+</code></pre>
+<p>提示：</p>
+<pre><code class="java">链表中节点的数目在范围 [0, 5 * 104] 内
+-105 &lt;= Node.val &lt;= 105</code></pre>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：归并排序（递归法）</strong><br>思路：在链表中点将链表断开，使用快慢指针法，找到中点后，输入当前链表左端点和中心端点，递归执行，当只有一个节点时，直接返回此节点<br>合并环节：将两个排序的链表进行合并，转化为一个排序链表</p>
+<pre><code class="java"> public ListNode sortList(ListNode head) {
+        // 1、递归结束条件
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // 2、找到链表中间节点并断开链表 &amp; 递归下探
+        ListNode midNode = middleNode(head);
+        ListNode rightHead = midNode.next;
+        midNode.next = null;
+
+        ListNode left = sortList(head);
+        ListNode right = sortList(rightHead);
+
+        // 3、当前层业务操作（合并有序链表）
+        return mergeTwoLists(left, right);
+    }
+
+    //  找到链表中间节点（876. 链表的中间结点）
+    private ListNode middleNode(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next.next;
+
+        while (fast != null &amp;&amp; fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    // 合并两个有序链表（21. 合并两个有序链表）
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode sentry = new ListNode(-1);
+        ListNode curr = sentry;
+
+        while(l1 != null &amp;&amp; l2 != null) {
+            if(l1.val &lt; l2.val) {
+                curr.next = l1;
+                l1 = l1.next;
+            } else {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+
+            curr = curr.next;
+        }
+
+        curr.next = l1 != null ? l1 : l2;
+        return sentry.next;
+    }</code></pre>
+<p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(logn)</p>
+<p><strong>方法二：归并排序（从低至顶直接合并）</strong><br>思路：使用迭代替换递归方法</p>
+<pre><code class="java">class Solution {
+    public ListNode sortList(ListNode head) {
+        ListNode h, h1, h2, pre, res;
+        h = head;
+        int length = 0, intv = 1;
+        while (h != null) {
+            h = h.next;
+            length++;
+        }
+        res = new ListNode(0);
+        res.next = head;
+        while (intv &lt; length) {
+            pre = res;
+            h = res.next;
+            while (h != null) {
+                int i = intv;
+                h1 = h;
+                while (i &gt; 0 &amp;&amp; h != null) {
+                    h = h.next;
+                    i--;
+                }
+                if (i &gt; 0) break;
+                i = intv;
+                h2 = h;
+                while (i &gt; 0 &amp;&amp; h != null) {
+                    h = h.next;
+                    i--;
+                }
+                int c1 = intv, c2 = intv - i;
+                while (c1 &gt; 0 &amp;&amp; c2 &gt; 0) {
+                    if (h1.val &lt; h2.val) {
+                        pre.next = h1;
+                        h1 = h1.next;
+                        c1--;
+                    } else {
+                        pre.next = h2;
+                        h2 = h2.next;
+                        c2--;
+                    }
+                    pre = pre.next;
+                }
+                pre.next = c1 == 0 ? h2 : h1;
+                while (c1 &gt; 0 || c2 &gt; 0) {
+                    pre = pre.next;
+                    c1--;
+                    c2--;
+                }
+                pre.next = h;
+            }
+            intv *= 2;
+        }
+        return res.next;
+    }
+}</code></pre>
+<p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(1)</p>
 
             </div>
             <hr/>
@@ -640,7 +743,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/b4c173ee.html">http://looles.github.io/posts/b4c173ee.html</a>
+                    <a href="http://looles.github.io/posts/f8e4f69a.html">http://looles.github.io/posts/f8e4f69a.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,12 +781,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
                                 </a>
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -857,13 +960,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2dc82254.html">
+                <a href="/posts/c9b471e6.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux下搭建web服务器-2">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode中有效的字母异位词">
                         
-                        <span class="card-title">Linux下搭建web服务器-2</span>
+                        <span class="card-title">LeetCode中有效的字母异位词</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -874,14 +977,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/linux/" class="post-category">
-                                    linux
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -891,12 +994,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -910,13 +1013,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/13e6fe6a.html">
+                <a href="/posts/9db4448.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="使用Hbuilder X创建基于uni-app模板的微信小程序">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="LeetCode中对链表进行插入排序">
                         
-                        <span class="card-title">使用Hbuilder X创建基于uni-app模板的微信小程序</span>
+                        <span class="card-title">LeetCode中对链表进行插入排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -927,14 +1030,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-category">
-                                    微信小程序
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -944,12 +1047,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>

@@ -5,8 +5,35 @@
     
     <entry>
       <title>LeetCode中完全二叉树的节点个数</title>
-      <link href="posts/ce41y99se2.html"/>
-      <url>posts/ce41y99se2.html</url>
+      <link href="posts/3ac22b3e.html"/>
+      <url>posts/3ac22b3e.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>1370.上升下降字符串<br>给你一个字符串 s ，请你根据下面的算法重新构造字符串：</p><ol><li>从 s 中选出 最小 的字符，将它 接在 结果字符串的后面。</li><li>从 s 剩余字符中选出 最小 的字符，且该字符比上一个添加的字符大，将它 接在 结果字符串后面。</li><li>重复步骤 2 ，直到你没法从 s 中选择字符。</li><li>从 s 中选出 最大 的字符，将它 接在 结果字符串的后面。</li><li>从 s 剩余字符中选出 最大 的字符，且该字符比上一个添加的字符小，将它 接在 结果字符串后面。</li><li>重复步骤 5 ，直到你没法从 s 中选择字符。</li><li>重复步骤 1 到 6 ，直到 s 中所有字符都已经被选过。</li></ol><p>在任何一步中，如果最小或者最大字符不止一个 ，你可以选择其中任意一个，并将其添加到结果字符串。</p><p>请你返回将 s 中字符重新排序后的 结果字符串 。</p><p>示例 1：</p><pre><code class="java">输入：s = "aaaabbbbcccc"输出："abccbaabccba"解释：第一轮的步骤 1，2，3 后，结果字符串为 result = "abc"第一轮的步骤 4，5，6 后，结果字符串为 result = "abccba"第一轮结束，现在 s = "aabbcc" ，我们再次回到步骤 1第二轮的步骤 1，2，3 后，结果字符串为 result = "abccbaabc"第二轮的步骤 4，5，6 后，结果字符串为 result = "abccbaabccba"</code></pre><p>示例 2：</p><pre><code class="java">输入：s = "rat"输出："art"解释：单词 "rat" 在上述算法重排序以后变成 "art"</code></pre><p>示例 3：</p><pre><code class="java">输入：s = "leetcode"输出："cdelotee"</code></pre><p>示例 4：</p><pre><code class="java">输入：s = "ggggggg"输出："ggggggg"</code></pre><p>示例 5：</p><pre><code class="java">输入：s = "spo"输出："ops"</code></pre><p>提示：</p><ul><li>1 &lt;= s.length &lt;= 500</li><li>s 只包含小写英文字母。</li></ul><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：</strong><br>思路：创建一个长度为26的数组count，用下标顺序对应其26个字母，用下标所在值对应s字符串中此字母的个数（用int[]数组代替hashMap）。然后按照26字母升序方式遍历count数组，若字母所在的的个数不为零，则将其加入输出字符串res，然后将其count数组中对应字母的个数减一；然后再按照26字母降序方式遍历count数组，如字母所在地的值不为零，则将其加入字符串res，然后将其count数组中对应的字母的个数减一，然后重复升序降序过程，知道res字符串的长度等于s字符串的长度，结束退出，返回res字符串。</p><pre><code class="java">class Solution {    public String sortString(String s) {        // 创建一个数组,用下标代表其26个字母,下标对应的值为字符串中此字母的个数        int[] count = new int[26];        // 遍历字符串,将其按照下标存入count数组中        for(char c : s.toCharArray()){            count[c - 'a'] += 1;        }        //创建字符串对象,用于存放输出字符串        StringBuilder res = new StringBuilder();        // 当res字符串的长度没达到s字符串时，一直执行两个for循环（升序，降序）        while(res.length() != s.length()){            // 按照26字母升序遍历count，如果此字母的个数为零则跳过循环，若不为零，将此字母加入到res字符串中，并且，将count数组中对应字符的次数减一            for(int i = 0; i &lt; 26; i++){                if(count[i] == 0){                    continue;                }                res.append((char)(i + 'a'));                count[i] -= 1;            }            // 按照26字母降序遍历count，如果此字母的个数为零则跳过循环，若不为零，将此字母加入到res字符串中，并且，将count数组中对应字符的次数减一            for(int i = 25; i &gt;= 0; i--){                if(count[i] == 0){                    continue;                }                res.append((char)(i + 'a'));                count[i] -= 1;            }        }        return res.toString();    }}</code></pre><p><strong>复杂度分析：</strong><br>    时间复杂度： O(n)，将源字符串的每个字符重排了一次；<br>    空间复杂度：O(N)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中完全二叉树的节点个数</title>
+      <link href="posts/3ac22b3e.html"/>
+      <url>posts/3ac22b3e.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="222"><li>完全二叉树的节点个数<br>给出一个完全二叉树，求出该树的节点个数。</li></ol><p>说明：</p><p>完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2h 个节点。</p><p>示例:</p><pre><code class="java">输入:     1   / \  2   3 / \  /4  5 6输出: 6</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：DFS法</strong><br>思路：对于任何二叉树都可以试用，遍历数结点，到达一个结点+1，返回最后的总数</p><pre><code class="java">/** * Definition for a binary tree node. * public class TreeNode { *     int val; *     TreeNode left; *     TreeNode right; *     TreeNode(int x) { val = x; } * } */class Solution {    public int countNodes(TreeNode root) {        //方法一：普通递归法        if(root == null){            return 0;        }        return countNodes(root.left) + countNodes(root.right) + 1;    }}</code></pre><p><strong>方法二：BFS</strong><br>思路：先计算树的高度height，然后计算右子树的高度，如果右子树的高度等于height - 1，说明左子树是满二叉树，可以通过公式（2^(height - 1)） - 1计算即可，不需要全部遍历，然后通过递归的方式计算右子树。如果右子树的高度不等于height - 1，说明右子树是满二叉树，不过少了一层，就是height- 2 ，也可以通过公式计算，然后在通过递归的方式计算左子树。</p><pre><code class="java">class Solution{     public int countNodes(TreeNode root) {        //计算树的高度，        int height = treeHeight(root);        //如果树是空的，或者高度是1，直接返回        if (height == 0 || height == 1)            return height;        //如果右子树的高度是树的高度减1，说明左子树是满二叉树，        //左子树可以通过公式计算，只需要递归右子树就行了        if (treeHeight(root.right) == height - 1) {            //注意这里的计算，左子树的数量是实际上是(1 &lt;&lt; (height - 1))-1，            //不要把根节点给忘了，在加上1就是(1 &lt;&lt; (height - 1))            return (1 &lt;&lt; (height - 1)) + countNodes(root.right);        } else {            //如果右子树的高度不是树的高度减1，说明右子树是满二叉树，可以通过            //公式计算右子树，只需要递归左子树就行了            return (1 &lt;&lt; (height - 2)) + countNodes(root.left);        }    }    //计算树的高度    private int treeHeight(TreeNode root) {        return root == null ? 0 : 1 + treeHeight(root.left);    }}</code></pre>]]></content>
       
@@ -32,8 +59,8 @@
     
     <entry>
       <title>LeetCode中用最少数量的箭引爆气球</title>
-      <link href="posts/ce41y99se2.html"/>
-      <url>posts/ce41y99se2.html</url>
+      <link href="posts/a8ae4bfd.html"/>
+      <url>posts/a8ae4bfd.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="452"><li>用最少数量的箭引爆气球<br>在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。</li></ol><p>一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 x start，x end， 且满足  x start ≤ x ≤ x end，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。我们想找到使得所有气球全部被引爆，所需的弓箭的最小数量。</p><p>给你一个数组 points ，其中 points [i] = [x start,x end] ，返回引爆所有气球所必须射出的最小弓箭数。</p><p>示例 1：</p><pre><code class="java">输入：points = [[10,16],[2,8],[1,6],[7,12]]输出：2解释：对于该样例，x = 6 可以射爆 [2,8],[1,6] 两个气球，以及 x = 11 射爆另外两个气球</code></pre><p>示例 2：</p><pre><code class="java">输入：points = [[1,2],[3,4],[5,6],[7,8]]输出：4</code></pre><p>示例 3：</p><pre><code class="java">输入：points = [[1,2],[2,3],[3,4],[4,5]]输出：2</code></pre><p>示例 4：</p><pre><code class="java">输入：points = [[1,2]]输出：1</code></pre><p>示例 5：</p><pre><code class="java">输入：points = [[2,3],[2,3]]输出：1</code></pre><p>提示：</p><pre><code class="java">0 &lt;= points.length &lt;= 104points[i].length == 2-231 &lt;= xstart &lt; xend &lt;= 231 - 1</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：排序+贪心算法</strong><br>思路：由于每个气球的宽度是固定的，我们只需要把所有的气球按照右边界的大小进行上升排序，然后将第一只箭的位置尽可能的在第一个气球的右边，这样第一支箭引爆的气球的数量是最多的，然后将引爆的气球都排除掉，从下一个未引爆的气球的右边界为开始，第二只箭尽可能的在这个气球的右边，以此类推，总共所需的箭则是最少的</p><pre><code class="java">class Solution {    public int findMinArrowShots(int[][] points) {        //边界条件判断        if(points == null || points.length == 0){            return 0;        }        // 按照每个气球的右边界排序        Arrays.sort(points, new Comparator&lt;int[]&gt;(){            public int compare(int[] point1, int[] point2){                if(point1[1] &gt; point2[1]){                    return 1;                }else if(point1[1] &lt; point2[1]){                    return -1;                }else{                    return 0;                }            }        });        // 获取排序后第一个气球右边界的位置，可以认为箭射入的位置        int loc = points[0][1];        // 统计箭的数量         int  count = 1;        for(int i = 1; i &lt; points.length; i++){            //如果箭射入的位置小于下标为i的气球的左边界位置，所以这只箭不能击爆此气球，需要另外一支箭，并且更新箭的位置            if(loc &lt; points[i][0]){                loc = points[i][1];                count++;            }        }        return count;    }}</code></pre><p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)，排序的时间复杂度<br>    空间复杂度：O(logn),排序使用的栈空间</p>]]></content>
       
@@ -59,8 +86,8 @@
     
     <entry>
       <title>LeetCode中有效的字母异位词</title>
-      <link href="posts/ce41y99se2.html"/>
-      <url>posts/ce41y99se2.html</url>
+      <link href="posts/c9b471e6.html"/>
+      <url>posts/c9b471e6.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="242"><li>有效的字母异位词<br>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。</li></ol><p>示例 1:</p><p>输入: s = “anagram”, t = “nagaram”<br>输出: true<br>示例 2:</p><p>输入: s = “rat”, t = “car”<br>输出: false<br>说明:<br>你可以假设字符串只包含小写字母。</p><p>进阶:<br>如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：hashmap</strong><br>思路：使用hashmap存放相应地字符与出现的数字，在t字符串进行遍历时，如遍历包含一个，将其对应的值减一，若为一，则删除这个键值对，最后判断hashmap是否为空，若为空，则说明全部一一包含，则返回true，若不为空，则不一一对应，则返回false。</p><pre><code class="java">class Solution {    public boolean isAnagram(String s, String t) {        HashMap&lt;Character,Integer&gt; hashmap = new HashMap&lt;&gt;();        for(int i = 0; i &lt; s.length(); i++){            if(!hashmap.containsKey(s.charAt(i))){                hashmap.put(s.charAt(i),1);            }else{                int temp = hashmap.get(s.charAt(i));                hashmap.remove(s.charAt(i));                hashmap.put(s.charAt(i),temp+1);            }        }        for(int j = 0; j &lt; t.length(); j++){            if(hashmap.containsKey(t.charAt(j))){                int temp = hashmap.get(t.charAt(j));                if(temp &gt; 1){                    hashmap.remove(t.charAt(j));                    hashmap.put(t.charAt(j),temp-1);                }else{                    hashmap.remove(t.charAt(j));                }            }else{                return false;            }        }        if(hashmap.isEmpty()){            return true;        }else{            return false;        }    }}</code></pre><p>**方法二：<br>思路<br>哈希映射<br>首先判断两个字符串长度是否相等，不相等则直接返回 false<br>若相等，则初始化 26 个字母哈希表，遍历字符串 s 和 t<br>s 负责在对应位置增加，t 负责在对应位置减少<br>如果哈希表的值都为 0，则二者是字母异位词</p><pre><code class="java">class Solution {    public boolean isAnagram(String s, String t) {        if(s.length() != t.length())            return false;        int[] alpha = new int[26];        for(int i = 0; i&lt; s.length(); i++) {            alpha[s.charAt(i) - 'a'] ++;            alpha[t.charAt(i) - 'a'] --;        }        for(int i=0;i&lt;26;i++)            if(alpha[i] != 0)                return false;        return true;    }}</code></pre>]]></content>
       
@@ -86,8 +113,8 @@
     
     <entry>
       <title>LeetCode中排序链表</title>
-      <link href="posts/ce41y99se2.html"/>
-      <url>posts/ce41y99se2.html</url>
+      <link href="posts/f8e4f69a.html"/>
+      <url>posts/f8e4f69a.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="148"><li>排序链表<br>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。</li></ol><p>进阶：</p><pre><code class="java">你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？</code></pre><p>示例 1：<br><img src="https://img-blog.csdnimg.cn/20201122140655139.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p><pre><code class="java">输入：head = [4,2,1,3]输出：[1,2,3,4]</code></pre><p>示例 2：<br><img src="https://img-blog.csdnimg.cn/20201122140717892.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70#pic_center"></p><pre><code class="java">输入：head = [-1,5,3,4,0]输出：[-1,0,3,4,5]</code></pre><p>示例 3：</p><pre><code class="java">输入：head = []输出：[]</code></pre><p>提示：</p><pre><code class="java">链表中节点的数目在范围 [0, 5 * 104] 内-105 &lt;= Node.val &lt;= 105</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：归并排序（递归法）</strong><br>思路：在链表中点将链表断开，使用快慢指针法，找到中点后，输入当前链表左端点和中心端点，递归执行，当只有一个节点时，直接返回此节点<br>合并环节：将两个排序的链表进行合并，转化为一个排序链表</p><pre><code class="java"> public ListNode sortList(ListNode head) {        // 1、递归结束条件        if (head == null || head.next == null) {            return head;        }        // 2、找到链表中间节点并断开链表 &amp; 递归下探        ListNode midNode = middleNode(head);        ListNode rightHead = midNode.next;        midNode.next = null;        ListNode left = sortList(head);        ListNode right = sortList(rightHead);        // 3、当前层业务操作（合并有序链表）        return mergeTwoLists(left, right);    }    //  找到链表中间节点（876. 链表的中间结点）    private ListNode middleNode(ListNode head) {        if (head == null || head.next == null) {            return head;        }        ListNode slow = head;        ListNode fast = head.next.next;        while (fast != null &amp;&amp; fast.next != null) {            slow = slow.next;            fast = fast.next.next;        }        return slow;    }    // 合并两个有序链表（21. 合并两个有序链表）    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {        ListNode sentry = new ListNode(-1);        ListNode curr = sentry;        while(l1 != null &amp;&amp; l2 != null) {            if(l1.val &lt; l2.val) {                curr.next = l1;                l1 = l1.next;            } else {                curr.next = l2;                l2 = l2.next;            }            curr = curr.next;        }        curr.next = l1 != null ? l1 : l2;        return sentry.next;    }</code></pre><p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(logn)</p><p><strong>方法二：归并排序（从低至顶直接合并）</strong><br>思路：使用迭代替换递归方法</p><pre><code class="java">class Solution {    public ListNode sortList(ListNode head) {        ListNode h, h1, h2, pre, res;        h = head;        int length = 0, intv = 1;        while (h != null) {            h = h.next;            length++;        }        res = new ListNode(0);        res.next = head;        while (intv &lt; length) {            pre = res;            h = res.next;            while (h != null) {                int i = intv;                h1 = h;                while (i &gt; 0 &amp;&amp; h != null) {                    h = h.next;                    i--;                }                if (i &gt; 0) break;                i = intv;                h2 = h;                while (i &gt; 0 &amp;&amp; h != null) {                    h = h.next;                    i--;                }                int c1 = intv, c2 = intv - i;                while (c1 &gt; 0 &amp;&amp; c2 &gt; 0) {                    if (h1.val &lt; h2.val) {                        pre.next = h1;                        h1 = h1.next;                        c1--;                    } else {                        pre.next = h2;                        h2 = h2.next;                        c2--;                    }                    pre = pre.next;                }                pre.next = c1 == 0 ? h2 : h1;                while (c1 &gt; 0 || c2 &gt; 0) {                    pre = pre.next;                    c1--;                    c2--;                }                pre.next = h;            }            intv *= 2;        }        return res.next;    }}</code></pre><p><strong>复杂度分析：</strong><br>    时间复杂度：O(nlogn)<br>    空间复杂度：O(1)</p>]]></content>
       
@@ -112,53 +139,9 @@
     
     
     <entry>
-      <title>搭建博客</title>
-      <link href="posts/123.html"/>
-      <url>posts/123.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="如何搭建自己的github-io博客"><a href="#如何搭建自己的github-io博客" class="headerlink" title="如何搭建自己的github.io博客"></a>如何搭建自己的github.io博客</h2><p>github.io是基于github的仓库进行管理，据本人浅显地理解就是我们借用了github的仓库管理器来充当个人的服务器（这个服务器是免费的嘿嘿），下面我将根据来<a href="https://www.jianshu.com/p/e68fba58f75c">柏荧的博客</a>来搭建属于自己的github.io的个人博客。</p><h2 id="1-注册一个github账号"><a href="#1-注册一个github账号" class="headerlink" title="1.注册一个github账号"></a>1.注册一个github账号</h2><p>作为全球最大的同性交友网站，github值得你拥有（唉，但是全英文的界面对我这种菜菜的人就很不友好了）。<br>话不多说，上图</p><p> <strong>github注册页面</strong></p><p><img src="https://img-blog.csdnimg.cn/20200425200001365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="2-拉取博客模板"><a href="#2-拉取博客模板" class="headerlink" title="**2.拉取博客模板"></a>**2.拉取博客模板</h2><p>**</p><p>注册结束之后点击<a href="https://github.com/qiubaiying/qiubaiying.github.io">此链接</a>（这里因为我也是刚刚fork此位大佬的模板，所以这里直接奉上他的仓库链接）<br><img src="https://img-blog.csdnimg.cn/20200425200447948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>点击fork把此模板代码拉取到自己的账号下</p><p> <strong>修改仓库名，绑定个人域名</strong><br>点击setting进入设置<br><img src="https://img-blog.csdnimg.cn/20200425200610888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改仓库名为自己的<em>github账号名.github.io</em>,然后点击rename<br><img src="https://img-blog.csdnimg.cn/20200425200942846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时在浏览器输入<em>github账号名.github.io</em>，如Looles.github.io<br><img src="https://img-blog.csdnimg.cn/20200425201135519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>绑定自己的域名，在github pages下找到custom domain在里面填写到自己申请的域名（并且需要在自己的域名设置里绑定自己github仓库的地址）<br><img src="https://img-blog.csdnimg.cn/20200425201352138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>此时还需要修改博客的配置才能变成自己的博客（此时打开网址内容的博客还仍是别人的内容，你只是复制粘贴到了自己github仓库下）</p><h2 id="网站结构"><a href="#网站结构" class="headerlink" title="网站结构"></a>网站结构</h2><p>修改之前我们了解一下jekyll网站的基础结构</p><pre><code>├── _config.yml├── _drafts|   ├── begin-with-the-crazy-ideas.textile|   └── on-simplicity-in-technology.markdown├── _includes|   ├── footer.html|   └── header.html├── _layouts|   ├── default.html|   └── post.html├── _posts|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile|   └── 2009-04-26-barcamp-boston-4-roundup.textile├── _data|   └── members.yml├── _site├── img└── index.html</code></pre><ul><li>_config.yml全局配置文件</li><li>_posts放置博客文章的文件夹</li><li>img存放图片的文件夹</li></ul><p>官方教程链接奉上<a href="http://jekyll.com.cn/docs/structure/">jekyll教程</a></p><h2 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h2><p>来到我们的仓库，找到_config.yml文件，这是网站的全局配置文件。</p><p><img src="https://img-blog.csdnimg.cn/20200425202151423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击修改<br><img src="https://img-blog.csdnimg.cn/20200425202231889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>一下具体讲解一下配置文件的内容</p><p>基础配置</p><pre><code># Site settingstitle: You Blog                     #你博客的标题SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题header-img: img/post-bg-rwd.jpg     #显示在首页的背景图片email: You@gmail.com    description: "You Blog"              #网站介绍keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址baseurl: ""      # 这个我们不用填写</code></pre><p>侧边栏</p><pre><code># Sidebar settingssidebar: true                           # 是否开启侧边栏.sidebar-about-description: "说点装逼的话。。。"sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g片</code></pre><p>社交平台：</p><pre><code># SNS settingsRSS: falseweibo_username:     usernamezhihu_username:     usernamegithub_username:    usernamefacebook_username:  usernamejianshu_username:   jianshu_id</code></pre><p>评论系统<br>采用了Gitalk评论插件（Disqus在国内加载较慢）<br>奉上给博客添加Gitalk评论链接<a href="http://qiubaiying.vip/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/">Gitalk评论教程</a></p><p>好友</p><pre><code>friends: [    {        title: "简书·BY",        href: "http://www.jianshu.com/u/e71990ada2fd"    },{        title: "Apple",        href: "https://apple.com"    },{        title: "Apple Developer",        href: "https://developer.apple.com/"    }]</code></pre><p>保存<br><img src="https://img-blog.csdnimg.cn/20200425202702255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再次进入主页<br><img src="https://img-blog.csdnimg.cn/20200425202725254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>个人博客已搭建完成（还未完全更改为自己的配置）</p><p>写文章<br>可直接在github网站里写，对于轻车熟路的程序员来说，可使用Git管理自己的网站文件代码</p><p>创建<br>文章统一放到网站根目录下的_posts的文件夹里，且文件名为“日期+此博客标题”，中间用-连接。</p><p>本人也是初入博客写作，进步空间巨大，希望有见解的兄弟可以多多指出见解，期待一起进步。</p><p>感谢各位<br>                                        —来自还有头发的程序员Loole</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客 </tag>
-            
-            <tag> hexo </tag>
-            
-            <tag> 前端 </tag>
-            
-            <tag> github </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="posts/4a17b156.html"/>
-      <url>posts/4a17b156.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new "My New Post"</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LeetCode中对链表进行插入排序</title>
-      <link href="posts/ce41y99e2.html"/>
-      <url>posts/ce41y99e2.html</url>
+      <link href="posts/9db4448.html"/>
+      <url>posts/9db4448.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="147"><li>对链表进行插入排序<br>对链表进行插入排序。</li></ol><p><img src="https://img-blog.csdnimg.cn/20201120140347644.gif#pic_center" alt="在这里插入图片描述"></p><p>插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。<br>每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。</p><p>插入排序算法：</p><pre><code class="java">插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。重复直到所有输入数据插入完为止。</code></pre><p>示例 1：</p><pre><code class="java">输入: 4-&gt;2-&gt;1-&gt;3输出: 1-&gt;2-&gt;3-&gt;4</code></pre><p>示例 2：</p><pre><code class="java">输入: -1-&gt;5-&gt;3-&gt;4-&gt;0输出: -1-&gt;0-&gt;3-&gt;4-&gt;5</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>**方法一：</p><ol><li>dummy指向第一个节点，一是用于结果输出，二是寻找插入位置时用于回到起点</li><li>cur用于遍历的节点</li><li>pre一是用于和当前节点作比较，二是做标记，让交换后的cur回到pre后面</li></ol><pre><code class="java">class Solution {    public ListNode insertionSortList(ListNode head) {        if (head == null || head.next == null) {            return head;        }        ListNode dummy = new ListNode(0);        ListNode pre = head;        ListNode cur = head.next;        dummy.next = head;        while (cur != null) {            if (pre.val &lt;= cur.val) {// 本来就有序                pre = cur;                cur = cur.next;            } else {                ListNode p = dummy;                // 找到一个位置使得p &lt; cur &lt; p.next                while (p.next != cur &amp;&amp; p.next.val &lt; cur.val) {                    p = p.next;                }                // 将cur插入到p和p.next之间                // 因为cur被插到前面，pre的指针需要跳过cur                pre.next = cur.next;                cur.next = p.next;                p.next = cur;                // 完成插入后，cur回到pre后面                cur = pre.next;            }        }        return dummy.next;    }}</code></pre>]]></content>
       
@@ -345,33 +328,6 @@
     
     
     <entry>
-      <title>LeetCode中移掉K位数字题解</title>
-      <link href="posts/128470ac.html"/>
-      <url>posts/128470ac.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="402"><li>移掉K位数字<br>给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。</li></ol><p>注意:</p><pre><code class="java">num 的长度小于 10002 且 ≥ k。num 不会包含任何前导零。</code></pre><p>示例 1 :</p><pre><code class="java">输入: num = "1432219", k = 3输出: "1219"解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。</code></pre><p>示例 2 :</p><pre><code class="java">输入: num = "10200", k = 1输出: "200"解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。</code></pre><p>示例 3 :</p><pre><code class="java">输入: num = "10", k = 2输出: "0"解释: 从原数字移除所有的数字，剩余为空就是0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>解释：<br>给定一个长度为 nn 的数字序列 [D0D1D2D3···Dn-1]，从左往右找到第一个位置 i（i&gt;0）使得 Di&lt;Di-1，删去 Di-1；如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p><p>基于此，我们可以每次对整个数字序列执行一次这个策略；删去一个字符后，剩下的 n−1 长度的数字序列就形成了新的子问题，可以继续使用同样的策略，直至删除 k 次。</p><p>方法一：<br>思路：从左到右，找到第一个比后面大的字符，删除这个字符，k次扫描</p><pre><code class="java">class Solution {    public String removeKdigits(String num, int k) {        if (num.length() == k) return "0";  //如果字符长度等于k，则直接返回0        StringBuilder s = new StringBuilder(num);        for (int i = 0; i &lt; k; i++) {       // K次扫描            int idx = 0;            for (int j = 1; j &lt; s.length() &amp;&amp; s.charAt(j) &gt;= s.charAt(j - 1); j++) idx = j;             //定位到第一个比后面大的字符            s.delete(idx, idx + 1);       //删除这个字符            //如果此时的字符长度大于1并且第一个字符为0时，则删除第一个字符            while (s.length() &gt; 1 &amp;&amp; s.charAt(0) == '0'){                s.delete(0, 1);            }         }        return s.toString();    }}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>java中双端队列deque的用法</title>
       <link href="posts/5ece5ecc.html"/>
       <url>posts/5ece5ecc.html</url>
@@ -393,6 +349,33 @@
             <tag> java </tag>
             
             <tag> deque </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode中移掉K位数字题解</title>
+      <link href="posts/128470ac.html"/>
+      <url>posts/128470ac.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="402"><li>移掉K位数字<br>给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。</li></ol><p>注意:</p><pre><code class="java">num 的长度小于 10002 且 ≥ k。num 不会包含任何前导零。</code></pre><p>示例 1 :</p><pre><code class="java">输入: num = "1432219", k = 3输出: "1219"解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。</code></pre><p>示例 2 :</p><pre><code class="java">输入: num = "10200", k = 1输出: "200"解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。</code></pre><p>示例 3 :</p><pre><code class="java">输入: num = "10", k = 2输出: "0"解释: 从原数字移除所有的数字，剩余为空就是0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>解释：<br>给定一个长度为 nn 的数字序列 [D0D1D2D3···Dn-1]，从左往右找到第一个位置 i（i&gt;0）使得 Di&lt;Di-1，删去 Di-1；如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p><p>基于此，我们可以每次对整个数字序列执行一次这个策略；删去一个字符后，剩下的 n−1 长度的数字序列就形成了新的子问题，可以继续使用同样的策略，直至删除 k 次。</p><p>方法一：<br>思路：从左到右，找到第一个比后面大的字符，删除这个字符，k次扫描</p><pre><code class="java">class Solution {    public String removeKdigits(String num, int k) {        if (num.length() == k) return "0";  //如果字符长度等于k，则直接返回0        StringBuilder s = new StringBuilder(num);        for (int i = 0; i &lt; k; i++) {       // K次扫描            int idx = 0;            for (int j = 1; j &lt; s.length() &amp;&amp; s.charAt(j) &gt;= s.charAt(j - 1); j++) idx = j;             //定位到第一个比后面大的字符            s.delete(idx, idx + 1);       //删除这个字符            //如果此时的字符长度大于1并且第一个字符为0时，则删除第一个字符            while (s.length() &gt; 1 &amp;&amp; s.charAt(0) == '0'){                s.delete(0, 1);            }         }        return s.toString();    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -742,6 +725,64 @@
             <tag> 前端 </tag>
             
             <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo博客介绍</title>
+      <link href="posts/6a72f890.html"/>
+      <url>posts/6a72f890.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new "My New Post"</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建博客</title>
+      <link href="posts/5c83b0d3.html"/>
+      <url>posts/5c83b0d3.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何搭建自己的github-io博客"><a href="#如何搭建自己的github-io博客" class="headerlink" title="如何搭建自己的github.io博客"></a>如何搭建自己的github.io博客</h2><p>github.io是基于github的仓库进行管理，据本人浅显地理解就是我们借用了github的仓库管理器来充当个人的服务器（这个服务器是免费的嘿嘿），下面我将根据来<a href="https://www.jianshu.com/p/e68fba58f75c">柏荧的博客</a>来搭建属于自己的github.io的个人博客。</p><h2 id="1-注册一个github账号"><a href="#1-注册一个github账号" class="headerlink" title="1.注册一个github账号"></a>1.注册一个github账号</h2><p>作为全球最大的同性交友网站，github值得你拥有（唉，但是全英文的界面对我这种菜菜的人就很不友好了）。<br>话不多说，上图</p><p> <strong>github注册页面</strong></p><p><img src="https://img-blog.csdnimg.cn/20200425200001365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="2-拉取博客模板"><a href="#2-拉取博客模板" class="headerlink" title="**2.拉取博客模板"></a>**2.拉取博客模板</h2><p>**</p><p>注册结束之后点击<a href="https://github.com/qiubaiying/qiubaiying.github.io">此链接</a>（这里因为我也是刚刚fork此位大佬的模板，所以这里直接奉上他的仓库链接）<br><img src="https://img-blog.csdnimg.cn/20200425200447948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>点击fork把此模板代码拉取到自己的账号下</p><p> <strong>修改仓库名，绑定个人域名</strong><br>点击setting进入设置<br><img src="https://img-blog.csdnimg.cn/20200425200610888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改仓库名为自己的<em>github账号名.github.io</em>,然后点击rename<br><img src="https://img-blog.csdnimg.cn/20200425200942846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时在浏览器输入<em>github账号名.github.io</em>，如Looles.github.io<br><img src="https://img-blog.csdnimg.cn/20200425201135519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>绑定自己的域名，在github pages下找到custom domain在里面填写到自己申请的域名（并且需要在自己的域名设置里绑定自己github仓库的地址）<br><img src="https://img-blog.csdnimg.cn/20200425201352138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>此时还需要修改博客的配置才能变成自己的博客（此时打开网址内容的博客还仍是别人的内容，你只是复制粘贴到了自己github仓库下）</p><h2 id="网站结构"><a href="#网站结构" class="headerlink" title="网站结构"></a>网站结构</h2><p>修改之前我们了解一下jekyll网站的基础结构</p><pre><code>├── _config.yml├── _drafts|   ├── begin-with-the-crazy-ideas.textile|   └── on-simplicity-in-technology.markdown├── _includes|   ├── footer.html|   └── header.html├── _layouts|   ├── default.html|   └── post.html├── _posts|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile|   └── 2009-04-26-barcamp-boston-4-roundup.textile├── _data|   └── members.yml├── _site├── img└── index.html</code></pre><ul><li>_config.yml全局配置文件</li><li>_posts放置博客文章的文件夹</li><li>img存放图片的文件夹</li></ul><p>官方教程链接奉上<a href="http://jekyll.com.cn/docs/structure/">jekyll教程</a></p><h2 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h2><p>来到我们的仓库，找到_config.yml文件，这是网站的全局配置文件。</p><p><img src="https://img-blog.csdnimg.cn/20200425202151423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击修改<br><img src="https://img-blog.csdnimg.cn/20200425202231889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>一下具体讲解一下配置文件的内容</p><p>基础配置</p><pre><code># Site settingstitle: You Blog                     #你博客的标题SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题header-img: img/post-bg-rwd.jpg     #显示在首页的背景图片email: You@gmail.com    description: "You Blog"              #网站介绍keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址baseurl: ""      # 这个我们不用填写</code></pre><p>侧边栏</p><pre><code># Sidebar settingssidebar: true                           # 是否开启侧边栏.sidebar-about-description: "说点装逼的话。。。"sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g片</code></pre><p>社交平台：</p><pre><code># SNS settingsRSS: falseweibo_username:     usernamezhihu_username:     usernamegithub_username:    usernamefacebook_username:  usernamejianshu_username:   jianshu_id</code></pre><p>评论系统<br>采用了Gitalk评论插件（Disqus在国内加载较慢）<br>奉上给博客添加Gitalk评论链接<a href="http://qiubaiying.vip/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/">Gitalk评论教程</a></p><p>好友</p><pre><code>friends: [    {        title: "简书·BY",        href: "http://www.jianshu.com/u/e71990ada2fd"    },{        title: "Apple",        href: "https://apple.com"    },{        title: "Apple Developer",        href: "https://developer.apple.com/"    }]</code></pre><p>保存<br><img src="https://img-blog.csdnimg.cn/20200425202702255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再次进入主页<br><img src="https://img-blog.csdnimg.cn/20200425202725254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzI5Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>个人博客已搭建完成（还未完全更改为自己的配置）</p><p>写文章<br>可直接在github网站里写，对于轻车熟路的程序员来说，可使用Git管理自己的网站文件代码</p><p>创建<br>文章统一放到网站根目录下的_posts的文件夹里，且文件名为“日期+此博客标题”，中间用-连接。</p><p>本人也是初入博客写作，进步空间巨大，希望有见解的兄弟可以多多指出见解，期待一起进步。</p><p>感谢各位<br>                                        —来自还有头发的程序员Loole</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> github </tag>
             
         </tags>
       
