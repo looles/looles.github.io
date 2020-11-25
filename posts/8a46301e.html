@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="java中双端队列deque的用法, 臾昳, Loole">
+    <meta name="keywords" content="vue-element-admin路由介绍, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java中双端队列deque的用法 | Looles</title>
+    <title>vue-element-admin路由介绍 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java中双端队列deque的用法</h1>
+                    <h1 class="description center-align post-title">vue-element-admin路由介绍</h1>
                 </div>
             </div>
         </div>
@@ -542,16 +542,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
-                            </a>
-                        
-                            <a href="/tags/deque/">
-                                <span class="chip bg-color">deque</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -562,8 +558,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java/" class="post-category">
-                                java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -575,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-15
+                    2020-11-25
                 </div>
                 
 
@@ -591,37 +587,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Deque是一个线性collection，支持在两端插入和移除操作，名称deque是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数Deque实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。<br>此接口定义在双端队列两端访问元素的方法。提供插入，移除和检查元素的方法。每种方法都存在两种形式：一种形式在操作失败时抛出异常，另一种形式返回一个特殊值（null或者false，具体取决于操作）。插入操作的后一种形式是专为使用有容量限制的Deque实现设计的，在大多数实现中，插入操作不能失败。</p>
-<h2 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h2><ul>
-<li>ArrayDeque：基于数组实现的线性双向队列</li>
-<li>LinkedList：基于链表实现的链式双向队列</li>
-</ul>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
-<li>插入、删除、获取操作支持两种形式：抛出异常或者返回null或false</li>
-<li>既具有FIFO特点又具有LIFO特点，既是队列又是栈</li>
-<li>不推荐插入null元素，null作为特定返回值表示队列为空</li>
-<li>未定义基于元素相等的equals和hashCode</li>
-</ol>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol>
-<li><p>插入元素</p>
-<pre><code>    addFirst(): 向队头插入元素，如果元素为空，则发生NPE
-    addLast(): 向队尾插入元素，如果为空，则发生NPE
-    offerFirst(): 向队头插入元素，如果插入成功返回true，否则返回false
-    offerLast(): 向队尾插入元素，如果插入成功返回true，否则返回false</code></pre>
-</li>
-<li><p>移除元素</p>
-<pre><code>    removeFirst(): 返回并移除队头元素，如果该元素为null，则发生NoSuchElementException
-    removeLast()：返回并移除队尾元素，如果该元素是null，则发生NoSuchElementException
-    pollFirst(): 返回并移除队头元素，如果队列无元素，则返回null
-    pollLast(): 返回并移除队尾元素，如果队列无元素，则返回null</code></pre>
-</li>
-<li><p>获取元素</p>
-<pre><code>    getFirst(): 获取队头元素但不移除，如果队列无元素，则发生NoSuchElementException
-    getLast(): 获取队尾元素但不移除，如果队列无元素，则发生NoSuchElementException
-    peekFirst(): 获取队头元素但不移除，如果队列无元素，则返回null
-    peekLast(): 获取对微元素但不移除，如果队列无元素，则返回null</code></pre>
-</li>
-</ol>
+                <h1 id="路由和侧边栏"><a href="#路由和侧边栏" class="headerlink" title="路由和侧边栏"></a>路由和侧边栏</h1><p>路由和侧边栏是绑定在一起的，只有在@/router/index.js下面配置对应的路由，侧边栏就会动态的生成</p>
+<h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h2><pre><code class="javascript">// 当设置 true 的时候该路由不会在侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
+hidden: true // (默认 false)
+
+//当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
+redirect: 'noRedirect'
+
+// 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
+// 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
+// 若你想不管路由下面的 children 声明的个数都显示你的根路由
+// 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
+alwaysShow: true
+
+name: 'router-name' // 设定路由的名字，一定要填写不然使用&lt;keep-alive&gt;时会出现各种问题
+meta: {
+  roles: ['admin', 'editor'] // 设置该路由进入的权限，支持多个权限叠加
+  title: 'title' // 设置该路由在侧边栏和面包屑中展示的名字
+  icon: 'svg-name' // 设置该路由的图标，支持 svg-class，也支持 el-icon-x element-ui 的 icon
+  noCache: true // 如果设置为true，则不会被 &lt;keep-alive&gt; 缓存(默认 false)
+  breadcrumb: false //  如果设置为false，则不会在breadcrumb面包屑中显示(默认 true)
+  affix: true // 若果设置为true，它则会固定在tags-view中(默认 false)
+
+  // 当路由设置了该属性，则会高亮相对应的侧边栏。
+  // 这在某些场景非常有用，比如：一个文章的列表页路由为：/article/list
+  // 点击文章进入文章详情页，这时候路由为/article/1，但你想在侧边栏高亮文章列表的路由，就可以进行如下设置
+  activeMenu: '/article/list'
+}</code></pre>
+<p><strong>示例：</strong></p>
+<pre><code class="javascript">  {
+    path: '/',
+    component: Layout,
+    redirect: '/dashboard', // 重定向地址，在面包屑中点击会重定向去的地址
+     hiden: true,   //不在侧边栏显示，默认为false
+     alwaysShow: true,  // 一直显示根路由
+     meta: { roles:['admin', 'editor'] },  // 设置跟路由权限，子路由继承权限
+    children: [{
+      path: 'dashboard',
+      name: 'Dashboard',
+      component: () =&gt; import('@/views/dashboard/index'),
+      meta: { title: '首页', icon: 'dashboard' }    //title 设置路由侧边栏，面包屑显示的名字
+    }]
+  },</code></pre>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>两种路由： constantRoutes 和 asyncRoutes<br>constantRoutes ： 代表那些不需要动态判断权限的路由，如登录页，404等通用页面<br>asyncRoutes:  代表那些需求动态判断权限并通过addRoutes动态添加的页面</p>
+<h2 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h2><p>侧边栏基于element-ui的el-menu改造<br>侧边栏是通过读取路由并结合权限判断而动态生成的，而且还需要支持路由无线嵌套，所以使用了递归组件。侧边栏有两种形式：submenu和el-menu-item。<br>在sidebar中做好判断了，当你一个路由下面的children声明的路由大于1个时，自动变成嵌套的模式，如果子路由正好等于一个就会默认将子路由作为根路由显示在侧边栏中，若不想这样，可以在根路由中设置alwaysShow：true来取消这一特性</p>
+<h2 id="多级目录（嵌套路由）"><a href="#多级目录（嵌套路由）" class="headerlink" title="多级目录（嵌套路由）"></a>多级目录（嵌套路由）</h2><p>如果你的路由是多级目录，如本项目 @/views/nested 那样， 有三级路由嵌套的情况下，不要忘记还要手动在二级目录的根文件下添加一个 <router-view>。</router-view></p>
+<h2 id="新增页面"><a href="#新增页面" class="headerlink" title="新增页面"></a>新增页面</h2><p>首先在@/router/index.js中增加你需要添加的路由<br>如：新增一个example页面</p>
+<pre><code class="javascript">{
+  path: '/example',
+  component: Layout,
+  redirect: '/example/export-example',
+  name: 'example',
+  meta: {
+    title: '示例',
+    icon: 'excel'
+  },
+    children: [
+    {
+      path: 'export-example',
+      component: ()=&gt;import('example/exportExample'),
+      name: 'exportExample',
+      meta: { title: '示例子路由1' }
+    }
+  ]
+}</code></pre>
+<h2 id="新增view"><a href="#新增view" class="headerlink" title="新增view"></a>新增view</h2><p>新增完路由之后要在@/views 文件夹下创建相应的文件夹，一般一个路由对应一个文件，该模块的功能组件或者方法建议在本文件夹下创建一个utils或者components文件夹，各个功能模块维护自己的utils 或者components 组件</p>
+<h2 id="新增api"><a href="#新增api" class="headerlink" title="新增api"></a>新增api</h2><p>最后在@/api文件夹下创建本模块对应的api服务</p>
 
             </div>
             <hr/>
@@ -647,7 +678,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/5ece5ecc.html">http://looles.github.io/posts/5ece5ecc.html</a>
+                    <a href="http://looles.github.io/posts/8a46301e.html">http://looles.github.io/posts/8a46301e.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -685,16 +716,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
-                                </a>
-                            
-                                <a href="/tags/deque/">
-                                    <span class="chip bg-color">deque</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -864,17 +891,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/128470ac.html">
+                <a href="/posts/8a46301e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="LeetCode中移掉K位数字题解">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="vue-element-admin路由介绍">
                         
-                        <span class="card-title">LeetCode中移掉K位数字题解</span>
+                        <span class="card-title">vue-element-admin路由介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -884,30 +912,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -921,13 +950,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bb619e45.html">
+                <a href="/posts/45.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="LeetCode中按奇偶排序数组II题解">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo博客介绍">
                         
-                        <span class="card-title">LeetCode中按奇偶排序数组II题解</span>
+                        <span class="card-title">hexo博客介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -938,7 +967,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
                             </span>
                         <span class="publish-author">
                             
@@ -955,12 +984,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>

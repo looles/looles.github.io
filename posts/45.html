@@ -613,13 +613,12 @@
 </ol>
 <p>6.将hexo部署到github或者gitee<br>打开站点配置文件_config.yml<br> deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/YourgithubName/YourgithubName.github.io.git">https://github.com/YourgithubName/YourgithubName.github.io.git</a> // 仓库地址<br>  branch: master<br>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
 <p>npm install hexo-deployer-git –save</p>
-<ol start="7">
-<li><p>清除之前生成的文件<br>hexo clean</p>
-</li>
-<li><p>生成静态文章<br>hexo generate</p>
-</li>
+<p>##更新博客<br>7. 清除之前生成的文件（可有可无）<br>hexo clean</p>
+<ol start="8">
+<li>生成静态文章<br>hexo generate</li>
 </ol>
 <p>9.部署文章，更新到github或者gitee上<br>hexo deploy</p>
+<p>10.更新gitee仓库（最最最重要最最最坑的一步）<br>你是否遇到到本地hexo server后，博客已更新，hexo d后，git仓库也更新了代码，但是就是实际的博客没有国内更新–解决方法：<br>在gitee仓库中，点击服务，后点击gitee page，点击更新后，实际博客就会更新了</p>
 <h4 id="参与贡献"><a href="#参与贡献" class="headerlink" title="参与贡献"></a>参与贡献</h4><ol>
 <li> Fork 本仓库</li>
 <li> 新建 Feat_xxx 分支</li>
@@ -872,18 +871,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/45.html">
+                <a href="/posts/8a46301e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo博客介绍">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="vue-element-admin路由介绍">
                         
-                        <span class="card-title">hexo博客介绍</span>
+                        <span class="card-title">vue-element-admin路由介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -893,31 +891,30 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
