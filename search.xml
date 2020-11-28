@@ -4,25 +4,25 @@
   
     
     <entry>
-      <title>LeetCode中完全二叉树的节点个数</title>
-      <link href="posts/3ac22b3e.html"/>
-      <url>posts/3ac22b3e.html</url>
+      <title>垃圾分类小程序</title>
+      <link href="posts/100bd55d.html"/>
+      <url>posts/100bd55d.html</url>
       
         <content type="html"><![CDATA[<h1 id="gabage"><a href="#gabage" class="headerlink" title="gabage"></a>gabage</h1><p>微信小程序搜索“垃圾分类识别管理”<br>这是一款基于图像识别的垃圾分类的微信小程序，可以实现文字查询及拍照图像识别垃圾种类功能，旨在推广垃圾分类回收的意识以及宣传和帮助人们提高垃圾种类的判断，提高个人垃圾分类的素养。</p><h1 id="云开发"><a href="#云开发" class="headerlink" title="云开发"></a>云开发</h1><p>本项目基于微信小程序云开发，云开发提供了云数据库，云存储以及云函数三项功能。</p><ul><li>数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库</li><li>文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理</li><li>云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码</li></ul><h1 id="垃圾分类小程序"><a href="#垃圾分类小程序" class="headerlink" title="垃圾分类小程序"></a>垃圾分类小程序</h1><h2 id="小程序使用到的云开发内容"><a href="#小程序使用到的云开发内容" class="headerlink" title="小程序使用到的云开发内容"></a>小程序使用到的云开发内容</h2><p>云函数，云数据库：</p><ul><li>数据库：存储四种垃圾分类的相关垃圾数据，云数据库即可</li><li>云函数：获取百度通用物体图像识别库的accessToken<h2 id="需要修改为自己的key"><a href="#需要修改为自己的key" class="headerlink" title="需要修改为自己的key"></a>需要修改为自己的key</h2></li></ul><ol><li>小程序key 在文件project.config.json-&gt;appid 记住创建小程序的时候选择云开发</li><li>图像识别 主要做通用物体图像识别的cloudfunctions-&gt;baiduAccessToken-&gt;index-&gt;apiKey和secretKey<br>此处替换为：API Key 和 Secret Key</li></ol><h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><ol><li>没有自己部署云函数</li><li>数据库没有给与相应的权限，最好给最大权限</li><li>需要的key 配置错误。</li><li>没有创建数据库名称</li></ol>]]></content>
       
       
       <categories>
           
-          <category> LeetCode </category>
+          <category> 微信小程序 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> 前端 </tag>
             
-            <tag> 算法 </tag>
+            <tag> 微信小程序 </tag>
             
         </tags>
       
