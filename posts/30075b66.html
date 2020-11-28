@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="LeetCode中根据身高重建队列, 臾昳, Loole">
+    <meta name="keywords" content="LeetCode中四数相加 ||, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode中根据身高重建队列 | Looles</title>
+    <title>LeetCode中四数相加 || | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode中根据身高重建队列</h1>
+                    <h1 class="description center-align post-title">LeetCode中四数相加 ||</h1>
                 </div>
             </div>
         </div>
@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-16
+                    2020-11-27
                 </div>
                 
 
@@ -580,14 +580,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    338
+                    608
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -602,45 +602,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="406">
-<li>根据身高重建队列<br>假设有打乱顺序的一群人站成一个队列。 每个人由一个整数对(h, k)表示，其中h是这个人的身高，k是排在这个人前面且身高大于或等于h的人数。 编写一个算法来重建这个队列。</li>
+                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="454">
+<li>四数相加 II<br>给定四个包含整数的数组列表 A , B , C , D ,计算有多少个元组 (i, j, k, l) ，使得 A[i] + B[j] + C[k] + D[l] = 0。</li>
 </ol>
-<p>注意：<br>总人数少于1100人。</p>
-<p>示例</p>
+<p>为了使问题简单化，所有的 A, B, C, D 具有相同的长度 N，且 0 ≤ N ≤ 500 。所有整数的范围在 -228 到 228 - 1 之间，最终结果不会超过 231 - 1 。</p>
+<p>例如:</p>
 <pre><code class="java">输入:
-[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
+A = [ 1, 2]
+B = [-2,-1]
+C = [-1, 2]
+D = [ 0, 2]
 
 输出:
-[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</code></pre>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法一：先排序后插入</p>
-<p>首先数组按照先H高度降序，K升序排序，遍历排序后的数组，根据K插入到K的位置上。</p>
+2
+
+解释:
+两个元组如下:
+1. (0, 0, 0, 1) -&gt; A[0] + B[0] + C[0] + D[1] = 1 + (-2) + (-1) + 2 = 0
+2. (1, 1, 0, 0) -&gt; A[1] + B[1] + C[0] + D[0] = 2 + (-1) + (-1) + 0 = 0</code></pre>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：hashmap+分组</strong><br>思路：首先四个数组分为两部分，A和B一部分，C和D一部分，然后将A与B中的数组值相加，将相加的和值存入hashmap当做键，然后将和值的次数作为value值，也就是hashmap存放A与B数组中的元素相加的值与对应值出现的次数，然后在C和D数组的元素相加的值中遍历，将C与D的元素加值取反，判断是否位于hashmap中，若存在hashmap中，则将hashmap中对应值的的次数取出累加，最后得到的总值即为满足条件四元组的个数</p>
 <pre><code class="java">class Solution {
-
-    public int[][] reconstructQueue(int[][] people) {
-        // [7,0], [7,1], [6,1], [5,0], [5,2], [4,4]
-        // 再一个一个插入。
-        // [7,0]
-        // [7,0], [7,1]
-        // [7,0], [6,1], [7,1]
-        // [5,0], [7,0], [6,1], [7,1]
-        // [5,0], [7,0], [5,2], [6,1], [7,1]
-        // [5,0], [7,0], [5,2], [6,1], [4,4], [7,1]
-        Arrays.sort(people, new Comparator&lt;int[]&gt;(){
-            @Override
-            public int compare(int[] o1,int[] o2){
-                return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
+    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        // 计算满足条件四元组的个数
+        int sum = 0;
+        // 计算A与B数组中元素的加值
+        int pre = 0;
+        // 计算C与D数组中元素的加值
+        int next = 0;
+        // 存放A与B数组中的加值及对应值出现的次数
+        HashMap&lt;Integer,Integer&gt; hashmap = new HashMap&lt;&gt;();
+        // 遍历A与B数组，将值存入hashmap中
+        for(int i = 0; i &lt; A.length; i++){
+            for(int j = 0; j &lt; B.length; j++){
+                pre = A[i] + B[j];
+                hashmap.put(pre,hashmap.get(pre) == null ? 1 : hashmap.get(pre) + 1);
             }
-        });
-
-        LinkedList&lt;int[]&gt; list = new LinkedList&lt;&gt;();
-        for (int[] i : people) {
-            list.add(i[1], i);
         }
-
-        return list.toArray(new int[list.size()][2]);
+        // 遍历C与D数组，判断元素的加值取反是否存在hashmap中，若存在将对应值得次数取出，累加
+        for(int m = 0; m &lt; C.length; m++){
+            for(int n = 0; n &lt; D.length; n++){
+                next = C[m] + D[n];
+                if(hashmap.containsKey(-next)){
+                    sum += hashmap.get(-next);
+                }
+            }
+        }
+        return sum;            
     }
 }</code></pre>
-<p><strong>核心思想</strong>：高个子先站好位，矮个子插入到K位置上，前面肯定有K个高个子，矮个子再插入到前面也满足K的要求。</p>
+<p><strong>复杂度分析：</strong><br>    时间复杂度：O(N^2)，使用了两次二重循环<br>    空间复杂度：O(n^2)，使用哈希映射需要使用的空间。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>有什么不正确的地方还请各位小伙伴们提出，希望多多交流，在此不胜感激</p>
 
             </div>
             <hr/>
@@ -666,7 +677,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/49f79b1a.html">http://looles.github.io/posts/49f79b1a.html</a>
+                    <a href="http://looles.github.io/posts/30075b66.html">http://looles.github.io/posts/30075b66.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -883,13 +894,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/90889556.html">
+                <a href="/posts/3ac22b3e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="哈希表（散列表）理解">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode中完全二叉树的节点个数">
                         
-                        <span class="card-title">哈希表（散列表）理解</span>
+                        <span class="card-title">LeetCode中完全二叉树的节点个数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -900,14 +911,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -917,12 +928,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -936,13 +947,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/5ece5ecc.html">
+                <a href="/posts/6850b9f7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="java中双端队列deque的用法">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="LeetCode中最大间距">
                         
-                        <span class="card-title">java中双端队列deque的用法</span>
+                        <span class="card-title">LeetCode中最大间距</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -953,14 +964,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -970,16 +981,12 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/deque/">
-                        <span class="chip bg-color">deque</span>
                     </a>
                     
                 </div>
