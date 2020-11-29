@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="hexo博客介绍, 臾昳, Loole">
+    <meta name="keywords" content="java中split详解, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo博客介绍 | Looles</title>
+    <title>java中split详解 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo博客介绍</h1>
+                    <h1 class="description center-align post-title">java中split详解</h1>
                 </div>
             </div>
         </div>
@@ -542,12 +542,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -558,8 +554,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category">
-                                LeetCode
+                            <a href="/categories/java/" class="post-category">
+                                java
                             </a>
                         
                     </div>
@@ -571,7 +567,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-20
+                    2020-11-26
                 </div>
                 
 
@@ -580,14 +576,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -602,15 +598,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new "My New Post"</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>Java中split的用法<br>Java中的我们可以利用split把字符串按照指定的分割符进行分割，然后返回字符串数组，下面是string.split的用法实例及注意事项：<br>java.lang.string.split<br>split 方法<br>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。<br>stringObj.split([separator，[limit]])<br>stringObj<br>必选项。要被分解的 String 对象或文字,该对象不会被split方法修改。<br>separator<br>可选项。字符串或正则表达式对象，它标识了分隔字符串时使用的是一个还是多个字符。如果忽略该选项，返回包含整个字符串的单一元素数组。<br>limit<br>可选项。该值用来限制返回数组中的元素个数(也就是最多分割成几个数组元素,只有为正数时有影响)<br>split 方法的结果是一个字符串数组，在 stingObj 中每个出现 separator 的位置都要进行分解。separator不作为任何数组元素的部分返回。<br>示例1：</p>
+<pre><code class="java">      String str="Java string split test";
+      String[] strarray=str.split(" ");
+      for (int i = 0; i &lt; strarray.length; i++)
+          System.out.println(strarray[i]);
+将输出：
+Java
+string
+split
+test</code></pre>
+<p>示例2：</p>
+<pre><code class="java">      String str="Java string split test";
+      String[] strarray=str.split(" ",2);//使用limit，最多分割成2个字符串
+      for (int i = 0; i &lt; strarray.length; i++)
+          System.out.println(strarray[i]);
+将输出：
+Java
+string split test</code></pre>
+<p>示例3：</p>
+<pre><code class="java">      String str="192.168.0.1";
+      String[] strarray=str.split(".");
+      for (int i = 0; i &lt; strarray.length; i++)
+          System.out.println(strarray[i]);
+结果是什么也没输出,将split(".")改为split("\\."),将输出正确结果：
+192
+168
+0
+1</code></pre>
+<p>经验分享：<br>1、分隔符为“.”(无输出),“|”(不能得到正确结果)转义字符时,“*”,“+”时出错抛出异常,都必须在前面加必须得加”\“,如split(“\|”);<br>2、如果用”/“作为分隔,就得写成这样：String.split(“\//“),因为在Java中是用”//“来表示”/“的,字符串得写成这样：String Str=”a//b//c”;<br> 转义字符,必须得加”\“;<br>3、如果在一个字符串中有多个分隔符,可以用”|”作为连字符,比如：String str=”Java string-split#test”,可以用Str.split(“ |-|#”)把每个字符串分开;</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在java.lang包中有String.split()方法，返回是一个数组。</p>
+<p>使用时要注意参数如果是特殊符号的话要进行转义。</p>
+<p>　 1、“.”和“|”都是转义字符，必须得加”\“;<br>　　如果用“.”作为分隔的话，必须是如下写法：<br>String.split(“\.”),这样才能正确的分隔开，不能用String.split(“.”);<br>如果用“|”作为分隔的话，必须是如下写法：<br>String.split(“\|”),这样才能正确的分隔开，不能用String.split(“|”);</p>
+<p>　　2、如果在一个字符串中有多个分隔符，可以用“|”作为连字符，比如：“acount=? and uu =? or n=?”,把三个都分隔出来，可以用<br>　　String.split(“and|or”);</p>
+<p>　　3、public String[] split(String regex,int limit)根据匹配给定的正则表达式来拆分此字符串。<br>　　此方法返回的数组包含此字符串的每个子字符串，这些子字符串由另一个匹配给定的表达式的子字符串终止或由字符串结束来终止。数组中<br>　　的子字符串按它们在此字符串中的顺序排列。如果表达式不匹配输入的任何部分，则结果数组只具有一个元素，即此字符串。</p>
+<p>　　4、public string[] split(string regex)<br>　　这里的参数的名称是 regex ，也就是 regular expression （正则表达式）。这个参数并不是一个简单的分割用的字符，而是一个正则表达式，<br>他对一些特殊的字符可能会出现你预想不到的结果，比如测试下面的代码：</p>
+<p>（1） 用竖线 | 分隔字符串，你将得不到预期的结果</p>
+<pre><code class="java">String[] aa = "aaa|bbb|ccc".split("|"); //String[] aa = "aaa|bbb|ccc".split("\\|"); 这样才能得到正确的结果 for (int i = 0 ; i &lt;aa.length ; i++ ) { System.out.println("--"+aa); }</code></pre>
+<p>（2）用竖 * 分隔字符串运行将抛出java.util.regex.PatternSyntaxException异常，用加号 + 也是如此。<br>String[] aa = “aaa<em>bbb</em>ccc”.split(“<em>“); //String[] aa = “aaa|bbb|ccc”.split(“\</em>“); 这样才能得到正确的结果 for (int i = 0 ; i &lt;aa.length ; i++ ) { System.out.println(“–”+aa); }</p>
+<p>（3）显然，+ * 不是有效的模式匹配规则表达式，用”\*” “\+”转义后即可得到正确的结果。<br>（4） “|” 分隔串时虽然能够执行，但是却不是预期的目的，”\|”转义后即可得到正确的结果。<br>（5）还有如果想在串中使用””字符，则也需要转义.首先要表达”aaaa\bbbb”这个串就应该用”aaaa\bbbb”,如果要分隔就应该这样才能得到正确结果：<br>String[] aa = “aaa\bbb\bccc”.split(\\);<br>（6） 还有就是点号”.”，也要首先转义才能得到正确的结果。</p>
+<p>第一种方法：</p>
+<pre><code class="java">string s="abcdeabcdeabcde"; string[] sArray=s.Split('c') ; foreach(string i in sArray) Console.WriteLine(i.ToString());</code></pre>
+<p>输出下面的结果:</p>
+<pre><code class="java">ab
+deab
+deab
+de</code></pre>
+<p>第二种方法：<br>我们看到了结果是以一个指定的字符进行的分割。使用另一种构造方法对多个字符进行分割:</p>
+<pre><code class="java">string s="abcdeabcdeabcde"; string[] sArray1=s.Split(new char[3]{'c','d','e'}) ; foreach(string i in sArray1) Console.WriteLine(i.ToString());
+
+可以输出下面的结果：
+ab
+ab
+ab</code></pre>
 
             </div>
             <hr/>
@@ -636,7 +676,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/6a72f890.html">http://looles.github.io/posts/6a72f890.html</a>
+                    <a href="http://looles.github.io/posts/893a593d.html">http://looles.github.io/posts/893a593d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -674,12 +714,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -853,13 +889,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/13e6fe6a.html">
+                <a href="/posts/30075b66.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="使用Hbuilder X创建基于uni-app模板的微信小程序">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="LeetCode中四数相加 ||">
                         
-                        <span class="card-title">使用Hbuilder X创建基于uni-app模板的微信小程序</span>
+                        <span class="card-title">LeetCode中四数相加 ||</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -870,14 +906,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-category">
-                                    微信小程序
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -887,12 +923,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -906,13 +942,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/5c83b0d3.html">
+                <a href="/posts/6850b9f7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="搭建博客">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="LeetCode中最大间距">
                         
-                        <span class="card-title">搭建博客</span>
+                        <span class="card-title">LeetCode中最大间距</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -923,14 +959,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -940,20 +976,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
