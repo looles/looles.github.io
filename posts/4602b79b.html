@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="LeetCode中移动零题解, 臾昳, Loole">
+    <meta name="keywords" content="LeetCode中只出现一次的数字题解, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode中移动零题解 | Looles</title>
+    <title>LeetCode中只出现一次的数字题解 | Looles</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode中移动零题解</h1>
+                    <h1 class="description center-align post-title">LeetCode中只出现一次的数字题解</h1>
                 </div>
             </div>
         </div>
@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-08
+                    2020-12-05
                 </div>
                 
 
@@ -580,14 +580,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    460
+                    750
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -602,49 +602,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="283">
-<li>移动零<br>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。</li>
-</ol>
-<p>示例:</p>
-<p>输入: [0,1,0,3,12]<br>输出: [1,3,12,0,0]<br>说明:</p>
-<p>必须在原数组上操作，不能拷贝额外的数组。<br>尽量减少操作次数。</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>1、双指针<br>创建两个指针i和j，第一次遍历时，用指针j用来记录有多少非0元素，在每次遇到一个非0元素就将其往数组左边挪，j指针的下标指向了最后一个非0元素下标，第二次遍历时，起始位置从j开始，将剩下的元素全部置为0。</p>
-<pre><code class="java">class Solution {
-    public void moveZeroes(int[] nums) {
-        if(nums==null) {
-            return;
+                <h1 id="LeetCode中“只出现一次的数字”题解"><a href="#LeetCode中“只出现一次的数字”题解" class="headerlink" title="LeetCode中“只出现一次的数字”题解"></a>LeetCode中“只出现一次的数字”题解</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="136-只出现一次的数字"><a href="#136-只出现一次的数字" class="headerlink" title="136. 只出现一次的数字"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number/">136. 只出现一次的数字</a></h4><p>难度 简单 </p>
+<p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p><strong>说明：</strong></p>
+<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p><strong>示例 1:</strong></p>
+<pre><code class="java">输入: [2,2,1]
+输出: 1</code></pre>
+<p><strong>示例 2:</strong></p>
+<pre><code class="java">输入: [4,1,2,1,2]
+输出: 4</code></pre>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="方法一：暴力查找"><a href="#方法一：暴力查找" class="headerlink" title="方法一：暴力查找"></a><strong>方法一：暴力查找</strong></h3><p>两次循环，代码略</p>
+<h3 id="方法二：排序"><a href="#方法二：排序" class="headerlink" title="方法二：排序"></a><strong>方法二：排序</strong></h3><p>使用快速排序，复杂度O(nlogn)</p>
+<h3 id="方法三：hashmap哈希表"><a href="#方法三：hashmap哈希表" class="headerlink" title="方法三：hashmap哈希表"></a><strong>方法三：hashmap哈希表</strong></h3><pre><code class="java">class Solution {
+    public int singleNumber(int[] nums) {
+        // 创建hashmap，键为对应值在数组nums中出现的次数
+        HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        // 遍历数组,存入hashmap
+        for (int i = 0; i &lt; nums.length; i++) {
+            // 获取此值在hashmap中的次数
+            Integer count = map.get(nums[i]);
+            // 将count++，如果第一次出现，将count赋值为1
+            count = count == null ? 1 : ++count;
+            // 将其值及其对应出现次数存入hashmap中
+            map.put(nums[i], count);
         }
-        //第一次遍历的时候，j指针记录非0的个数，只要是非0的统统都赋给nums[j]
-        int j = 0;
-        for(int i=0;i&lt;nums.length;++i) {
-            if(nums[i]!=0) {
-                nums[j++] = nums[i];
+        // 遍历hashmap哈希表
+        for (Integer value : map.keySet()) {
+            // 如果出现次数为1，将对应值返回
+            Integer count = map.get(value);
+            if (count == 1) {
+                return value;
             }
         }
-        //非0元素统计完了，剩下的都是0了
-        //所以第二次遍历把末尾的元素都赋为0即可
-        for(int i=j;i&lt;nums.length;++i) {
-            nums[i] = 0;
-        }
+        return -1; // can't find it.
     }
-}    </code></pre>
-<p>2、快速排序<br>确定一个待分割的元素做中间点x,然后把所有小于等于x的元素放到x的左边，大于x的元素放到右边。<br>在此题中，用0当做这个中间点，把不等于0的放到中间点的左边（没说不能为负数，所以此处条件为不等于0），等于0的放到其右边。</p>
+}
+</code></pre>
+<h6 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h6><p>​            时间复杂度：O(n)</p>
+<p>​            空间复杂度：O(N)</p>
+<h3 id="方法四：异或运算"><a href="#方法四：异或运算" class="headerlink" title="方法四：异或运算"></a><strong>方法四：异或运算</strong></h3><h4 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a><strong>异或运算</strong></h4><h5 id="运算法则："><a href="#运算法则：" class="headerlink" title="运算法则："></a>运算法则：</h5><ol>
+<li><p>a ^ b = b ^ a</p>
+</li>
+<li><p>a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c;</p>
+</li>
+<li><p>d = a ^ b ^ c 可以推出 a = d ^ b ^ c.</p>
+</li>
+<li><p>a ^ b ^ a = b.</p>
+<h5 id="异或运算-1"><a href="#异或运算-1" class="headerlink" title="异或运算"></a>异或运算</h5><p>　1、异或是一个数学运算符。应用于逻辑运算。<br>　2、例如：真异或假的结果是真，假异或真的结果也是真，真异或真的结果是假，假异或假的结果是假。就是说两个值相 异结果为真。</p>
+<p><strong>n^0=n n^n=0，即任何数与0进行异或，为它本身，两个相同的数进行异或运算，会得到0。</strong></p>
+<p><strong>一道有意思的题目：</strong></p>
+<p>​        很多成对出现数字保存在磁盘文件中，注意成对的数字不一定是相邻的，如2, 5,3, 4, 7,3, 4, 2,5……，由于意外有一个数字消失了，如何尽快的找到是哪个数字消失了？ </p>
+<p>​        思路：由于有一个数字消失了，那必定有一个数只出现一次而且其它数字都出现了偶数次。用搜索来做就没必要了，利用异或运算的两个特性，代码与此题类似，同一问题</p>
+</li>
+</ol>
+<pre><code> ##### 特性
+
+ 1.自己与自己异或结果为0，
+
+ 2.异或满足 交换律。</code></pre>
 <pre><code class="java">class Solution {
-    public void moveZeroes(int[] nums) {
-        //两个指针i和j
-        int i = 0, j = 0;
-        if(nums == null) return;
-        for(i=0; i &lt; nums.length; i++){
-        //当前元素!=0，就把其交换到左边，等于0的交换到右边
-            if(nums[i] != 0){
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
-                j++;
-            }
+    public int singleNumber(int[] nums) {
+        // 初始化res 为 nums[0] 
+        int res = nums[0];
+        // 遍历数组，依次进行异或运算，由于异或运算具有交换性，所以最后的结果即为出现一次的数与0异或
+        for(int i = 1; i &lt; nums.length; i++){
+            res ^= nums[i];
         }
+        // 返回此数
+        return res;
     }
 }</code></pre>
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>​        时间复杂度：O(N)</p>
+<p>​        空间复杂度：O(1)</p>
 
             </div>
             <hr/>
@@ -670,7 +700,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://looles.github.io/posts/1438972c.html">http://looles.github.io/posts/1438972c.html</a>
+                    <a href="http://looles.github.io/posts/4602b79b.html">http://looles.github.io/posts/4602b79b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1150,13 +1180,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/79f75a73.html">
+                <a href="/posts/7664a6eb.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="LeetCode中最接近原点的k个点题解">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode中任务调度器题解">
                         
-                        <span class="card-title">LeetCode中最接近原点的k个点题解</span>
+                        <span class="card-title">LeetCode中任务调度器题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1167,7 +1197,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
                         </span>
                         <span class="publish-author">
                             
@@ -1203,13 +1233,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/50e4c20e.html">
+                <a href="/posts/50a39ae0.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="LeetCode中二叉树的前序、中序、后序遍历题解">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Typora+picGo+Gitee管理图床">
                         
-                        <span class="card-title">LeetCode中二叉树的前序、中序、后序遍历题解</span>
+                        <span class="card-title">Typora+picGo+Gitee管理图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1220,14 +1250,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="post-category">
+                                    常用软件
                                 </a>
                             
                             
@@ -1237,12 +1267,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">常用软件</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
+                        <span class="chip bg-color">图床</span>
                     </a>
                     
                 </div>
