@@ -472,11 +472,11 @@
                 
                 
                 
-                <a href="/categories/hexo/" title="hexo: 2">
+                <a href="/categories/hexo/" title="hexo: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">hexo
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -517,11 +517,11 @@
                 </a>
                 
                 
-                <a href="/categories/LeetCode/" title="LeetCode: 26">
+                <a href="/categories/LeetCode/" title="LeetCode: 25">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F8F9F9;">LeetCode
-                        <span class="tag-length">26</span>
+                        <span class="tag-length">25</span>
                     </span>
                 </a>
                 
@@ -604,7 +604,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"hexo","max":27},{"name":"微信小程序","max":27},{"name":"linux","max":27},{"name":"springboot","max":27},{"name":"嵌入式","max":27},{"name":"LeetCode","max":27},{"name":"java","max":27},{"name":"算法","max":27},{"name":"前端","max":27},{"name":"常用软件","max":27}],
+            indicator: [{"name":"hexo","max":26},{"name":"微信小程序","max":26},{"name":"linux","max":26},{"name":"springboot","max":26},{"name":"嵌入式","max":26},{"name":"LeetCode","max":26},{"name":"java","max":26},{"name":"算法","max":26},{"name":"前端","max":26},{"name":"常用软件","max":26}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -615,7 +615,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [2,2,3,1,1,26,3,1,1,2],
+                    value : [3,2,3,1,1,25,3,1,1,2],
                     name : '文章分类数量'
                 }
             ]
@@ -645,7 +645,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.6k</span>&nbsp;字
+                class="white-color">42.4k</span>&nbsp;字
             
             
             
@@ -751,6 +751,12 @@ $(function () {
         }
     </script>
     <script src="/js/cursor.js"></script>
+    <script type="text/javascript">
+        var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = " Don't go!", clearTimeout(st)) : (document.title = " Welcome to loole's blog", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+        })
+    </script>
 
     <!-- Baidu Analytics -->
 

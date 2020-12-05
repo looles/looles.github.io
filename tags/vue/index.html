@@ -471,11 +471,11 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 2">
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="博客" style="background-color: #F9EBEA;">博客
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -606,6 +606,15 @@
                 </a>
                 
                 
+                <a href="/tags/webstorm/" title="webstorm: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="webstorm" style="background-color: #85C1E9;">webstorm
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" title="常用软件: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -623,15 +632,6 @@
                     </span>
                 </a>
                 
-                
-                <a href="/tags/webstorm/" title="webstorm: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="webstorm" style="background-color: #85C1E9;">webstorm
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
             </div>
         </div>
     </div>
@@ -643,7 +643,7 @@
         <div class="row tags-posts">
             
             
-            <div class="article tag-post col s12 m6 l4" data-tags="vue, 常用软件, webstorm" data-aos="fade-up">
+            <div class="article tag-post col s12 m6 l4" data-tags="vue, webstorm, 常用软件" data-aos="fade-up">
                 <div class="card">
                     <a href="/posts/96bfb740.html">
                         <div class="card-image tag-image">
@@ -728,7 +728,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.6k</span>&nbsp;字
+                class="white-color">42.4k</span>&nbsp;字
             
             
             
@@ -834,6 +834,12 @@ $(function () {
         }
     </script>
     <script src="/js/cursor.js"></script>
+    <script type="text/javascript">
+        var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = " Don't go!", clearTimeout(st)) : (document.title = " Welcome to loole's blog", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+        })
+    </script>
 
     <!-- Baidu Analytics -->
 

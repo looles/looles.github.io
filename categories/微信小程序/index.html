@@ -472,11 +472,11 @@
                 
                 
                 
-                <a href="/categories/hexo/" title="hexo: 2">
+                <a href="/categories/hexo/" title="hexo: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">hexo
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -517,11 +517,11 @@
                 </a>
                 
                 
-                <a href="/categories/LeetCode/" title="LeetCode: 26">
+                <a href="/categories/LeetCode/" title="LeetCode: 25">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F8F9F9;">LeetCode
-                        <span class="tag-length">26</span>
+                        <span class="tag-length">25</span>
                     </span>
                 </a>
                 
@@ -698,7 +698,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.6k</span>&nbsp;字
+                class="white-color">42.4k</span>&nbsp;字
             
             
             
@@ -804,6 +804,12 @@ $(function () {
         }
     </script>
     <script src="/js/cursor.js"></script>
+    <script type="text/javascript">
+        var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = " Don't go!", clearTimeout(st)) : (document.title = " Welcome to loole's blog", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+        })
+    </script>
 
     <!-- Baidu Analytics -->
 
