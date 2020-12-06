@@ -580,7 +580,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    750
+                    1k
                 </div>
                 
 
@@ -612,7 +612,12 @@
 <p><strong>示例 2:</strong></p>
 <pre><code class="java">输入: [4,1,2,1,2]
 输出: 4</code></pre>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="方法一：暴力查找"><a href="#方法一：暴力查找" class="headerlink" title="方法一：暴力查找"></a><strong>方法一：暴力查找</strong></h3><p>两次循环，代码略</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h3><p>这题拿到手，第一反应是用hash表，没有思考细节，只是觉得hash表肯定是可以搞定的，但是空间复杂度是 O(n)O(n)，不满足题意。</p>
+<p>接着开始思考，如何才能做到空间复杂度是 O(1)O(1) 呢？</p>
+<p>心想，如果使用暴力破解法，每次从数组中取一个数，记为number，然后从剩下的数中查找，如果找不到，则number即为要找的那个数。这种解法时间复杂度是 O(n^2)O(n2)。</p>
+<p>如何能把时间复杂度降到 O(n)O(n)，有两个突破点：</p>
+<p>暴力解法做了很多重复的工作<br>要充分利用题目的已有信息<br>通过第二点，找到了一个很重要的信息：除了某个元素只出现一次以外，其余每个元素均出现两次——异或运算，异或运算会把出现两次的值异或为0剩下的即为唯一值与0异或，还是这个唯一值</p>
+<h3 id="方法一：暴力查找"><a href="#方法一：暴力查找" class="headerlink" title="方法一：暴力查找"></a><strong>方法一：暴力查找</strong></h3><p>两次循环，代码略</p>
 <h3 id="方法二：排序"><a href="#方法二：排序" class="headerlink" title="方法二：排序"></a><strong>方法二：排序</strong></h3><p>使用快速排序，复杂度O(nlogn)</p>
 <h3 id="方法三：hashmap哈希表"><a href="#方法三：hashmap哈希表" class="headerlink" title="方法三：hashmap哈希表"></a><strong>方法三：hashmap哈希表</strong></h3><pre><code class="java">class Solution {
     public int singleNumber(int[] nums) {
@@ -1180,13 +1185,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/7664a6eb.html">
+                <a href="/posts/78b77a8b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode中任务调度器题解">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode中只杨辉三角题解">
                         
-                        <span class="card-title">LeetCode中任务调度器题解</span>
+                        <span class="card-title">LeetCode中只杨辉三角题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1197,7 +1202,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-06
                         </span>
                         <span class="publish-author">
                             
@@ -1233,13 +1238,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/50a39ae0.html">
+                <a href="/posts/7664a6eb.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Typora+picGo+Gitee管理图床">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode中任务调度器题解">
                         
-                        <span class="card-title">Typora+picGo+Gitee管理图床</span>
+                        <span class="card-title">LeetCode中任务调度器题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1250,14 +1255,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    常用软件
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -1267,12 +1272,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">常用软件</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                        <span class="chip bg-color">图床</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1428,7 +1433,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.4k</span>&nbsp;字
+                class="white-color">45.4k</span>&nbsp;字
             
             
             
