@@ -274,11 +274,11 @@
     
     
     <entry>
-      <title>LeetCode中任务调度器题解</title>
-      <link href="posts/7664a6eb.html"/>
-      <url>posts/7664a6eb.html</url>
+      <title>LeetCode中只出现一次的数字题解</title>
+      <link href="posts/4602b79b.html"/>
+      <url>posts/4602b79b.html</url>
       
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="621-任务调度器"><a href="#621-任务调度器" class="headerlink" title="621. 任务调度器"></a><a href="https://leetcode-cn.com/problems/task-scheduler/">621. 任务调度器</a></h4><p>难度 中等</p><p>给你一个用字符数组 <code>tasks</code> 表示的 CPU 需要执行的任务列表。其中每个字母表示一种不同种类的任务。任务可以以任意顺序执行，并且每个任务都可以在 1 个单位时间内执行完。在任何一个单位时间，CPU 可以完成一个任务，或者处于待命状态。</p><p>然而，两个 <strong>相同种类</strong> 的任务之间必须有长度为整数 <code>n</code> 的冷却时间，因此至少有连续 <code>n</code> 个单位时间内 CPU 在执行不同的任务，或者在待命状态。</p><p>你需要计算完成所有任务所需要的 <strong>最短时间</strong> 。</p><p><strong>示例 1：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","B","B","B"], n = 2输出：8解释：A -&gt; B -&gt; (待命) -&gt; A -&gt; B -&gt; (待命) -&gt; A -&gt; B     在本示例中，两个相同类型任务之间必须间隔长度为 n = 2 的冷却时间，而执行一个任务只需要一个单位时间，所以中间出现了（待命）状态。 </code></pre><p><strong>示例 2：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","B","B","B"], n = 0输出：6解释：在这种情况下，任何大小为 6 的排列都可以满足要求，因为 n = 0["A","A","A","B","B","B"]["A","B","A","B","A","B"]["B","B","B","A","A","A"]...诸如此类</code></pre><p><strong>示例 3：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2输出：16解释：一种可能的解决方案是：     A -&gt; B -&gt; C -&gt; A -&gt; D -&gt; E -&gt; A -&gt; F -&gt; G -&gt; A -&gt; (待命) -&gt; (待命) -&gt; A -&gt; (待命) -&gt; (待命) -&gt; A</code></pre><p><strong>提示：</strong></p><ul><li><code>1 &lt;= task.length &lt;= 104</code></li><li><code>tasks[i]</code> 是大写英文字母</li><li><code>n</code> 的取值范围为 <code>[0, 100]</code></li></ul><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>思路： </p><p>  * 1、将任务按类型分组，正好A-Z用一个int[26]保存任务类型个数</p><p>   * 2、对数组进行排序，优先排列个数（count）最大的任务，</p><p>   *   如题得到的时间至少为 retCount =（count-1）* (n+1) + 1 ==&gt; A-&gt;X-&gt;X-&gt;A-&gt;X-&gt;X-&gt;A(X为其他任务或者待命)</p><p>   * 3、若出现多个频率相同且都是最高的任务时，上式中的1为频率最高的不同任务的个数maxCount</p><p>   *   此时公式为 retCount = (count - 1) * (n + 1) + maxCount</p><p>   * 4、如果空位都插满之后还有任务，那就随便在这些间隔里面插入就可以，因为间隔长度肯定会大于n，在这种情况下就是任务的总数是最小所需时间</p><pre><code class="java">class Solution {       /**     * 解题思路：     * 1、将任务按类型分组，正好A-Z用一个int[26]保存任务类型个数     * 2、对数组进行排序，优先排列个数（count）最大的任务，     *      如题得到的时间至少为 retCount =（count-1）* (n+1) + 1 ==&gt; A-&gt;X-&gt;X-&gt;A-&gt;X-&gt;X-&gt;A(X为其他任务或者待命)     * 3、若出现多个频率相同且都是最高的任务时，上式中的1为频率最高的不同任务的个数maxCount     *      此时公式为 retCount = (count - 1) * (n + 1) + maxCount     * 4、如果空位都插满之后还有任务，那就随便在这些间隔里面插入就可以，因为间隔长度肯定会大于n，在这种情况下就是任务的总数是最小所需时间     *     * @param tasks     * @param n     * @return     */    public int leastInterval(char[] tasks, int n) {        if (tasks.length &lt;= 1 || n &lt; 1){            return tasks.length;        }         int[] counts = new int[26];         // 统计数组中每个字母的词频        for (int i = 0; i &lt; tasks.length; i++) {            counts[tasks[i] - 'A']++;        }        // 按照字频生序排序        Arrays.sort(counts);        int maxCount = 0;        // 计算词频最高的一共有多少        for(int i = 25; i &gt;= 0 &amp;&amp; counts[i] == counts[25]; i--) {            maxCount++;        }        // 根据公式计算        int retCount = (counts[25] - 1) * (n + 1) + maxCount;        //返回公式计算的值与数组长度的值的 最大值        return Math.max(retCount, tasks.length);    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="LeetCode中“只出现一次的数字”题解"><a href="#LeetCode中“只出现一次的数字”题解" class="headerlink" title="LeetCode中“只出现一次的数字”题解"></a>LeetCode中“只出现一次的数字”题解</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="136-只出现一次的数字"><a href="#136-只出现一次的数字" class="headerlink" title="136. 只出现一次的数字"></a><a href="https://leetcode-cn.com/problems/single-number/">136. 只出现一次的数字</a></h4><p>难度 简单 </p><p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p><strong>说明：</strong></p><p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p><p><strong>示例 1:</strong></p><pre><code class="java">输入: [2,2,1]输出: 1</code></pre><p><strong>示例 2:</strong></p><pre><code class="java">输入: [4,1,2,1,2]输出: 4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h3><p>这题拿到手，第一反应是用hash表，没有思考细节，只是觉得hash表肯定是可以搞定的，但是空间复杂度是 O(n)O(n)，不满足题意。</p><p>接着开始思考，如何才能做到空间复杂度是 O(1)O(1) 呢？</p><p>心想，如果使用暴力破解法，每次从数组中取一个数，记为number，然后从剩下的数中查找，如果找不到，则number即为要找的那个数。这种解法时间复杂度是 O(n^2)O(n2)。</p><p>如何能把时间复杂度降到 O(n)O(n)，有两个突破点：</p><p>暴力解法做了很多重复的工作<br>要充分利用题目的已有信息<br>通过第二点，找到了一个很重要的信息：除了某个元素只出现一次以外，其余每个元素均出现两次——异或运算，异或运算会把出现两次的值异或为0剩下的即为唯一值与0异或，还是这个唯一值</p><h3 id="方法一：暴力查找"><a href="#方法一：暴力查找" class="headerlink" title="方法一：暴力查找"></a><strong>方法一：暴力查找</strong></h3><p>两次循环，代码略</p><h3 id="方法二：排序"><a href="#方法二：排序" class="headerlink" title="方法二：排序"></a><strong>方法二：排序</strong></h3><p>使用快速排序，复杂度O(nlogn)</p><h3 id="方法三：hashmap哈希表"><a href="#方法三：hashmap哈希表" class="headerlink" title="方法三：hashmap哈希表"></a><strong>方法三：hashmap哈希表</strong></h3><pre><code class="java">class Solution {    public int singleNumber(int[] nums) {        // 创建hashmap，键为对应值在数组nums中出现的次数        HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();        // 遍历数组,存入hashmap        for (int i = 0; i &lt; nums.length; i++) {            // 获取此值在hashmap中的次数            Integer count = map.get(nums[i]);            // 将count++，如果第一次出现，将count赋值为1            count = count == null ? 1 : ++count;            // 将其值及其对应出现次数存入hashmap中            map.put(nums[i], count);        }        // 遍历hashmap哈希表        for (Integer value : map.keySet()) {            // 如果出现次数为1，将对应值返回            Integer count = map.get(value);            if (count == 1) {                return value;            }        }        return -1; // can't find it.    }}</code></pre><h6 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h6><p>​            时间复杂度：O(n)</p><p>​            空间复杂度：O(N)</p><h3 id="方法四：异或运算"><a href="#方法四：异或运算" class="headerlink" title="方法四：异或运算"></a><strong>方法四：异或运算</strong></h3><h4 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a><strong>异或运算</strong></h4><h5 id="运算法则："><a href="#运算法则：" class="headerlink" title="运算法则："></a>运算法则：</h5><ol><li><p>a ^ b = b ^ a</p></li><li><p>a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c;</p></li><li><p>d = a ^ b ^ c 可以推出 a = d ^ b ^ c.</p></li><li><p>a ^ b ^ a = b.</p><h5 id="异或运算-1"><a href="#异或运算-1" class="headerlink" title="异或运算"></a>异或运算</h5><p>　1、异或是一个数学运算符。应用于逻辑运算。<br>　2、例如：真异或假的结果是真，假异或真的结果也是真，真异或真的结果是假，假异或假的结果是假。就是说两个值相 异结果为真。</p><p><strong>n^0=n n^n=0，即任何数与0进行异或，为它本身，两个相同的数进行异或运算，会得到0。</strong></p><p><strong>一道有意思的题目：</strong></p><p>​        很多成对出现数字保存在磁盘文件中，注意成对的数字不一定是相邻的，如2, 5,3, 4, 7,3, 4, 2,5……，由于意外有一个数字消失了，如何尽快的找到是哪个数字消失了？ </p><p>​        思路：由于有一个数字消失了，那必定有一个数只出现一次而且其它数字都出现了偶数次。用搜索来做就没必要了，利用异或运算的两个特性，代码与此题类似，同一问题</p></li></ol><pre><code> ##### 特性 1.自己与自己异或结果为0， 2.异或满足 交换律。</code></pre><pre><code class="java">class Solution {    public int singleNumber(int[] nums) {        // 初始化res 为 nums[0]         int res = nums[0];        // 遍历数组，依次进行异或运算，由于异或运算具有交换性，所以最后的结果即为出现一次的数与0异或        for(int i = 1; i &lt; nums.length; i++){            res ^= nums[i];        }        // 返回此数        return res;    }}</code></pre><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>​        时间复杂度：O(N)</p><p>​        空间复杂度：O(1)</p>]]></content>
       
       
       <categories>
@@ -301,11 +301,11 @@
     
     
     <entry>
-      <title>LeetCode中只出现一次的数字题解</title>
-      <link href="posts/4602b79b.html"/>
-      <url>posts/4602b79b.html</url>
+      <title>LeetCode中任务调度器题解</title>
+      <link href="posts/7664a6eb.html"/>
+      <url>posts/7664a6eb.html</url>
       
-        <content type="html"><![CDATA[<h1 id="LeetCode中“只出现一次的数字”题解"><a href="#LeetCode中“只出现一次的数字”题解" class="headerlink" title="LeetCode中“只出现一次的数字”题解"></a>LeetCode中“只出现一次的数字”题解</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="136-只出现一次的数字"><a href="#136-只出现一次的数字" class="headerlink" title="136. 只出现一次的数字"></a><a href="https://leetcode-cn.com/problems/single-number/">136. 只出现一次的数字</a></h4><p>难度 简单 </p><p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p><strong>说明：</strong></p><p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p><p><strong>示例 1:</strong></p><pre><code class="java">输入: [2,2,1]输出: 1</code></pre><p><strong>示例 2:</strong></p><pre><code class="java">输入: [4,1,2,1,2]输出: 4</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h3><p>这题拿到手，第一反应是用hash表，没有思考细节，只是觉得hash表肯定是可以搞定的，但是空间复杂度是 O(n)O(n)，不满足题意。</p><p>接着开始思考，如何才能做到空间复杂度是 O(1)O(1) 呢？</p><p>心想，如果使用暴力破解法，每次从数组中取一个数，记为number，然后从剩下的数中查找，如果找不到，则number即为要找的那个数。这种解法时间复杂度是 O(n^2)O(n2)。</p><p>如何能把时间复杂度降到 O(n)O(n)，有两个突破点：</p><p>暴力解法做了很多重复的工作<br>要充分利用题目的已有信息<br>通过第二点，找到了一个很重要的信息：除了某个元素只出现一次以外，其余每个元素均出现两次——异或运算，异或运算会把出现两次的值异或为0剩下的即为唯一值与0异或，还是这个唯一值</p><h3 id="方法一：暴力查找"><a href="#方法一：暴力查找" class="headerlink" title="方法一：暴力查找"></a><strong>方法一：暴力查找</strong></h3><p>两次循环，代码略</p><h3 id="方法二：排序"><a href="#方法二：排序" class="headerlink" title="方法二：排序"></a><strong>方法二：排序</strong></h3><p>使用快速排序，复杂度O(nlogn)</p><h3 id="方法三：hashmap哈希表"><a href="#方法三：hashmap哈希表" class="headerlink" title="方法三：hashmap哈希表"></a><strong>方法三：hashmap哈希表</strong></h3><pre><code class="java">class Solution {    public int singleNumber(int[] nums) {        // 创建hashmap，键为对应值在数组nums中出现的次数        HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();        // 遍历数组,存入hashmap        for (int i = 0; i &lt; nums.length; i++) {            // 获取此值在hashmap中的次数            Integer count = map.get(nums[i]);            // 将count++，如果第一次出现，将count赋值为1            count = count == null ? 1 : ++count;            // 将其值及其对应出现次数存入hashmap中            map.put(nums[i], count);        }        // 遍历hashmap哈希表        for (Integer value : map.keySet()) {            // 如果出现次数为1，将对应值返回            Integer count = map.get(value);            if (count == 1) {                return value;            }        }        return -1; // can't find it.    }}</code></pre><h6 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h6><p>​            时间复杂度：O(n)</p><p>​            空间复杂度：O(N)</p><h3 id="方法四：异或运算"><a href="#方法四：异或运算" class="headerlink" title="方法四：异或运算"></a><strong>方法四：异或运算</strong></h3><h4 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a><strong>异或运算</strong></h4><h5 id="运算法则："><a href="#运算法则：" class="headerlink" title="运算法则："></a>运算法则：</h5><ol><li><p>a ^ b = b ^ a</p></li><li><p>a ^ b ^ c = a ^ (b ^ c) = (a ^ b) ^ c;</p></li><li><p>d = a ^ b ^ c 可以推出 a = d ^ b ^ c.</p></li><li><p>a ^ b ^ a = b.</p><h5 id="异或运算-1"><a href="#异或运算-1" class="headerlink" title="异或运算"></a>异或运算</h5><p>　1、异或是一个数学运算符。应用于逻辑运算。<br>　2、例如：真异或假的结果是真，假异或真的结果也是真，真异或真的结果是假，假异或假的结果是假。就是说两个值相 异结果为真。</p><p><strong>n^0=n n^n=0，即任何数与0进行异或，为它本身，两个相同的数进行异或运算，会得到0。</strong></p><p><strong>一道有意思的题目：</strong></p><p>​        很多成对出现数字保存在磁盘文件中，注意成对的数字不一定是相邻的，如2, 5,3, 4, 7,3, 4, 2,5……，由于意外有一个数字消失了，如何尽快的找到是哪个数字消失了？ </p><p>​        思路：由于有一个数字消失了，那必定有一个数只出现一次而且其它数字都出现了偶数次。用搜索来做就没必要了，利用异或运算的两个特性，代码与此题类似，同一问题</p></li></ol><pre><code> ##### 特性 1.自己与自己异或结果为0， 2.异或满足 交换律。</code></pre><pre><code class="java">class Solution {    public int singleNumber(int[] nums) {        // 初始化res 为 nums[0]         int res = nums[0];        // 遍历数组，依次进行异或运算，由于异或运算具有交换性，所以最后的结果即为出现一次的数与0异或        for(int i = 1; i &lt; nums.length; i++){            res ^= nums[i];        }        // 返回此数        return res;    }}</code></pre><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>​        时间复杂度：O(N)</p><p>​        空间复杂度：O(1)</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="621-任务调度器"><a href="#621-任务调度器" class="headerlink" title="621. 任务调度器"></a><a href="https://leetcode-cn.com/problems/task-scheduler/">621. 任务调度器</a></h4><p>难度 中等</p><p>给你一个用字符数组 <code>tasks</code> 表示的 CPU 需要执行的任务列表。其中每个字母表示一种不同种类的任务。任务可以以任意顺序执行，并且每个任务都可以在 1 个单位时间内执行完。在任何一个单位时间，CPU 可以完成一个任务，或者处于待命状态。</p><p>然而，两个 <strong>相同种类</strong> 的任务之间必须有长度为整数 <code>n</code> 的冷却时间，因此至少有连续 <code>n</code> 个单位时间内 CPU 在执行不同的任务，或者在待命状态。</p><p>你需要计算完成所有任务所需要的 <strong>最短时间</strong> 。</p><p><strong>示例 1：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","B","B","B"], n = 2输出：8解释：A -&gt; B -&gt; (待命) -&gt; A -&gt; B -&gt; (待命) -&gt; A -&gt; B     在本示例中，两个相同类型任务之间必须间隔长度为 n = 2 的冷却时间，而执行一个任务只需要一个单位时间，所以中间出现了（待命）状态。 </code></pre><p><strong>示例 2：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","B","B","B"], n = 0输出：6解释：在这种情况下，任何大小为 6 的排列都可以满足要求，因为 n = 0["A","A","A","B","B","B"]["A","B","A","B","A","B"]["B","B","B","A","A","A"]...诸如此类</code></pre><p><strong>示例 3：</strong></p><pre><code class="java">输入：tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2输出：16解释：一种可能的解决方案是：     A -&gt; B -&gt; C -&gt; A -&gt; D -&gt; E -&gt; A -&gt; F -&gt; G -&gt; A -&gt; (待命) -&gt; (待命) -&gt; A -&gt; (待命) -&gt; (待命) -&gt; A</code></pre><p><strong>提示：</strong></p><ul><li><code>1 &lt;= task.length &lt;= 104</code></li><li><code>tasks[i]</code> 是大写英文字母</li><li><code>n</code> 的取值范围为 <code>[0, 100]</code></li></ul><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>思路： </p><p>  * 1、将任务按类型分组，正好A-Z用一个int[26]保存任务类型个数</p><p>   * 2、对数组进行排序，优先排列个数（count）最大的任务，</p><p>   *   如题得到的时间至少为 retCount =（count-1）* (n+1) + 1 ==&gt; A-&gt;X-&gt;X-&gt;A-&gt;X-&gt;X-&gt;A(X为其他任务或者待命)</p><p>   * 3、若出现多个频率相同且都是最高的任务时，上式中的1为频率最高的不同任务的个数maxCount</p><p>   *   此时公式为 retCount = (count - 1) * (n + 1) + maxCount</p><p>   * 4、如果空位都插满之后还有任务，那就随便在这些间隔里面插入就可以，因为间隔长度肯定会大于n，在这种情况下就是任务的总数是最小所需时间</p><pre><code class="java">class Solution {       /**     * 解题思路：     * 1、将任务按类型分组，正好A-Z用一个int[26]保存任务类型个数     * 2、对数组进行排序，优先排列个数（count）最大的任务，     *      如题得到的时间至少为 retCount =（count-1）* (n+1) + 1 ==&gt; A-&gt;X-&gt;X-&gt;A-&gt;X-&gt;X-&gt;A(X为其他任务或者待命)     * 3、若出现多个频率相同且都是最高的任务时，上式中的1为频率最高的不同任务的个数maxCount     *      此时公式为 retCount = (count - 1) * (n + 1) + maxCount     * 4、如果空位都插满之后还有任务，那就随便在这些间隔里面插入就可以，因为间隔长度肯定会大于n，在这种情况下就是任务的总数是最小所需时间     *     * @param tasks     * @param n     * @return     */    public int leastInterval(char[] tasks, int n) {        if (tasks.length &lt;= 1 || n &lt; 1){            return tasks.length;        }         int[] counts = new int[26];         // 统计数组中每个字母的词频        for (int i = 0; i &lt; tasks.length; i++) {            counts[tasks[i] - 'A']++;        }        // 按照字频生序排序        Arrays.sort(counts);        int maxCount = 0;        // 计算词频最高的一共有多少        for(int i = 25; i &gt;= 0 &amp;&amp; counts[i] == counts[25]; i--) {            maxCount++;        }        // 根据公式计算        int retCount = (counts[25] - 1) * (n + 1) + maxCount;        //返回公式计算的值与数组长度的值的 最大值        return Math.max(retCount, tasks.length);    }}</code></pre>]]></content>
       
       
       <categories>
@@ -427,11 +427,11 @@
       
         <tags>
             
+            <tag> 前端 </tag>
+            
             <tag> 博客 </tag>
             
             <tag> hexo </tag>
-            
-            <tag> 前端 </tag>
             
         </tags>
       
@@ -483,9 +483,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> 微信小程序 </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -962,6 +962,33 @@
     
     
     <entry>
+      <title>LeetCode中移掉K位数字题解</title>
+      <link href="posts/128470ac.html"/>
+      <url>posts/128470ac.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="402"><li>移掉K位数字<br>给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。</li></ol><p>注意:</p><pre><code class="java">num 的长度小于 10002 且 ≥ k。num 不会包含任何前导零。</code></pre><p>示例 1 :</p><pre><code class="java">输入: num = "1432219", k = 3输出: "1219"解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。</code></pre><p>示例 2 :</p><pre><code class="java">输入: num = "10200", k = 1输出: "200"解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。</code></pre><p>示例 3 :</p><pre><code class="java">输入: num = "10", k = 2输出: "0"解释: 从原数字移除所有的数字，剩余为空就是0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>解释：<br>给定一个长度为 nn 的数字序列 [D0D1D2D3···Dn-1]，从左往右找到第一个位置 i（i&gt;0）使得 Di&lt;Di-1，删去 Di-1；如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p><p>基于此，我们可以每次对整个数字序列执行一次这个策略；删去一个字符后，剩下的 n−1 长度的数字序列就形成了新的子问题，可以继续使用同样的策略，直至删除 k 次。</p><p>方法一：<br>思路：从左到右，找到第一个比后面大的字符，删除这个字符，k次扫描</p><pre><code class="java">class Solution {    public String removeKdigits(String num, int k) {        if (num.length() == k) return "0";  //如果字符长度等于k，则直接返回0        StringBuilder s = new StringBuilder(num);        for (int i = 0; i &lt; k; i++) {       // K次扫描            int idx = 0;            for (int j = 1; j &lt; s.length() &amp;&amp; s.charAt(j) &gt;= s.charAt(j - 1); j++) idx = j;             //定位到第一个比后面大的字符            s.delete(idx, idx + 1);       //删除这个字符            //如果此时的字符长度大于1并且第一个字符为0时，则删除第一个字符            while (s.length() &gt; 1 &amp;&amp; s.charAt(0) == '0'){                s.delete(0, 1);            }         }        return s.toString();    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java中双端队列deque的用法</title>
       <link href="posts/5ece5ecc.html"/>
       <url>posts/5ece5ecc.html</url>
@@ -983,33 +1010,6 @@
             <tag> java </tag>
             
             <tag> deque </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>LeetCode中移掉K位数字题解</title>
-      <link href="posts/128470ac.html"/>
-      <url>posts/128470ac.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="402"><li>移掉K位数字<br>给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。</li></ol><p>注意:</p><pre><code class="java">num 的长度小于 10002 且 ≥ k。num 不会包含任何前导零。</code></pre><p>示例 1 :</p><pre><code class="java">输入: num = "1432219", k = 3输出: "1219"解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。</code></pre><p>示例 2 :</p><pre><code class="java">输入: num = "10200", k = 1输出: "200"解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。</code></pre><p>示例 3 :</p><pre><code class="java">输入: num = "10", k = 2输出: "0"解释: 从原数字移除所有的数字，剩余为空就是0。</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>解释：<br>给定一个长度为 nn 的数字序列 [D0D1D2D3···Dn-1]，从左往右找到第一个位置 i（i&gt;0）使得 Di&lt;Di-1，删去 Di-1；如果不存在，说明整个数字序列单调不降，删去最后一个数字即可。</p><p>基于此，我们可以每次对整个数字序列执行一次这个策略；删去一个字符后，剩下的 n−1 长度的数字序列就形成了新的子问题，可以继续使用同样的策略，直至删除 k 次。</p><p>方法一：<br>思路：从左到右，找到第一个比后面大的字符，删除这个字符，k次扫描</p><pre><code class="java">class Solution {    public String removeKdigits(String num, int k) {        if (num.length() == k) return "0";  //如果字符长度等于k，则直接返回0        StringBuilder s = new StringBuilder(num);        for (int i = 0; i &lt; k; i++) {       // K次扫描            int idx = 0;            for (int j = 1; j &lt; s.length() &amp;&amp; s.charAt(j) &gt;= s.charAt(j - 1); j++) idx = j;             //定位到第一个比后面大的字符            s.delete(idx, idx + 1);       //删除这个字符            //如果此时的字符长度大于1并且第一个字符为0时，则删除第一个字符            while (s.length() &gt; 1 &amp;&amp; s.charAt(0) == '0'){                s.delete(0, 1);            }         }        return s.toString();    }}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> LeetCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1356,9 +1356,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -1383,9 +1383,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> 微信小程序 </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1410,11 +1410,11 @@
       
         <tags>
             
+            <tag> 前端 </tag>
+            
             <tag> 博客 </tag>
             
             <tag> hexo </tag>
-            
-            <tag> 前端 </tag>
             
             <tag> github </tag>
             
