@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="LeetCode中最接近原点的k个点题解, 臾昳, Loole">
+    <meta name="keywords" content="LeetCode中最后一块石头的重量题解, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode中最接近原点的k个点题解 | Loole</title>
+    <title>LeetCode中最后一块石头的重量题解 | Loole</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode中最接近原点的k个点题解</h1>
+                    <h1 class="description center-align post-title">LeetCode中最后一块石头的重量题解</h1>
                 </div>
             </div>
         </div>
@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-09
+                    2020-12-30
                 </div>
                 
 
@@ -580,14 +580,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    674
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -602,65 +602,102 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="973">
-<li>最接近原点的 K 个点<br>我们有一个由平面上的点组成的列表 points。需要从中找出 K 个距离原点 (0, 0) 最近的点。</li>
+                <h1 id="LeetCode中最后一块石头的重量题解-java"><a href="#LeetCode中最后一块石头的重量题解-java" class="headerlink" title="LeetCode中最后一块石头的重量题解-java"></a>LeetCode中最后一块石头的重量题解-java</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h4 id="1046-最后一块石头的重量"><a href="#1046-最后一块石头的重量" class="headerlink" title="1046. 最后一块石头的重量"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/last-stone-weight/">1046. 最后一块石头的重量</a></h4><p>难度简单113收藏分享切换为英文接收动态反馈</p>
+<p>有一堆石头，每块石头的重量都是正整数。</p>
+<p>每一回合，从中选出两块 <strong>最重的</strong> 石头，然后将它们一起粉碎。假设石头的重量分别为 <code>x</code> 和 <code>y</code>，且 <code>x &lt;= y</code>。那么粉碎的可能结果如下：</p>
+<ul>
+<li>如果 <code>x == y</code>，那么两块石头都会被完全粉碎；</li>
+<li>如果 <code>x != y</code>，那么重量为 <code>x</code> 的石头将会完全粉碎，而重量为 <code>y</code> 的石头新重量为 <code>y-x</code>。</li>
+</ul>
+<p>最后，最多只会剩下一块石头。返回此石头的重量。如果没有石头剩下，就返回 <code>0</code>。</p>
+<p><strong>示例：</strong></p>
+<pre><code>输入：[2,7,4,1,8,1]
+输出：1
+解释：
+先选出 7 和 8，得到 1，所以数组转换为 [2,4,1,1,1]，
+再选出 2 和 4，得到 2，所以数组转换为 [2,1,1,1]，
+接着是 2 和 1，得到 1，所以数组转换为 [1,1,1]，
+最后选出 1 和 1，得到 0，最终数组转换为 [1]，这就是最后剩下那块石头的重量。</code></pre>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= stones.length &lt;= 30</code></li>
+<li><code>1 &lt;= stones[i] &lt;= 1000</code></li>
 </ol>
-<p>（这里，平面上两点之间的距离是欧几里德距离。）</p>
-<p>你可以按任何顺序返回答案。除了点坐标的顺序之外，答案确保是唯一的。</p>
-<p>示例 1：</p>
-<p>输入：points = [[1,3],[-2,2]], K = 1<br>输出：[[-2,2]]<br>解释：<br>(1, 3) 和原点之间的距离为 sqrt(10)，<br>(-2, 2) 和原点之间的距离为 sqrt(8)，<br>由于 sqrt(8) &lt; sqrt(10)，(-2, 2) 离原点更近。<br>我们只需要距离原点最近的 K = 1 个点，所以答案就是 [[-2,2]]。<br>示例 2：</p>
-<p>输入：points = [[3,3],[5,-1],[-2,4]], K = 2<br>输出：[[3,3],[-2,4]]<br>（答案 [[-2,4],[3,3]] 也会被接受。）</p>
-<p>提示：</p>
-<p>1 &lt;= K &lt;= points.length &lt;= 10000<br>-10000 &lt; points[i][0] &lt; 10000<br>-10000 &lt; points[i][1] &lt; 10000</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法一：排序<br>将每个点到原点的欧几里得距离的平方从小到大排序后，取出前K个即可。</p>
-<pre><code class="java">class Solution {
-    public int[][] kClosest(int[][] points, int K) {
-        Arrays.sort(points, new Comparator&lt;int[]&gt;() {
-            public int compare(int[] point1, int[] point2) {
-                return (point1[0] * point1[0] + point1[1] * point1[1]) - (point2[0] * point2[0] + point2[1] * point2[1]);
-            }
-        });
-        return Arrays.copyOfRange(points, 0, K);
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="方法一：排序求差值"><a href="#方法一：排序求差值" class="headerlink" title="方法一：排序求差值"></a>方法一：排序求差值</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>将数组进行排序升序，从最后开始遍历，计算相邻差值赋值给后一位，将0赋值给前一位，然后再排序，依次遍历，到最后计算数组中最后一个值即为最后一块石头的重量的大小</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><pre><code>class Solution {
+    public int lastStoneWeight(int[] stones) {
+        // 对数组进行升序排序
+        Arrays.sort(stones);
+        int index = stones.length - 1;
+        // 从后遍历相邻元素差值，赋值给对应数组下标，并将前一个值赋值为0，排序，依次进行
+        for(int i = index; i &gt; 0; i--){
+            stones[index] = stones[index] - stones[index-1];
+            stones[index - 1] = 0;
+
+            Arrays.sort(stones);
+        }
+        // 数组最后一个元素即为最后一块石头的重量
+        return stones[stones.length - 1];
     }
 }</code></pre>
-<p>复杂度分析：<br>时间复杂度：O(nlogn）<br>空间复杂度：O(logn）</p>
-<p>方法二：优先队列<br>使用一个优先队列实时维护前K个最小的距离平方。<br>首先我们将前 KK 个点的编号（为了方便最后直接得到答案）以及对应的距离平方放入优先队列中，随后从第 K+1K+1 个点开始遍历：如果当前点的距离平方比堆顶的点的距离平方要小，就把堆顶的点弹出，再插入当前的点。当遍历完成后，所有在优先队列中的点就是前 KK 个距离最小的点。</p>
-<pre><code class="java">class Solution {
-    public int[][] kClosest(int[][] points, int K) {
-        //方法一：排序
-        // Arrays.sort(points, new Comparator&lt;int[]&gt;(){
-        //     public int compare(int[] point1,int[] point2){
-        //         return (point1[0] * point1[0] + point1[1] * point1[1]) - (point2[0] * point2[0] + point2[1] * point2[1]);
-        //     }
-        // });
-        // return Arrays.copyOfRange(points, 0, K);
-
-        //方法二：优先队列
-        PriorityQueue&lt;int[]&gt; pq = new PriorityQueue&lt;int[]&gt;(new Comparator&lt;int[]&gt;(){
-            public int compare(int[] array1,int[] array2){
-                return array2[0] - array1[0];
-            }
-        });
-        for(int i = 0; i &lt; K; ++i){
-            pq.offer(new int[]{points[i][0] * points[i][0] + points[i][1] * points[i][1], i});
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="提交详情"><a href="#提交详情" class="headerlink" title="提交详情"></a>提交详情</h4><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com/happyzm/images/raw/master/image-20201230105559568.png" alt="image-20201230105559568"></p>
+<h3 id="方法二：最大堆"><a href="#方法二：最大堆" class="headerlink" title="方法二：最大堆"></a>方法二：最大堆</h3><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>将所有石头的重量放入最大堆中，每次依次从队列中取出最重的两块石头a,b ,必有a&gt;=b,如果a&gt;b,则将新石头a-b的差值放入最大堆中，如果a=b，则不会产生新石头，重复此过程，直到最大堆中的元素少于2块。</p>
+<p>若最终剩下一块石头，则该石头即为最后一块石头的重量，返回该元素，若无石头剩下，最大堆为空，则返回0</p>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><pre><code>class Solution {
+    public int lastStoneWeight(int[] stones) {
+        // 创建一个最大堆
+        PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;Integer&gt;((a, b) -&gt; b - a);
+        // 遍历数组，将值依次放入最大堆中
+        for (int stone : stones) {
+            pq.offer(stone);
         }
-        int n = points.length;
-        for(int i = K; i &lt; n; ++i){
-            int dist = points[i][0] * points[i][0] + points[i][1] * points[i][1];
-            if(dist &lt; pq.peek()[0]){
-                pq.poll();
-                pq.offer(new int[]{dist, i});
-
+        // 遍历最大堆
+        while (pq.size() &gt; 1) {
+            // 取出两个元素a,b 
+            int a = pq.poll();
+            int b = pq.poll();
+            // 比较如a大于b，将其差值放入最大堆中
+            if (a &gt; b) {
+                pq.offer(a - b);
             }
         }
-        int[][] ans = new int[K][2];
-        for(int i = 0; i &lt; K; ++i){
-            ans[i] = points[pq.poll()[1]];
-        }
-        return ans;
+        // 如果最后最大堆为空，则最后一块石头重量为0.否则为最大堆中剩余的值
+        return pq.isEmpty() ? 0 : pq.poll();
     }
 }</code></pre>
-<p>复杂度分析：<br>时间复杂度：O(nlogK）<br>空间复杂度：O(K)</p>
+<h4 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><ul>
+<li>时间复杂度：O(nlogn)，其中 n 是石头数量。每次从队列中取出元素需要花费 O(logn) 的时间，最多共需要粉碎 n−1 次石头。</li>
+</ul>
+<ul>
+<li>空间复杂度：O(n)</li>
+</ul>
+<h4 id="提交详情-1"><a href="#提交详情-1" class="headerlink" title="提交详情"></a>提交详情</h4><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com/happyzm/images/raw/master/image-20201230105634154.png" alt="image-20201230105634154"></p>
+<h3 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h3><h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>使用递归解决问题，最后条件：如果数组长度为2，则值为两个元素之间的差值；如果长度为1，则值为此元素，对数组进行排序，如果之后最后两个元素不为0,则值为 最后两个元素的差值，每次令数组最后一个元素为相邻两个元素的差值，倒数第二个元素的值为0，依次递归下去，直到长度为2或者为1，</p>
+<h4 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h4><pre><code>class Solution {
+    public int lastStoneWeight(int[] stones) {
+        // 如果长度为2，则值为两个元素的差值
+        if (stones.length == 2) {
+            return Math.abs(stones[0] - stones[1]);
+        }
+        // 如果长度为1，则为此元素
+        if (stones.length == 1) {
+            return stones[0];
+        }
+        // 进行升序排序
+        Arrays.sort(stones);
+        // 如果只有最后两个元素不为0 ，则值为最后两个元素得差值
+        if (stones[stones.length - 3] == 0) {
+            return stones[stones.length - 1] - stones[stones.length - 2];
+        }
+        // 最后一个元素的值为，最后一个元素的值与倒数第二个元素的差值
+        stones[stones.length - 1] = stones[stones.length - 1] - stones[stones.length - 2];
+        // 令倒数第二个元素的值为0
+        stones[stones.length - 2] = 0;
+        // 递归这个函数
+        return lastStoneWeight(stones);
+    }
+}</code></pre>
+<h4 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><h4 id="提交详情-2"><a href="#提交详情-2" class="headerlink" title="提交详情"></a>提交详情</h4><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com/happyzm/images/raw/master/image-20201230105657592.png" alt="image-20201230105657592"></p>
 
             </div>
             <hr/>
@@ -686,7 +723,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://happyzm.gitee.io/posts/79f75a73.html">http://happyzm.gitee.io/posts/79f75a73.html</a>
+                    <a href="http://happyzm.gitee.io/posts/5a20f95.html">http://happyzm.gitee.io/posts/5a20f95.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1166,13 +1203,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/75881b9f.html">
+                <a href="/posts/5f2a8f47.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="LeetCode中下一个排列题解">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="计算机组成与结构复习知识点总结">
                         
-                        <span class="card-title">LeetCode中下一个排列题解</span>
+                        <span class="card-title">计算机组成与结构复习知识点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1183,14 +1220,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" class="post-category">
+                                    计算机组成
                                 </a>
                             
                             
@@ -1200,12 +1237,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">
+                        <span class="chip bg-color">计算机组成</span>
                     </a>
                     
                 </div>
@@ -1219,13 +1252,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1438972c.html">
+                <a href="/posts/34072712.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="LeetCode中移动零题解">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode中合并两个有序数组题解">
                         
-                        <span class="card-title">LeetCode中移动零题解</span>
+                        <span class="card-title">LeetCode中合并两个有序数组题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1236,7 +1269,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-29
                             </span>
                         <span class="publish-author">
                             
