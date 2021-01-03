@@ -6,7 +6,7 @@
   <link href="http://happyzm.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://happyzm.gitee.io/"/>
-  <updated>2021-01-03T10:32:05.047Z</updated>
+  <updated>2021-01-03T11:55:35.740Z</updated>
   <id>http://happyzm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决使用hexo deploy推送代码到github仓库时重复输入账户密码</title>
+    <link href="http://happyzm.gitee.io/posts/d48f9c48.html"/>
+    <id>http://happyzm.gitee.io/posts/d48f9c48.html</id>
+    <published>2021-01-03T11:44:00.000Z</published>
+    <updated>2021-01-03T11:55:35.740Z</updated>
+    
+    
+    <summary type="html">解决使用hexo deploy推送代码到github仓库时重复输入账户密码</summary>
+    
+    
+    
+    <category term="hexo" scheme="http://happyzm.gitee.io/categories/hexo/"/>
+    
+    
+    <category term="博客" scheme="http://happyzm.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="hexo" scheme="http://happyzm.gitee.io/tags/hexo/"/>
+    
+    <category term="github" scheme="http://happyzm.gitee.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>路由知识点汇总</title>
@@ -408,27 +431,6 @@
     <category term="常用软件" scheme="http://happyzm.gitee.io/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
     
     <category term="vscode" scheme="http://happyzm.gitee.io/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode中两个数组的交集二题解</title>
-    <link href="http://happyzm.gitee.io/posts/b75b071d.html"/>
-    <id>http://happyzm.gitee.io/posts/b75b071d.html</id>
-    <published>2020-12-06T12:52:00.000Z</published>
-    <updated>2020-12-09T12:57:30.611Z</updated>
-    
-    
-    <summary type="html">LeetCode中两个数组的交集题解-java</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="http://happyzm.gitee.io/categories/LeetCode/"/>
-    
-    
-    <category term="LeetCode" scheme="http://happyzm.gitee.io/tags/LeetCode/"/>
-    
-    <category term="算法" scheme="http://happyzm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
