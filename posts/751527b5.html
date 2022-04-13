@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="LeetCode中计数质数题解, 臾昳, Loole">
+    <meta name="keywords" content="在校证书, 臾昳, Loole">
     <meta name="description" content="且视他人之疑目如盏盏鬼火，大胆地去走你的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode中计数质数题解 | Loole</title>
+    <title>在校证书 | Loole</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode中计数质数题解</h1>
+                    <h1 class="description center-align post-title">在校证书</h1>
                 </div>
             </div>
         </div>
@@ -542,12 +542,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E6%84%9F%E6%82%9F/">
+                                <span class="chip bg-color">感悟</span>
                             </a>
                         
                     </div>
@@ -558,8 +554,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category">
-                                LeetCode
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA/" class="post-category">
+                                个人
                             </a>
                         
                     </div>
@@ -571,7 +567,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-03
+                    2020-01-02
                 </div>
                 
 
@@ -580,7 +576,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    366
+                    4
                 </div>
                 
 
@@ -602,40 +598,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol start="204">
-<li>计数质数<br>统计所有小于非负整数 n 的质数的数量。</li>
-</ol>
-<p>示例 1：</p>
-<pre><code class="java">输入：n = 10
-输出：4
-解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。</code></pre>
-<p>示例 2：</p>
-<pre><code class="java">输入：n = 0
-输出：0</code></pre>
-<p>示例 3：</p>
-<pre><code class="java">输入：n = 1
-输出：0</code></pre>
-<p>提示：</p>
-<pre><code class="java">0 &lt;= n &lt;= 5 * 106</code></pre>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>方法一：暴力遍历法</strong><br>思路：遍历小于n的整数，每次判断是不是质数，若是质数，则将结果+1，最后返回结果（由于暴力超时，所以此处不列代码）</p>
-<p><strong>方法二：标记法</strong><br>思路：创建一个大小为n的Boolean数组，其下标代表整数，从3开始遍历，由于大于3的偶数肯定不是质数，所以每次遍历+2，每次遍历，判断数组对应下表的值，若为false，则说明为质数，然后将此下标的奇数倍也全部标记为true（为合数），然后将结果result加1，统计最后的结果</p>
-<pre><code class="java">class Solution {
-    public int countPrimes(int n) {
-        int result = 0;
-        boolean[] b = new boolean[n];   // 初始化默认值都为 false，为质数标记
-        if(2 &lt; n) result++; // 如果大于 2 则一定拥有 2 这个质数
-
-        for(int i = 3; i &lt; n; i += 2){  // 从 3 开始遍历，且只遍历奇数
-            if(!b[i]){  // 是质数
-                for(int j = 3; i * j &lt; n; j += 2){
-                    b[i * j] = true;    // 将当前质数的奇数倍都设置成非质数标记 true
-                }
-                result++;   // 质数个数 +1
-            }
-        }
-        return result;
-    }
-}</code></pre>
+                <h1 id="在校证书"><a href="#在校证书" class="headerlink" title="在校证书"></a>在校证书</h1><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com/happyzm/images/raw/master/PersonalCertificate.jpg"></p>
 
             </div>
             <hr/>
@@ -661,7 +624,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://happyzm.gitee.io/posts/a4adefe8.html">http://happyzm.gitee.io/posts/a4adefe8.html</a>
+                    <a href="http://happyzm.gitee.io/posts/751527b5.html">http://happyzm.gitee.io/posts/751527b5.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -699,12 +662,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E6%84%9F%E6%82%9F/">
+                                    <span class="chip bg-color">感悟</span>
                                 </a>
                             
                         </div>
@@ -1141,13 +1100,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/50a39ae0.html">
+                <a href="/posts/6a72f890.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Typora+picGo+Gitee管理图床">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo博客介绍">
                         
-                        <span class="card-title">Typora+picGo+Gitee管理图床</span>
+                        <span class="card-title">hexo博客介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1158,14 +1117,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    常用软件
+                            <a href="/categories/LeetCode/" class="post-category">
+                                    LeetCode
                                 </a>
                             
                             
@@ -1175,12 +1134,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">常用软件</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                        <span class="chip bg-color">图床</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
@@ -1194,13 +1153,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/96bfb740.html">
+                <a href="/posts/753927b5.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Webstorm中用npm运行vue项目">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="个人在校成绩单">
                         
-                        <span class="card-title">Webstorm中用npm运行vue项目</span>
+                        <span class="card-title">个人在校成绩单</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1211,14 +1170,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    常用软件
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA/" class="post-category">
+                                    个人
                                 </a>
                             
                             
@@ -1228,16 +1187,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
-                    </a>
-                    
-                    <a href="/tags/webstorm/">
-                        <span class="chip bg-color">webstorm</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">常用软件</span>
+                    <a href="/tags/%E6%84%9F%E6%82%9F/">
+                        <span class="chip bg-color">感悟</span>
                     </a>
                     
                 </div>
